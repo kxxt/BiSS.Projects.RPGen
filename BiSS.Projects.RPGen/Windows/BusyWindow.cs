@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BiSS.Projects.RPGen
+namespace BiSS.Projects.RPGen.Windows
 {
-	public partial class Form1 : Form
+	public partial class BusyWindow : RsWork.UI.Windows.ModernDialogBase
 	{
-		public Form1()
+		public BusyWindow()
 		{
 			InitializeComponent();
 		}
