@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using Spire.Presentation;
 using Spire.Presentation.Charts;
 namespace Test
@@ -15,8 +17,7 @@ namespace Test
 			Presentation ppt=new Presentation();
 			//ppt.SaveToFile("out.pptx",FileFormat.Pptx2010);
 			ISlide s0 = ppt.Slides[0];
-			IChart ct= s0.Shapes.AppendChart(ChartType.Area, new RectangleF(10f, 10f,512f, 512f));
-			ct.ChartTitle.TextProperties.Paragraphs[0].Text = "Test";
+			
 			Double[] widths = new double[] { 100, 100, 150, 100, 100 };
 			Double[] heights = new double[] { 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15 };
 			ITable table = ppt.Slides[0].Shapes.AppendTable(ppt.SlideSize.Size.Width / 2 - 275, 90, widths, heights);
@@ -65,6 +66,10 @@ namespace Test
 			//		tablet[j, i].TextFrame.Paragraphs[0].Alignment = TextAlignmentType.Center;
 			//	}
 			//}
+			ISlide s1 = ppt.Slides.Append();
+			IChart ct = s1.Shapes.AppendChart(ChartType.Area, new RectangleF(10f, 10f, 512f, 512f));
+			ct.ChartStyle=ChartStyle.Style2;
+			ct.ChartTitle.TextProperties.Paragraphs[0].Text = "Test";
 			ppt.SaveToFile("out.pptx", FileFormat.Pptx2010);
 		}
 	}
