@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -70,7 +71,31 @@ namespace Test
 			IChart ct = s1.Shapes.AppendChart(ChartType.Area, new RectangleF(10f, 10f, 512f, 512f));
 			ct.ChartStyle=ChartStyle.Style2;
 			ct.ChartTitle.TextProperties.Paragraphs[0].Text = "Test";
-			ppt.SaveToFile("out.pptx", FileFormat.Pptx2010);
-		}
+		    ppt.SaveToFile("out.pptx", FileFormat.Pptx2010);
+            ///////////////////////////////////
+
+            try { File.Copy("tmp3.pptx", "outcharts.pptx"); }
+            catch { }
+
+		    Presentation pptx = null;
+            try
+            {
+                pptx= new Presentation("outcharts.pptx", FileFormat.Pptx2010);
+            }
+            catch(Exception e) { Console.WriteLine(RsWork.Functions.Log.Logger.GetExceptionInfo(e));}
+
+            ISlide s2 = pptx.Slides[3];
+		    ITable tb =(ITable) s2.Shapes[0];
+		    for (int i = 0; i < 13; i++)
+		    for (int j = 0; j < 5; j++)
+		    {
+		        //fill the table with data
+		        tb[j, i].TextFrame.Text = dataStr[i, j];
+
+		        //set the Font
+		        tb[j, i].TextFrame.Paragraphs[0].TextRanges[0].LatinFont = new TextFont("Arial Narrow");
+		    }
+            pptx.SaveToFile("outcharts.pptx",FileFormat.Pptx2010);
+        }
 	}
 }
