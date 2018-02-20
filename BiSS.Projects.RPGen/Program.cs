@@ -22,7 +22,7 @@ namespace BiSS.Projects.RPGen
 		/// 应用程序的主入口点。
 		/// </summary>
 		[STAThread]
-		static void Main()
+		static int Main()
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
@@ -38,7 +38,10 @@ namespace BiSS.Projects.RPGen
 //			ppt.SaveToFile(fs, FileFormat.Pptx2010);
 			
 //#endregion
+			
+			Application.Run(new SplashWindow());
 			Application.Run(new MainForm());
+			return 0;
 		}
 	}
 }

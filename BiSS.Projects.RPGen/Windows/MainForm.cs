@@ -1,8 +1,8 @@
 ﻿using System.Windows.Forms;
-
+using MetroFramework.Forms;
 namespace BiSS.Projects.RPGen.Windows
 {
-	public partial class MainForm : RsWork.UI.Windows.ModernDialogBase
+	public partial class MainForm : MetroForm
 	{
 		public MainForm()
 		{
@@ -23,6 +23,16 @@ namespace BiSS.Projects.RPGen.Windows
 		{
 			MessageBox.Show(Application.StartupPath + @"\Web\loading.html");
 			new SplashWindow().Show();
+		}
+
+		private void modernButton1_Click(object sender, System.EventArgs e)
+		{
+
+		}
+
+		private void modernButton3_Click(object sender, System.EventArgs e)
+		{
+			new AboutWindow().ShowDialog();
 		}
 	}
 }
