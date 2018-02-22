@@ -41,7 +41,7 @@ namespace BiSS.Projects.RPGen.Windows
 		private void DoWork()
 		{
 			//todo:
-			Thread.Sleep(5000);
+			Thread.Sleep(3000);
 		}
 
 		private void bgw_DoWork(object sender, DoWorkEventArgs e)
@@ -56,6 +56,7 @@ namespace BiSS.Projects.RPGen.Windows
 		}
 		private void WindowMove(object sender, MouseEventArgs e)
 		{
+			//if (this.Handle == null) return;
 			ReleaseCapture();
 			SendMessage(this.Handle, WM_SYSCOMMAND, SC_MOVE + HTCAPTION, 0);
 		}

@@ -52,9 +52,22 @@
     <ApplicationIcon>RPGenIcon-Colored.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+    <Reference Include="DotNetBrowser, Version=1.14.0.0, Culture=neutral, PublicKeyToken=b0b5aaca9c95c84e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\NEWorld\src\WindowsLauncher\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+      <HintPath>bin\Debug\DotNetBrowser.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.RunTime.1.2.0.3\lib\net40-Client\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.Design.1.2.0.3\lib\net40\MetroFramework.Design.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.Fonts.1.2.0.3\lib\net40\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -104,6 +117,8 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Config\Config.cs" />
+    <Compile Include="Debug\SampleClass.cs" />
     <Compile Include="Op\DataReader.cs" />
     <Compile Include="Windows\AboutWindow.cs">
       <SubType>Form</SubType>
@@ -117,6 +132,12 @@
     <Compile Include="Windows\BusyWindow.Designer.cs">
       <DependentUpon>BusyWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Windows\IntroductionWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\IntroductionWindow.Designer.cs">
+      <DependentUpon>IntroductionWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Windows\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +146,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Windows\SettingsWindiow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\SettingsWindiow.Designer.cs">
+      <DependentUpon>SettingsWindiow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Windows\SplashWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,8 +170,14 @@
     <EmbeddedResource Include="Windows\AboutWindow.resx">
       <DependentUpon>AboutWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Windows\IntroductionWindow.resx">
+      <DependentUpon>IntroductionWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Windows\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\SettingsWindiow.resx">
+      <DependentUpon>SettingsWindiow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\SplashWindow.resx">
       <DependentUpon>SplashWindow.cs</DependentUpon>

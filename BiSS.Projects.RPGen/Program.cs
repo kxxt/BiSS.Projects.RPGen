@@ -21,7 +21,7 @@ namespace BiSS.Projects.RPGen
 		/// <summary>
 		/// 应用程序的主入口点。
 		/// </summary>
-		[STAThread]
+		[MTAThread]
 		static int Main()
 		{
 			Application.EnableVisualStyles();

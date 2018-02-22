@@ -1,6 +1,10 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
+using System.Drawing;
 using System.Windows.Forms;
 using MetroFramework.Forms;
+using Newtonsoft.Json;
+
 namespace BiSS.Projects.RPGen.Windows
 {
 	public partial class MainForm : MetroForm
@@ -23,17 +27,22 @@ namespace BiSS.Projects.RPGen.Windows
 		private void modernButton2_Click(object sender, System.EventArgs e)
 		{
 			//MessageBox.Show(Application.StartupPath + @"\Web\loading.html");
-			new SplashWindow().Show();
+			//new IntroductionWindow().Show();
 		}
 
-		private void modernButton1_Click(object sender, System.EventArgs e)
+		private void metroTile3_Click(object sender, EventArgs e)
+		{
+			new SettingsWindiow().ShowDialog();
+		}
+
+		private void metroTile5_Click(object sender, EventArgs e)
 		{
 			Process.Start("https://github.com/kxxt/BiSS.Projects.RPGen");
 		}
 
-		private void modernButton3_Click(object sender, System.EventArgs e)
+		private void metroTile6_Click(object sender, EventArgs e)
 		{
-			new AboutWindow().ShowDialog();
+			new AboutWindow().Show();
 		}
 	}
 }

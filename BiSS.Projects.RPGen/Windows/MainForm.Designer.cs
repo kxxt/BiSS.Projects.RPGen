@@ -31,10 +31,16 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 			this.closebtn = new RsWork.UI.Controls.ModernButton();
 			this.minbtn = new RsWork.UI.Controls.ModernButton();
-			this.modernButton1 = new RsWork.UI.Controls.ModernButton();
 			this.modernButton2 = new RsWork.UI.Controls.ModernButton();
-			this.modernButton3 = new RsWork.UI.Controls.ModernButton();
-			this.modernButton4 = new RsWork.UI.Controls.ModernButton();
+			this.Tile_XLS = new MetroFramework.Controls.MetroTile();
+			this.metroTile1 = new MetroFramework.Controls.MetroTile();
+			this.metroTile2 = new MetroFramework.Controls.MetroTile();
+			this.metroTile3 = new MetroFramework.Controls.MetroTile();
+			this.status_Textbox = new MetroFramework.Controls.MetroTextBox();
+			this.statusTitleLabel = new MetroFramework.Controls.MetroLabel();
+			this.metroTile4 = new MetroFramework.Controls.MetroTile();
+			this.metroTile5 = new MetroFramework.Controls.MetroTile();
+			this.metroTile6 = new MetroFramework.Controls.MetroTile();
 			this.SuspendLayout();
 			// 
 			// closebtn
@@ -81,28 +87,6 @@
 			this.minbtn.UseVisualStyleBackColor = false;
 			this.minbtn.Click += new System.EventHandler(this.minbtn_Click);
 			// 
-			// modernButton1
-			// 
-			this.modernButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.modernButton1.BackColor = System.Drawing.Color.Transparent;
-			this.modernButton1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
-			this.modernButton1.DisabledBorderColor = System.Drawing.Color.DarkGray;
-			this.modernButton1.DisabledForeColor = System.Drawing.Color.DarkGray;
-			this.modernButton1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
-			this.modernButton1.FlatAppearance.BorderSize = 2;
-			this.modernButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.modernButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-			this.modernButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.modernButton1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-			this.modernButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
-			this.modernButton1.Location = new System.Drawing.Point(576, 8);
-			this.modernButton1.Name = "modernButton1";
-			this.modernButton1.Size = new System.Drawing.Size(87, 32);
-			this.modernButton1.TabIndex = 4;
-			this.modernButton1.Text = "GitHub";
-			this.modernButton1.UseVisualStyleBackColor = false;
-			this.modernButton1.Click += new System.EventHandler(this.modernButton1_Click);
-			// 
 			// modernButton2
 			// 
 			this.modernButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -117,66 +101,153 @@
 			this.modernButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.modernButton2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
 			this.modernButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
-			this.modernButton2.Location = new System.Drawing.Point(538, 8);
+			this.modernButton2.Location = new System.Drawing.Point(966, 8);
 			this.modernButton2.Name = "modernButton2";
 			this.modernButton2.Size = new System.Drawing.Size(32, 32);
 			this.modernButton2.TabIndex = 5;
-			this.modernButton2.Text = "-";
+			this.modernButton2.Text = "T";
 			this.modernButton2.UseVisualStyleBackColor = false;
 			this.modernButton2.Click += new System.EventHandler(this.modernButton2_Click);
 			// 
-			// modernButton3
+			// Tile_XLS
 			// 
-			this.modernButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.modernButton3.BackColor = System.Drawing.Color.Transparent;
-			this.modernButton3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
-			this.modernButton3.DisabledBorderColor = System.Drawing.Color.DarkGray;
-			this.modernButton3.DisabledForeColor = System.Drawing.Color.DarkGray;
-			this.modernButton3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
-			this.modernButton3.FlatAppearance.BorderSize = 2;
-			this.modernButton3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.modernButton3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-			this.modernButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.modernButton3.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-			this.modernButton3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
-			this.modernButton3.Location = new System.Drawing.Point(669, 8);
-			this.modernButton3.Name = "modernButton3";
-			this.modernButton3.Size = new System.Drawing.Size(291, 32);
-			this.modernButton3.TabIndex = 6;
-			this.modernButton3.Text = "关于 Believers in Science Studio";
-			this.modernButton3.UseVisualStyleBackColor = false;
-			this.modernButton3.Click += new System.EventHandler(this.modernButton3_Click);
+			this.Tile_XLS.Location = new System.Drawing.Point(23, 63);
+			this.Tile_XLS.Name = "Tile_XLS";
+			this.Tile_XLS.Size = new System.Drawing.Size(415, 114);
+			this.Tile_XLS.Style = MetroFramework.MetroColorStyle.Green;
+			this.Tile_XLS.TabIndex = 8;
+			this.Tile_XLS.Text = "填写Excel表单";
+			this.Tile_XLS.Theme = MetroFramework.MetroThemeStyle.Dark;
+			this.Tile_XLS.TileImage = ((System.Drawing.Image)(resources.GetObject("Tile_XLS.TileImage")));
+			this.Tile_XLS.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.Tile_XLS.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+			this.Tile_XLS.UseTileImage = true;
 			// 
-			// modernButton4
+			// metroTile1
 			// 
-			this.modernButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.modernButton4.BackColor = System.Drawing.Color.Transparent;
-			this.modernButton4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
-			this.modernButton4.DisabledBorderColor = System.Drawing.Color.DarkGray;
-			this.modernButton4.DisabledForeColor = System.Drawing.Color.DarkGray;
-			this.modernButton4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
-			this.modernButton4.FlatAppearance.BorderSize = 2;
-			this.modernButton4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.modernButton4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-			this.modernButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.modernButton4.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-			this.modernButton4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
-			this.modernButton4.Location = new System.Drawing.Point(966, 8);
-			this.modernButton4.Name = "modernButton4";
-			this.modernButton4.Size = new System.Drawing.Size(32, 32);
-			this.modernButton4.TabIndex = 7;
-			this.modernButton4.Text = "?";
-			this.modernButton4.UseVisualStyleBackColor = false;
+			this.metroTile1.Location = new System.Drawing.Point(23, 183);
+			this.metroTile1.Name = "metroTile1";
+			this.metroTile1.Size = new System.Drawing.Size(137, 140);
+			this.metroTile1.TabIndex = 9;
+			this.metroTile1.Text = "程序设置";
+			this.metroTile1.Theme = MetroFramework.MetroThemeStyle.Dark;
+			this.metroTile1.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile1.TileImage")));
+			this.metroTile1.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.metroTile1.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+			this.metroTile1.UseTileImage = true;
+			// 
+			// metroTile2
+			// 
+			this.metroTile2.Location = new System.Drawing.Point(444, 63);
+			this.metroTile2.Name = "metroTile2";
+			this.metroTile2.Size = new System.Drawing.Size(260, 260);
+			this.metroTile2.Style = MetroFramework.MetroColorStyle.Purple;
+			this.metroTile2.TabIndex = 10;
+			this.metroTile2.Text = "导入成绩单";
+			this.metroTile2.Theme = MetroFramework.MetroThemeStyle.Dark;
+			this.metroTile2.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile2.TileImage")));
+			this.metroTile2.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.metroTile2.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+			this.metroTile2.UseTileImage = true;
+			// 
+			// metroTile3
+			// 
+			this.metroTile3.Location = new System.Drawing.Point(166, 183);
+			this.metroTile3.Name = "metroTile3";
+			this.metroTile3.Size = new System.Drawing.Size(272, 140);
+			this.metroTile3.Style = MetroFramework.MetroColorStyle.Brown;
+			this.metroTile3.TabIndex = 11;
+			this.metroTile3.Text = "程序设置";
+			this.metroTile3.Theme = MetroFramework.MetroThemeStyle.Dark;
+			this.metroTile3.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile3.TileImage")));
+			this.metroTile3.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.metroTile3.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+			this.metroTile3.UseTileImage = true;
+			this.metroTile3.Click += new System.EventHandler(this.metroTile3_Click);
+			// 
+			// status_Textbox
+			// 
+			this.status_Textbox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+			this.status_Textbox.Location = new System.Drawing.Point(81, 653);
+			this.status_Textbox.Name = "status_Textbox";
+			this.status_Textbox.ReadOnly = true;
+			this.status_Textbox.Size = new System.Drawing.Size(510, 25);
+			this.status_Textbox.Style = MetroFramework.MetroColorStyle.Orange;
+			this.status_Textbox.TabIndex = 12;
+			this.status_Textbox.Text = "{$Doing_Status}";
+			this.status_Textbox.Theme = MetroFramework.MetroThemeStyle.Dark;
+			// 
+			// statusTitleLabel
+			// 
+			this.statusTitleLabel.AutoSize = true;
+			this.statusTitleLabel.FontSize = MetroFramework.MetroLabelSize.Tall;
+			this.statusTitleLabel.Location = new System.Drawing.Point(23, 653);
+			this.statusTitleLabel.Name = "statusTitleLabel";
+			this.statusTitleLabel.Size = new System.Drawing.Size(52, 25);
+			this.statusTitleLabel.TabIndex = 13;
+			this.statusTitleLabel.Text = "状态:";
+			this.statusTitleLabel.Theme = MetroFramework.MetroThemeStyle.Dark;
+			// 
+			// metroTile4
+			// 
+			this.metroTile4.Location = new System.Drawing.Point(23, 329);
+			this.metroTile4.Name = "metroTile4";
+			this.metroTile4.Size = new System.Drawing.Size(349, 140);
+			this.metroTile4.Style = MetroFramework.MetroColorStyle.Teal;
+			this.metroTile4.TabIndex = 14;
+			this.metroTile4.Text = "设置 输入输出 格式";
+			this.metroTile4.Theme = MetroFramework.MetroThemeStyle.Dark;
+			this.metroTile4.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile4.TileImage")));
+			this.metroTile4.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.metroTile4.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+			this.metroTile4.UseTileImage = true;
+			// 
+			// metroTile5
+			// 
+			this.metroTile5.Location = new System.Drawing.Point(378, 329);
+			this.metroTile5.Name = "metroTile5";
+			this.metroTile5.Size = new System.Drawing.Size(326, 140);
+			this.metroTile5.Style = MetroFramework.MetroColorStyle.Silver;
+			this.metroTile5.TabIndex = 15;
+			this.metroTile5.Text = "本项目 GitHub";
+			this.metroTile5.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile5.TileImage")));
+			this.metroTile5.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.metroTile5.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+			this.metroTile5.UseTileImage = true;
+			this.metroTile5.Click += new System.EventHandler(this.metroTile5_Click);
+			// 
+			// metroTile6
+			// 
+			this.metroTile6.CustomForeColor = true;
+			this.metroTile6.ForeColor = System.Drawing.Color.Black;
+			this.metroTile6.Location = new System.Drawing.Point(23, 475);
+			this.metroTile6.Name = "metroTile6";
+			this.metroTile6.Size = new System.Drawing.Size(262, 172);
+			this.metroTile6.Style = MetroFramework.MetroColorStyle.White;
+			this.metroTile6.TabIndex = 16;
+			this.metroTile6.Text = "关于\r\nBelievers in Science Studio";
+			this.metroTile6.Theme = MetroFramework.MetroThemeStyle.Dark;
+			this.metroTile6.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile6.TileImage")));
+			this.metroTile6.TileImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.metroTile6.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+			this.metroTile6.UseTileImage = true;
+			this.metroTile6.Click += new System.EventHandler(this.metroTile6_Click);
 			// 
 			// MainForm
 			// 
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
 			this.ClientSize = new System.Drawing.Size(1077, 701);
 			this.ControlBox = false;
-			this.Controls.Add(this.modernButton4);
-			this.Controls.Add(this.modernButton3);
+			this.Controls.Add(this.metroTile6);
+			this.Controls.Add(this.metroTile5);
+			this.Controls.Add(this.metroTile4);
+			this.Controls.Add(this.statusTitleLabel);
+			this.Controls.Add(this.status_Textbox);
+			this.Controls.Add(this.metroTile3);
+			this.Controls.Add(this.metroTile2);
+			this.Controls.Add(this.metroTile1);
+			this.Controls.Add(this.Tile_XLS);
 			this.Controls.Add(this.modernButton2);
-			this.Controls.Add(this.modernButton1);
 			this.Controls.Add(this.minbtn);
 			this.Controls.Add(this.closebtn);
 			this.Font = new System.Drawing.Font("微软雅黑 Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -184,11 +255,12 @@
 			this.MaximizeBox = false;
 			this.Name = "MainForm";
 			this.Resizable = false;
-			this.ShadowType = MetroFramework.Forms.MetroFormShadowType.SystemShadow;
+			this.ShadowType = MetroFramework.Forms.MetroForm.MetroFormShadowType.Flat;
 			this.Style = MetroFramework.MetroColorStyle.Orange;
 			this.Text = "Believers in Science Studio 成绩报告生成器";
 			this.Theme = MetroFramework.MetroThemeStyle.Dark;
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 
@@ -196,10 +268,16 @@
 
 		private RsWork.UI.Controls.ModernButton closebtn;
 		private RsWork.UI.Controls.ModernButton minbtn;
-		private RsWork.UI.Controls.ModernButton modernButton1;
 		private RsWork.UI.Controls.ModernButton modernButton2;
-		private RsWork.UI.Controls.ModernButton modernButton3;
-		private RsWork.UI.Controls.ModernButton modernButton4;
+		private MetroFramework.Controls.MetroTile Tile_XLS;
+		private MetroFramework.Controls.MetroTile metroTile1;
+		private MetroFramework.Controls.MetroTile metroTile2;
+		private MetroFramework.Controls.MetroTile metroTile3;
+		private MetroFramework.Controls.MetroTextBox status_Textbox;
+		private MetroFramework.Controls.MetroLabel statusTitleLabel;
+		private MetroFramework.Controls.MetroTile metroTile4;
+		private MetroFramework.Controls.MetroTile metroTile5;
+		private MetroFramework.Controls.MetroTile metroTile6;
 	}
 }
 
