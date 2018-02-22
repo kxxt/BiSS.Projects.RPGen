@@ -57,7 +57,7 @@
 			this.closebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.closebtn.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
 			this.closebtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
-			this.closebtn.Location = new System.Drawing.Point(1042, 8);
+			this.closebtn.Location = new System.Drawing.Point(937, 10);
 			this.closebtn.Name = "closebtn";
 			this.closebtn.Size = new System.Drawing.Size(32, 32);
 			this.closebtn.TabIndex = 2;
@@ -79,7 +79,7 @@
 			this.minbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.minbtn.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
 			this.minbtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
-			this.minbtn.Location = new System.Drawing.Point(1004, 8);
+			this.minbtn.Location = new System.Drawing.Point(899, 10);
 			this.minbtn.Name = "minbtn";
 			this.minbtn.Size = new System.Drawing.Size(32, 32);
 			this.minbtn.TabIndex = 3;
@@ -101,7 +101,7 @@
 			this.modernButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.modernButton2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
 			this.modernButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
-			this.modernButton2.Location = new System.Drawing.Point(966, 8);
+			this.modernButton2.Location = new System.Drawing.Point(861, 10);
 			this.modernButton2.Name = "modernButton2";
 			this.modernButton2.Size = new System.Drawing.Size(32, 32);
 			this.modernButton2.TabIndex = 5;
@@ -167,11 +167,13 @@
 			// 
 			// status_Textbox
 			// 
+			this.status_Textbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.status_Textbox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
 			this.status_Textbox.Location = new System.Drawing.Point(81, 653);
 			this.status_Textbox.Name = "status_Textbox";
 			this.status_Textbox.ReadOnly = true;
-			this.status_Textbox.Size = new System.Drawing.Size(510, 25);
+			this.status_Textbox.Size = new System.Drawing.Size(888, 25);
 			this.status_Textbox.Style = MetroFramework.MetroColorStyle.Orange;
 			this.status_Textbox.TabIndex = 12;
 			this.status_Textbox.Text = "{$Doing_Status}";
@@ -179,6 +181,7 @@
 			// 
 			// statusTitleLabel
 			// 
+			this.statusTitleLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.statusTitleLabel.AutoSize = true;
 			this.statusTitleLabel.FontSize = MetroFramework.MetroLabelSize.Tall;
 			this.statusTitleLabel.Location = new System.Drawing.Point(23, 653);
@@ -210,6 +213,7 @@
 			this.metroTile5.Style = MetroFramework.MetroColorStyle.Silver;
 			this.metroTile5.TabIndex = 15;
 			this.metroTile5.Text = "本项目 GitHub";
+			this.metroTile5.Theme = MetroFramework.MetroThemeStyle.Dark;
 			this.metroTile5.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile5.TileImage")));
 			this.metroTile5.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			this.metroTile5.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
@@ -236,7 +240,7 @@
 			// MainForm
 			// 
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-			this.ClientSize = new System.Drawing.Size(1077, 701);
+			this.ClientSize = new System.Drawing.Size(976, 701);
 			this.ControlBox = false;
 			this.Controls.Add(this.metroTile6);
 			this.Controls.Add(this.metroTile5);
