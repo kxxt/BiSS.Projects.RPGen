@@ -21,11 +21,15 @@ namespace BiSS.Projects.RPGen
 		/// <summary>
 		/// 应用程序的主入口点。
 		/// </summary>
-		[MTAThread]
+		[STAThread]
 		static int Main()
 		{
+#if DEBUG
+			DebugEnabled = true;
+#endif
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
+			LogWindow=new LogWindow();
 //#region TEST
 //			Workbook t=new Workbook();
 //			t.Version=ExcelVersion.Version2013;
@@ -43,5 +47,20 @@ namespace BiSS.Projects.RPGen
 			Application.Run(new MainForm());
 			return 0;
 		}
+
+		public static void ShowLogWindow()
+		{
+			
+			LogWindow.ShowDialog();
+		}
+		private static bool debugEnabled=true;//todo
+
+		public static bool DebugEnabled { get => debugEnabled; set => debugEnabled = value; }
+		public static string Log { get => log; set{ log = value;
+			LogWindow.metroTextBox1.Text = log;
+		} }
+
+		private static string log="!Application Log!\r\n";
+		private static LogWindow LogWindow;
 	}
 }

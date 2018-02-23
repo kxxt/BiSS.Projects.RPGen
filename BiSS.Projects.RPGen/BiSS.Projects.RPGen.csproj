@@ -138,6 +138,12 @@
     <Compile Include="Windows\IntroductionWindow.Designer.cs">
       <DependentUpon>IntroductionWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Windows\LogWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\LogWindow.Designer.cs">
+      <DependentUpon>LogWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Windows\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +179,9 @@
     <EmbeddedResource Include="Windows\IntroductionWindow.resx">
       <DependentUpon>IntroductionWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Windows\LogWindow.resx">
+      <DependentUpon>LogWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Windows\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -182,7 +191,9 @@
     <EmbeddedResource Include="Windows\SplashWindow.resx">
       <DependentUpon>SplashWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Data\TEMPLATE.XLSX" />
+    <None Include="Data\TEMPLATE.XLSX">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="freespire.office.2.15.0.nupkg" />
     <None Include="freespire.presentation.2.1.0.nupkg" />
     <None Include="packages.config" />
@@ -213,6 +224,7 @@
     <None Include="Data\TITLE_TEMPLATE_2.PPTX">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Properties\DataSources\Program.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

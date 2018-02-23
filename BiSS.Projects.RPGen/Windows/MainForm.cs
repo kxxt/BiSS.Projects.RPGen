@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using MetroFramework.Forms;
 using Newtonsoft.Json;
+using RsWork.UI.Windows;
 
 namespace BiSS.Projects.RPGen.Windows
 {
@@ -43,6 +44,16 @@ namespace BiSS.Projects.RPGen.Windows
 		private void metroTile6_Click(object sender, EventArgs e)
 		{
 			new AboutWindow().Show();
+		}
+
+		private void metroTile7_Click(object sender, EventArgs e)
+		{
+			new ModernDialogN("提示", "此版本无自动更新功能,如有需要请前往GitHub下载本程序.","zh-cn",Color.Coral,Color.Chocolate,Color.Tomato,Color.DarkSalmon).ShowDialog();
+		}
+
+		private void statusTitleLabel_Click(object sender, EventArgs e)
+		{
+			Program.ShowLogWindow();
 		}
 	}
 }

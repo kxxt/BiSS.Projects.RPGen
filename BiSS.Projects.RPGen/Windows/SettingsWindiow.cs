@@ -13,11 +13,13 @@ namespace BiSS.Projects.RPGen.Windows
 		public SettingsWindiow()
 		{
 			InitializeComponent();
+			debugEnabledToggle.Checked = Program.DebugEnabled;
+
 		}
 
 		private void debugEnabledToggle_CheckedChanged(object sender, EventArgs e)
 		{
-
+			Program.DebugEnabled = debugEnabledToggle.Checked;
 		}
 
 		private void closebtn_Click(object sender, EventArgs e)
