@@ -29,6 +29,9 @@ namespace BiSS.Projects.RPGen
 #if DEBUG
 			DebugEnabled = true;
 #endif
+#if RACE
+			RaceMode = true;
+#endif
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
             //MetroFramework.Fonts.FontResolver fontResolver = new FontResolver();
@@ -53,6 +56,7 @@ namespace BiSS.Projects.RPGen
             Log("App Started,displaying the SplashWindow.");
 			Application.Run(new SplashWindow());
 			Application.Run(frm);
+			
 			return 0;
 		}
         public static void Log(string str)
@@ -65,7 +69,7 @@ namespace BiSS.Projects.RPGen
 			LogWindow.Visible=true;
 		}
 		private static bool debugEnabled=true;//todo
-
+		private static bool raceMode = false;
 		public static bool DebugEnabled { get => debugEnabled; set => debugEnabled = value; }
 		public static string Logs { get => log; set{ log = value;
             if(LogWindow!=null)
@@ -75,9 +79,10 @@ namespace BiSS.Projects.RPGen
             }
                 if (frm != null)
                     frm.UpdateStatus("hhhh"/*log.Substring(log.LastIndexOf("\n"))*/);
-
             }
         }
+
+		public static bool RaceMode { get => raceMode;private set => raceMode = value; }
 
 		private static string log="!Application Log!\r\n";
 		private static LogWindow LogWindow;

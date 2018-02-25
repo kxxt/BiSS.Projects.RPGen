@@ -58,6 +58,7 @@ namespace BiSS.Projects.RPGen.Windows
 		{
 			//if (this.Handle == null) return;
 			ReleaseCapture();
+			
 			SendMessage(this.Handle, WM_SYSCOMMAND, SC_MOVE + HTCAPTION, 0);
 		}
 	}

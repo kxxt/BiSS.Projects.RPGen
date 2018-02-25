@@ -33,7 +33,7 @@ namespace BiSS.Projects.RPGen.Windows
 
 		private void metroTile3_Click(object sender, EventArgs e)
 		{
-			new SettingsWindiow().ShowDialog();
+			
 		}
 
 		private void metroTile5_Click(object sender, EventArgs e)
@@ -59,5 +59,18 @@ namespace BiSS.Projects.RPGen.Windows
         {
             this.status_Textbox.Text = str;
         }
+
+        private void MainForm_Shown(object sender, EventArgs e)
+        {
+			if(Program.RaceMode)
+				new WarningWindow().ShowDialog();
+			this.Activate();
+			
+        }
+
+		private void metroTile1_Click(object sender, EventArgs e)
+		{
+			new SettingsWindiow().ShowDialog();
+		}
 	}
 }
