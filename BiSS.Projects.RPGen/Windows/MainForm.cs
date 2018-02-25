@@ -55,5 +55,9 @@ namespace BiSS.Projects.RPGen.Windows
 		{
 			Program.ShowLogWindow();
 		}
+        public void UpdateStatus(string str)
+        {
+            this.status_Textbox.Text = str;
+        }
 	}
 }
