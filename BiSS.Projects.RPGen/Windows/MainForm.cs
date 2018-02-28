@@ -44,17 +44,17 @@ namespace BiSS.Projects.RPGen.Windows
 			var rand = new Random();
 			float r = 0f;
 			int rr = 0;
-			var st = new Structure.ScoreTable(new Dictionary<string, ScoreModel>(), new CalcResultContainer(),
-				new InputDataIndicator());
+			var st = new Structure.ScoreTable(new Dictionary<string, ScoreModel>(),new InputDataIndicator());
 			for (int i = 0; i <= 5000; i++)
 			{
 				r = 150*(float )rand.NextDouble();
 				rr = rand.Next();
 				st.Add(i.ToString(),new ScoreModel(r,r,r,r,r,r,r,r,r,rr,rr,rr,rr,rr,rr,rr,rr,rr));
 			}
+			st.Add(5001.ToString(), new ScoreModel(r, r, r, r, r, r, r, r, r, rr, rr, rr, rr, rr, rr, rr, rr, rr));
 			r = rand.Next(0, 5000);
 			MessageBox.Show($"id:{r},zh:{st.Score[r.ToString()].Zh}", "Finished");
-			st.CalcAverageTest();
+			st.CalcAverage();
 		}
 
 		private void metroTile3_Click(object sender, EventArgs e)

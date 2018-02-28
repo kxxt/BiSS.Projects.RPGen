@@ -120,6 +120,7 @@
   <ItemGroup>
     <Compile Include="Config\Config.cs" />
     <Compile Include="Debug\SampleClass.cs" />
+    <Compile Include="Op\Math.cs" />
     <Compile Include="Structure\CalcResultContainer.cs" />
     <Compile Include="Op\DataReader.cs" />
     <Compile Include="Op\ExcelOperator.cs" />

@@ -301,12 +301,15 @@
 			// 
 			// metroTile9
 			// 
+			this.metroTile9.CustomForeColor = true;
+			this.metroTile9.ForeColor = System.Drawing.Color.Black;
 			this.metroTile9.Location = new System.Drawing.Point(379, 330);
 			this.metroTile9.Name = "metroTile9";
 			this.metroTile9.Size = new System.Drawing.Size(325, 139);
 			this.metroTile9.Style = MetroFramework.MetroColorStyle.Yellow;
 			this.metroTile9.TabIndex = 19;
 			this.metroTile9.Text = "生成成绩报告(PPT)";
+			this.metroTile9.Theme = MetroFramework.MetroThemeStyle.Light;
 			this.metroTile9.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile9.TileImage")));
 			this.metroTile9.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			this.metroTile9.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
