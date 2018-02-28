@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 			this.Tile_XLS = new MetroFramework.Controls.MetroTile();
 			this.metroTile1 = new MetroFramework.Controls.MetroTile();
@@ -43,6 +44,11 @@
 			this.modernButton2 = new RsWork.UI.Controls.ModernButton();
 			this.minbtn = new RsWork.UI.Controls.ModernButton();
 			this.closebtn = new RsWork.UI.Controls.ModernButton();
+			this.FlashTimer = new System.Windows.Forms.Timer(this.components);
+			this.openFileDialog_XLSX = new System.Windows.Forms.OpenFileDialog();
+			this.saveFileDialog_XLSX = new System.Windows.Forms.SaveFileDialog();
+			this.metroTile9 = new MetroFramework.Controls.MetroTile();
+			this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
 			this.SuspendLayout();
 			// 
 			// Tile_XLS
@@ -58,6 +64,7 @@
 			this.Tile_XLS.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			this.Tile_XLS.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
 			this.Tile_XLS.UseTileImage = true;
+			this.Tile_XLS.Click += new System.EventHandler(this.Tile_XLS_Click);
 			// 
 			// metroTile1
 			// 
@@ -86,13 +93,15 @@
 			this.metroTile2.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			this.metroTile2.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
 			this.metroTile2.UseTileImage = true;
+			this.metroTile2.Click += new System.EventHandler(this.metroTile2_Click);
 			// 
 			// metroTile3
 			// 
+			this.metroTile3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
+			this.metroTile3.CustomBackground = true;
 			this.metroTile3.Location = new System.Drawing.Point(166, 183);
 			this.metroTile3.Name = "metroTile3";
 			this.metroTile3.Size = new System.Drawing.Size(272, 140);
-			this.metroTile3.Style = MetroFramework.MetroColorStyle.Lime;
 			this.metroTile3.TabIndex = 11;
 			this.metroTile3.Text = "使用帮助";
 			this.metroTile3.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -107,10 +116,10 @@
 			this.status_Textbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.status_Textbox.FontSize = MetroFramework.MetroTextBoxSize.Medium;
-			this.status_Textbox.Location = new System.Drawing.Point(81, 653);
+			this.status_Textbox.Location = new System.Drawing.Point(81, 679);
 			this.status_Textbox.Name = "status_Textbox";
 			this.status_Textbox.ReadOnly = true;
-			this.status_Textbox.Size = new System.Drawing.Size(888, 25);
+			this.status_Textbox.Size = new System.Drawing.Size(645, 25);
 			this.status_Textbox.Style = MetroFramework.MetroColorStyle.Orange;
 			this.status_Textbox.TabIndex = 12;
 			this.status_Textbox.Text = "{$Doing_Status}";
@@ -121,13 +130,13 @@
 			this.statusTitleLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.statusTitleLabel.AutoSize = true;
 			this.statusTitleLabel.FontSize = MetroFramework.MetroLabelSize.Tall;
-			this.statusTitleLabel.Location = new System.Drawing.Point(23, 653);
+			this.statusTitleLabel.Location = new System.Drawing.Point(23, 679);
 			this.statusTitleLabel.Name = "statusTitleLabel";
 			this.statusTitleLabel.Size = new System.Drawing.Size(52, 25);
 			this.statusTitleLabel.TabIndex = 13;
 			this.statusTitleLabel.Text = "状态:";
 			this.statusTitleLabel.Theme = MetroFramework.MetroThemeStyle.Dark;
-			this.statusTitleLabel.Click += new System.EventHandler(this.statusTitleLabel_Click);
+			this.statusTitleLabel.DoubleClick += new System.EventHandler(this.statusTitleLabel_DoubleClick);
 			// 
 			// metroTile4
 			// 
@@ -192,9 +201,9 @@
 			// 
 			// metroTile8
 			// 
-			this.metroTile8.Location = new System.Drawing.Point(291, 514);
+			this.metroTile8.Location = new System.Drawing.Point(291, 475);
 			this.metroTile8.Name = "metroTile8";
-			this.metroTile8.Size = new System.Drawing.Size(190, 133);
+			this.metroTile8.Size = new System.Drawing.Size(190, 172);
 			this.metroTile8.Style = MetroFramework.MetroColorStyle.Orange;
 			this.metroTile8.TabIndex = 18;
 			this.metroTile8.Text = "作者的其他App";
@@ -218,7 +227,7 @@
 			this.modernButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.modernButton2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
 			this.modernButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
-			this.modernButton2.Location = new System.Drawing.Point(861, 10);
+			this.modernButton2.Location = new System.Drawing.Point(618, 10);
 			this.modernButton2.Name = "modernButton2";
 			this.modernButton2.Size = new System.Drawing.Size(32, 32);
 			this.modernButton2.TabIndex = 5;
@@ -240,7 +249,7 @@
 			this.minbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.minbtn.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
 			this.minbtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
-			this.minbtn.Location = new System.Drawing.Point(899, 10);
+			this.minbtn.Location = new System.Drawing.Point(656, 10);
 			this.minbtn.Name = "minbtn";
 			this.minbtn.Size = new System.Drawing.Size(32, 32);
 			this.minbtn.TabIndex = 3;
@@ -262,7 +271,7 @@
 			this.closebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.closebtn.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
 			this.closebtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
-			this.closebtn.Location = new System.Drawing.Point(937, 10);
+			this.closebtn.Location = new System.Drawing.Point(694, 10);
 			this.closebtn.Name = "closebtn";
 			this.closebtn.Size = new System.Drawing.Size(32, 32);
 			this.closebtn.TabIndex = 2;
@@ -270,11 +279,58 @@
 			this.closebtn.UseVisualStyleBackColor = false;
 			this.closebtn.Click += new System.EventHandler(this.closebtn_Click);
 			// 
+			// FlashTimer
+			// 
+			this.FlashTimer.Enabled = true;
+			this.FlashTimer.Interval = 300;
+			this.FlashTimer.Tag = "1";
+			this.FlashTimer.Tick += new System.EventHandler(this.FlashTimer_Tick);
+			// 
+			// openFileDialog_XLSX
+			// 
+			this.openFileDialog_XLSX.DefaultExt = "xlsx";
+			this.openFileDialog_XLSX.FileName = "openFileDialog1";
+			this.openFileDialog_XLSX.Filter = "XLSX 表格文件|*.xlsx";
+			this.openFileDialog_XLSX.Title = " 选择要导入的成绩表单";
+			// 
+			// saveFileDialog_XLSX
+			// 
+			this.saveFileDialog_XLSX.DefaultExt = "XLSX";
+			this.saveFileDialog_XLSX.Filter = "XLSX 表格文件|*.xlsx";
+			this.saveFileDialog_XLSX.Title = "选择将要填写的表单的保存位置";
+			// 
+			// metroTile9
+			// 
+			this.metroTile9.Location = new System.Drawing.Point(379, 330);
+			this.metroTile9.Name = "metroTile9";
+			this.metroTile9.Size = new System.Drawing.Size(325, 139);
+			this.metroTile9.Style = MetroFramework.MetroColorStyle.Yellow;
+			this.metroTile9.TabIndex = 19;
+			this.metroTile9.Text = "生成成绩报告(PPT)";
+			this.metroTile9.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile9.TileImage")));
+			this.metroTile9.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.metroTile9.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+			this.metroTile9.UseTileImage = true;
+			// 
+			// metroLabel1
+			// 
+			this.metroLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.metroLabel1.AutoSize = true;
+			this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
+			this.metroLabel1.Location = new System.Drawing.Point(23, 654);
+			this.metroLabel1.Name = "metroLabel1";
+			this.metroLabel1.Size = new System.Drawing.Size(240, 25);
+			this.metroLabel1.TabIndex = 20;
+			this.metroLabel1.Text = "双击\"状态\"查看应用程序日志";
+			this.metroLabel1.Theme = MetroFramework.MetroThemeStyle.Dark;
+			// 
 			// MainForm
 			// 
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-			this.ClientSize = new System.Drawing.Size(976, 701);
+			this.ClientSize = new System.Drawing.Size(733, 727);
 			this.ControlBox = false;
+			this.Controls.Add(this.metroLabel1);
+			this.Controls.Add(this.metroTile9);
 			this.Controls.Add(this.metroTile8);
 			this.Controls.Add(this.metroTile7);
 			this.Controls.Add(this.metroTile6);
@@ -320,6 +376,11 @@
 		private MetroFramework.Controls.MetroTile metroTile6;
 		private MetroFramework.Controls.MetroTile metroTile7;
 		private MetroFramework.Controls.MetroTile metroTile8;
+		private System.Windows.Forms.Timer FlashTimer;
+		private System.Windows.Forms.OpenFileDialog openFileDialog_XLSX;
+		private System.Windows.Forms.SaveFileDialog saveFileDialog_XLSX;
+		private MetroFramework.Controls.MetroTile metroTile9;
+		private MetroFramework.Controls.MetroLabel metroLabel1;
 	}
 }
 

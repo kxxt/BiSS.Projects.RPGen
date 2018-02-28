@@ -14,7 +14,7 @@ namespace BiSS.Projects.RPGen.Windows
 		{
 			InitializeComponent();
 			debugEnabledToggle.Checked = Program.DebugEnabled;
-
+			
 		}
 
 		private void debugEnabledToggle_CheckedChanged(object sender, EventArgs e)

@@ -52,6 +52,9 @@
     <ApplicationIcon>RPGenIcon-Colored.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MathNet.Numerics, Version=3.20.2.0, Culture=neutral, PublicKeyToken=cd8b63ad3d691a37, processorArchitecture=MSIL">
+      <HintPath>..\packages\MathNet.Numerics.Signed.3.20.2\lib\net40\MathNet.Numerics.dll</HintPath>
+    </Reference>
     <Reference Include="MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroFramework.RunTime.1.2.0.3\lib\net40-Client\MetroFramework.dll</HintPath>
     </Reference>
@@ -100,6 +103,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -115,7 +120,14 @@
   <ItemGroup>
     <Compile Include="Config\Config.cs" />
     <Compile Include="Debug\SampleClass.cs" />
+    <Compile Include="Structure\CalcResultContainer.cs" />
     <Compile Include="Op\DataReader.cs" />
+    <Compile Include="Op\ExcelOperator.cs" />
+    <Compile Include="Structure\InputDataIndicator.cs" />
+    <Compile Include="Structure\ScoreIndicators.cs" />
+    <Compile Include="Structure\ScoreModel.cs" />
+    <Compile Include="Structure\ScoreTable.cs" />
+    <Compile Include="Structure\Subjects.cs" />
     <Compile Include="Windows\AboutWindow.cs">
       <SubType>Form</SubType>
     </Compile>
