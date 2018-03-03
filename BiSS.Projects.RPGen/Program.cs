@@ -31,6 +31,7 @@ namespace BiSS.Projects.RPGen
 #if RACE
 			RaceMode = true;
 #endif
+			
 			DataDir = EnvDir + "Data\\";
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
@@ -69,6 +70,7 @@ namespace BiSS.Projects.RPGen
 			LogWindow.Visible = true;
 		}
 		private static bool debugEnabled = true;//todo
+		private static bool showCellInfo = true;
 		private static bool raceMode = false;
 		private static EventHandler<DebugEnabledChangedEventArgs> debugEnabledChanged;
 		private static string envDir = Environment.CurrentDirectory+"\\";
@@ -99,6 +101,7 @@ namespace BiSS.Projects.RPGen
 		public static EventHandler<DebugEnabledChangedEventArgs> DebugEnabledChanged { get => debugEnabledChanged; set => debugEnabledChanged = value; }
 		public static string EnvDir { get => envDir; set => envDir = value; }
 		public static string DataDir { get => dataDir; set => dataDir = value; }
+		public static bool ShowCellInfo { get => showCellInfo; set => showCellInfo = value; }
 
 		private static string log = "!Application Log!\r\n";
 		private static LogWindow LogWindow;

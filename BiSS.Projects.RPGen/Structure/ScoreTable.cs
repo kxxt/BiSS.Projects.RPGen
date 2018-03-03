@@ -17,9 +17,52 @@ namespace BiSS.Projects.RPGen.Structure
 
 		public void Add(string name, ScoreModel score)
 		{
+			if(!Score.ContainsKey(name))
 			this.score.Add(name,score);
 		}
 
+		public IList<DisplayObject> Export()
+		{
+			var ret=new List<DisplayObject>();
+			int i = 1;
+			foreach (var s in score)
+			{
+				ret.Add(new DisplayObject(i++,s.Key,s.Value));
+			}
+			return ret;
+		}
+		public string[,] ToStringArray()
+		{
+			var t=new string[score.Count,score.Count];
+			int index = 0;
+			//t[0, 0] = "*";
+			//t[0, 1] = "姓名";
+			//t[0, 2] = "语文";
+			//t[0, 3] = "数学";
+			//t[0, 4] = "英语";
+			//t[0, 5] = "物理";
+			//t[0, 6] = "化学";
+			//t[0, 7] = "政治";
+			//t[0, 8] = "历史";
+			//t[0, 9] = "地理";
+			//t[0, 10] = "生物";
+			t[0, 0] = "id";
+			t[1, 0] = "姓名";
+			t[2, 0] = "语文";
+			t[3, 0] = "数学";
+			t[4, 00] = "英语";
+			t[5, 0] = "物理";
+			t[6, 0] = "化学";
+			t[7, 0] = "政治";
+			t[8, 0] = "历史";
+			t[9, 0] = "地理";
+			t[10, 0] = "生物";
+			//foreach (var s in score)
+			//{
+			//	t[0,]
+			//}
+			return t;
+		}
 		public ScoreTable(Dictionary<string, ScoreModel> score, InputDataIndicator userInput)
 		{
 			this.score = score;
@@ -53,10 +96,10 @@ namespace BiSS.Projects.RPGen.Structure
 			int zhAverage = -1;
 			int zhSum = 0;
 			//IList<float> Zh=new List<float>(); 
-			MessageBox.Show(score.Values.Count.ToString());
+			MessageBox.Show(score.Values.Count.ToString()+$"\r\n{score}");
 			foreach (var s in score)
 			{
-				calcResult[Subjects.Zh][ScoreIndicators.Sum] += s.Value.Zh??0;
+				calcResult[Subjects.Zh][ScoreIndicators.Sum] += s.Value.Zh ?? 0;
 				calcResult[Subjects.M][ScoreIndicators.Sum] += s.Value.M ?? 0;
 				calcResult[Subjects.En][ScoreIndicators.Sum] += s.Value.En ?? 0;
 				calcResult[Subjects.P][ScoreIndicators.Sum] += s.Value.P ?? 0;
@@ -96,6 +139,7 @@ namespace BiSS.Projects.RPGen.Structure
 
 
 		}
+
 	}
 }
 /*foreach (var s in score.Values)

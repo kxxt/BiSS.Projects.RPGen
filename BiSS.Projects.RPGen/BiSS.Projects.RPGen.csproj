@@ -101,6 +101,30 @@
     <Reference Include="Spire.XLS, Version=7.12.14.15040, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
       <HintPath>..\packages\FreeSpire.Office.2.15\lib\net40\Spire.XLS.dll</HintPath>
     </Reference>
+    <Reference Include="Syncfusion.BulletGraph.Windows, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.Chart.Base, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.Chart.Windows, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.Compression.Base, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.Core.WinForms, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.Data.WinForms, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.Diagram.Base, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.Diagram.Windows, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.Grid.Base, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.Grid.Windows, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.GridCommon.WinForms, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.GridConverter.Windows, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.GridHelperClasses.Windows, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.OfficeChart.Base, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.Presentation.Base, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.SfDataGrid.WinForms, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.SfInput.WinForms, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.SfSmithChart.WinForms, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.Shared.Base, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.Shared.Windows, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.Spreadsheet.Windows, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.Tools.Windows, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.XlsIO.Base, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.XlsIO.Windows, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
@@ -119,11 +143,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config\Config.cs" />
+    <Compile Include="Debug\NameGen.cs" />
     <Compile Include="Debug\SampleClass.cs" />
+    <Compile Include="Op\ExcelOperator2.cs" />
     <Compile Include="Op\Math.cs" />
     <Compile Include="Structure\CalcResultContainer.cs" />
     <Compile Include="Op\DataReader.cs" />
     <Compile Include="Op\ExcelOperator.cs" />
+    <Compile Include="Structure\DisplayObject.cs" />
     <Compile Include="Structure\InputDataIndicator.cs" />
     <Compile Include="Structure\ScoreIndicators.cs" />
     <Compile Include="Structure\ScoreModel.cs" />
@@ -141,11 +168,36 @@
     <Compile Include="Windows\BusyWindow.Designer.cs">
       <DependentUpon>BusyWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Windows\DataGridViewHelper.cs" />
+    <Compile Include="Windows\ExcelWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\ExcelWindow.Designer.cs">
+      <DependentUpon>ExcelWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\GridEditWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\GridEditWindow.Designer.cs">
+      <DependentUpon>GridEditWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\GridWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\GridWindow.Designer.cs">
+      <DependentUpon>GridWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Windows\IntroductionWindow.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Windows\IntroductionWindow.Designer.cs">
       <DependentUpon>IntroductionWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\IOFormatWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\IOFormatWindow.Designer.cs">
+      <DependentUpon>IOFormatWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Windows\LogWindow.cs">
       <SubType>Form</SubType>
@@ -191,8 +243,20 @@
     <EmbeddedResource Include="Windows\AboutWindow.resx">
       <DependentUpon>AboutWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Windows\ExcelWindow.resx">
+      <DependentUpon>ExcelWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\GridEditWindow.resx">
+      <DependentUpon>GridEditWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\GridWindow.resx">
+      <DependentUpon>GridWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Windows\IntroductionWindow.resx">
       <DependentUpon>IntroductionWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\IOFormatWindow.resx">
+      <DependentUpon>IOFormatWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\LogWindow.resx">
       <DependentUpon>LogWindow.cs</DependentUpon>
@@ -209,7 +273,13 @@
     <EmbeddedResource Include="Windows\WarningWindow.resx">
       <DependentUpon>WarningWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Data\tmp.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Data\TEMPLATE.XLSX">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Data\Test\c5.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="freespire.office.2.15.0.nupkg" />
@@ -242,6 +312,9 @@
     <None Include="Data\TITLE_TEMPLATE_2.PPTX">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Properties\DataSources\BiSS.Projects.RPGen.Structure.DisplayObject.datasource" />
+    <None Include="Properties\DataSources\BiSS.Projects.RPGen.Structure.ScoreTable.datasource" />
+    <None Include="Properties\DataSources\BiSS.Projects.RPGen.Windows.MainForm.datasource" />
     <None Include="Properties\DataSources\Program.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -283,6 +356,35 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

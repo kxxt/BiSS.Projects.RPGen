@@ -14,7 +14,7 @@ namespace BiSS.Projects.RPGen.Windows
 		{
 			InitializeComponent();
 			debugEnabledToggle.Checked = Program.DebugEnabled;
-			
+			metroToggle1.Checked = Program.ShowCellInfo;
 		}
 
 		private void debugEnabledToggle_CheckedChanged(object sender, EventArgs e)
@@ -25,6 +25,11 @@ namespace BiSS.Projects.RPGen.Windows
 		private void closebtn_Click(object sender, EventArgs e)
 		{
 			this.Close();
+		}
+
+		private void metroToggle1_CheckedChanged(object sender, EventArgs e)
+		{
+			Program.ShowCellInfo = metroToggle1.Checked;
 		}
 	}
 }

@@ -1,14 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using BiSS.Projects.RPGen.Debug;
+using BiSS.Projects.RPGen.Op;
 using BiSS.Projects.RPGen.Structure;
 using MetroFramework.Forms;
 using Newtonsoft.Json;
 using RsWork.Functions.Log;
 using RsWork.UI.Windows;
+using Spire.Xls;
+using Syncfusion.XlsIO;
 using static BiSS.Projects.RPGen.Program;
 namespace BiSS.Projects.RPGen.Windows
 {
@@ -18,13 +25,18 @@ namespace BiSS.Projects.RPGen.Windows
 		{
 			InitializeComponent();
 			if (!Program.DebugEnabled)
+			{
 				modernButton2.Visible = false;
+				modernButton1.Visible = false;
+			}
+				
 			Program.DebugEnabledChanged +=new EventHandler<DebugEnabledChangedEventArgs>(this.DebugEnabledChanged); 
 		}
 
 		private void DebugEnabledChanged(object sender, DebugEnabledChangedEventArgs e)
 		{
 			modernButton2.Visible = e.Value;
+			modernButton1.Visible = e.Value;
 		}
 		private void closebtn_Click(object sender, System.EventArgs e)
 		{
@@ -45,16 +57,26 @@ namespace BiSS.Projects.RPGen.Windows
 			float r = 0f;
 			int rr = 0;
 			var st = new Structure.ScoreTable(new Dictionary<string, ScoreModel>(),new InputDataIndicator());
-			for (int i = 0; i <= 5000; i++)
+			var gw = new GridWindow("测试成绩数据");
+			NameGen ng=new NameGen();
+			for (int i = 1; i <= 100; i++)
 			{
-				r = 150*(float )rand.NextDouble();
-				rr = rand.Next();
-				st.Add(i.ToString(),new ScoreModel(r,r,r,r,r,r,r,r,r,rr,rr,rr,rr,rr,rr,rr,rr,rr));
+				
+				r =  rand.Next(0,1500)/10f;
+				rr = rand.Next(1,100);
+				st.Add(ng.Rand2(),new ScoreModel(rr,rr,r,r,r,r,r,r,r,r,r,rr,rr,rr,rr,rr,rr,rr,rr,rr,rr,rr,rr,rr,rr,rr,rr,rr,rr));
 			}
-			st.Add(5001.ToString(), new ScoreModel(r, r, r, r, r, r, r, r, r, rr, rr, rr, rr, rr, rr, rr, rr, rr));
-			r = rand.Next(0, 5000);
-			MessageBox.Show($"id:{r},zh:{st.Score[r.ToString()].Zh}", "Finished");
-			st.CalcAverage();
+			//st.Add(5001.ToString(), new ScoreModel(rr,rr,r, r, r, r, r, r, r, r, r, rr, rr, rr, rr, rr, rr, rr, rr, rr));
+			r = rand.Next(1, 100);
+			//MessageBox.Show($"id:{r},zh:{st.Score[r.ToString()].Zh}", "Finished");
+			var ex=st.Export();
+			foreach (var i in ex)
+			{
+				gw.DisplayObjectBindingSource.Add(i);
+			}
+			gw.Show();
+
+			//st.CalcAverage();
 		}
 
 		private void metroTile3_Click(object sender, EventArgs e)
@@ -115,32 +137,203 @@ namespace BiSS.Projects.RPGen.Windows
 
 		private void Tile_XLS_Click(object sender, EventArgs e)
 		{
+			//try
+			//{
+			//	MessageBox.Show("将选择表格文件保存位置.\r\n" +
+			//	                "文件保存后应用程序将启动Excel完成表单填写ヾ(￣▽￣)Bye~Bye~." +
+			//	                "\r\n请在填写完成后返回本程序继续操作.(*≧︶≦))(￣▽￣* )ゞ", "Hint");
+			//	var result = saveFileDialog_XLSX.ShowDialog();
+			//	if (!(result == DialogResult.OK || result == DialogResult.Yes))
+			//	{
+			//		MessageBox.Show("操作已取消.＞﹏＜","取消");
+			//		return;
+			//	}
+			//	Log($"XLSX Output Path:{saveFileDialog_XLSX.FileName}");
+			//	File.Copy(Program.DataDir + "TEMPLATE.XLSX", saveFileDialog_XLSX.FileName,true);
+				
+			//	Process.Start(saveFileDialog_XLSX.FileName);
+			//}
+			//catch (Exception exception)
+			//{
+			//	Log(Logger.GetExceptionInfo(exception));
+			//	MessageBox.Show("文件操作失败!\r\n请保证程序有足够的权限在文件系统上操作文件,然后重试","运行时错误",MessageBoxButtons.OK,MessageBoxIcon.Error);
+			//}
+			var ew=
+				 new ExcelWindow("填写成绩单 (Hint:可以从原始成绩单中复制)");
+			Random rd = new Random();
+			var name = $"Temp\\{rd.Next()}.xlsx";
 			try
 			{
-				MessageBox.Show("将选择表格文件保存位置.\r\n" +
-				                "文件保存后应用程序将启动Excel完成表单填写ヾ(￣▽￣)Bye~Bye~." +
-				                "\r\n请在填写完成后返回本程序继续操作.(*≧︶≦))(￣▽￣* )ゞ", "Hint");
-				var result = saveFileDialog_XLSX.ShowDialog();
-				if (!(result == DialogResult.OK || result == DialogResult.Yes))
-				{
-					MessageBox.Show("操作已取消.＞﹏＜","取消");
-					return;
-				}
-				Log($"XLSX Output Path:{saveFileDialog_XLSX.FileName}");
-				File.Copy(Program.DataDir + "TEMPLATE.XLSX", saveFileDialog_XLSX.FileName,true);
 				
-				Process.Start(saveFileDialog_XLSX.FileName);
+				Directory.CreateDirectory("Temp");
+				File.Copy("Data\\tmp.xlsx", name);
 			}
-			catch (Exception exception)
+			catch (Exception ce)
 			{
-				Log(Logger.GetExceptionInfo(exception));
+				Log(Logger.GetExceptionInfo(ce));
 				MessageBox.Show("文件操作失败!\r\n请保证程序有足够的权限在文件系统上操作文件,然后重试","运行时错误",MessageBoxButtons.OK,MessageBoxIcon.Error);
 			}
+			ew.spreadsheet1.Open(name);
+			ew.FormClosing +=new FormClosingEventHandler((o,b)=>{ew.spreadsheet1.Save();try{ew.Dispose();}catch{}});
+			ew.Show();
 		}
 
 		private void metroTile2_Click(object sender, EventArgs e)
 		{
 			openFileDialog_XLSX.ShowDialog();
+		}
+
+		private void modernButton1_Click(object sender, EventArgs e)
+		{
+			Workbook wb;
+			Worksheet ws=null;
+			
+				wb = new Workbook();
+				wb.LoadFromFile("Data\\Test\\c5.xlsx");
+				wb.ActiveSheetIndex = 0 + 1;
+				ws = wb.ActiveSheet;
+			
+			//var dgv=new DataGridView();
+			//dgv.Dock = DockStyle.Fill;
+			//dgv.DoubleBuffered(true);
+			//try { dgv.DataSource = ws.ExportDataTable(); } catch(Exception ex) { Log(Logger.GetExceptionInfo(ex));}
+			
+			
+			//Form frm = new Form();
+			//frm.Controls.Add(dgv);
+			//frm.ShowDialog();
+			ScoreTable st=new ScoreTable(new Dictionary<string, ScoreModel>(),new InputDataIndicator() );
+			var data= ws.ExportDataTable();
+			//for (int i = 0; i < data.Rows.Count; i++)
+			//{
+			//	data.Rows[i][1] = Convert.ToInt32(data.Rows[i][1].ToString());
+			//}
+			GridEditWindow gew=new GridEditWindow("编辑成绩");
+			gew.DataGridView.DataSource = data;
+			gew.Show();
+		}
+
+		private void metroTile4_Click(object sender, EventArgs e)
+		{
+			new IOFormatWindow().ShowDialog();
+		}
+
+		private void modernButton3_Click(object sender, EventArgs e)
+		{
+			var ew = new ExcelWindow("Test#3");
+			ew.spreadsheet1.Open("Data\\Test\\c5.xlsx");
+			ew.ShowDialog();
+			//ExcelOperator2 ex=new ExcelOperator2(ew.spreadsheet1);
+			var s=ew.spreadsheet1.ActiveSheet;
+			var l = s.ExportDataTable(s.UsedRange, ExcelExportDataTableOptions.ColumnNames|ExcelExportDataTableOptions.ComputedFormulaValues);
+			//MessageBox.Show($"{l.Rows[0][0].ToString()}");
+			ScoreTable st=new ScoreTable(new Dictionary<string, ScoreModel>(),new InputDataIndicator() );
+			
+				for (int j = 0; j < l.Rows.Count; j++)
+				{
+					String name = l.Rows[j][0].ToString();
+					ScoreModel sm=new ScoreModel();
+					for (int i = 1; i < l.Columns.Count; i++)
+					{
+						switch (i)
+						{
+						case 1:
+							sm.Id = Int32.Parse(l.Rows[j][i].ToString());
+							break;
+						case 2:
+							sm.SumRank = Int32.Parse(l.Rows[j][i].ToString());
+							break;
+						case 3:
+							sm.SumGradeRank= Int32.Parse(l.Rows[j][i].ToString());
+							break;
+						case 4:
+							sm.Zh = Single.Parse(l.Rows[j][i].ToString());
+							break;
+						case 5:
+							sm.ZhRank=Int32.Parse(l.Rows[j][i].ToString());
+							break;
+							case 6:
+								sm.ZhGradeRank =int.Parse(l.Rows[j][i].ToString());
+								break;
+							case 7:
+								sm.M =float.Parse(l.Rows[j][i].ToString());
+								break;
+							case 8:
+								sm.MRank =int.Parse(l.Rows[j][i].ToString());
+								break;
+							case 9:
+								sm.MGradeRank =int.Parse(l.Rows[j][i].ToString());
+								break;
+							case 10:
+								sm.En =float.Parse(l.Rows[j][i].ToString());
+								break;
+							case 11:
+								sm.EnRank =int.Parse(l.Rows[j][i].ToString());
+								break;
+							case 12:
+								sm.EnGradeRank =int.Parse(l.Rows[j][i].ToString());
+								break;
+							case 13:
+								sm.P =float.Parse(l.Rows[j][i].ToString());
+								break;
+							case 14:
+								sm.PRank =int.Parse(l.Rows[j][i].ToString());
+								break;
+							case 15:
+								sm.PGradeRank =int.Parse(l.Rows[j][i].ToString());
+								break;
+							case 16:
+								sm.C =float.Parse(l.Rows[j][i].ToString());
+								break;
+							case 17:
+								sm.CRank =int.Parse(l.Rows[j][i].ToString());
+								break;
+							case 18:
+								sm.CGradeRank =int.Parse(l.Rows[j][i].ToString());
+								break;
+							case 19:
+								sm.Po =float.Parse(l.Rows[j][i].ToString());
+								break;
+							case 20:
+								sm.PoRank =Int32.Parse(l.Rows[j][i].ToString());
+								break;
+							case 21:
+								sm.PoGradeRank =Int32.Parse(l.Rows[j][i].ToString());
+								break;
+							case 22:
+								sm.H =float.Parse(l.Rows[j][i].ToString());
+								break;
+							case 23:
+								sm.HRank =int.Parse(l.Rows[j][i].ToString());
+								break;
+							case 24:
+								sm.HGradeRank =int.Parse(l.Rows[j][i].ToString());
+								break;
+							case 25:
+								sm.G =float.Parse(l.Rows[j][i].ToString());
+								break;
+							case 26:
+								sm.GRank =int.Parse(l.Rows[j][i].ToString());
+								break;
+							case 27:
+								sm.GGradeRank =int.Parse(l.Rows[j][i].ToString());
+								break;
+							case 28:
+								sm.B =float.Parse(l.Rows[j][i].ToString());
+								break;
+							case 29:
+								sm.BRank =int.Parse(l.Rows[j][i].ToString());
+								break;
+							case 30:
+								sm.BGradeRank =int.Parse(l.Rows[j][i].ToString());
+								break;
+						default:throw new NotImplementedException();
+							break;
+						}
+					}
+					MessageBox.Show($"%C# {name}%=>%JSON%:\r\n{sm.ToString()}");
+			}
+			
 		}
 	}
 }

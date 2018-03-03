@@ -9,41 +9,41 @@ namespace BiSS.Projects.RPGen.Structure
 	public class InputDataIndicator
 	{
 		#region Overall
-		private int? gradeSumAverage = null;
-		private int? gradeSumMid = null;
-		private int? gradeSumMode = null;
+		private float? gradeSumAverage = null;
+		private float? gradeSumMid = null;
+		private float? gradeSumMode = null;
 		#endregion
 
 		#region Subjects'
-		private int? zhAverage = null;
-		private int? mAverage = null;
-		private int? enAverage = null;
-		private int? pAverage = null;
-		private int? cAverage = null;
-		private int? poAverage = null;
-		private int? hAverage = null;
-		private int? gAverage = null;
-		private int? bAverage = null;
+		private float? zhAverage = null;
+		private float? mAverage = null;
+		private float? enAverage = null;
+		private float? pAverage = null;
+		private float? cAverage = null;
+		private float? poAverage = null;
+		private float? hAverage = null;
+		private float? gAverage = null;
+		private float? bAverage = null;
 
-		private int? zhMid = null;
-		private int? mMid = null;
-		private int? enMid = null;
-		private int? pMid = null;
-		private int? cMid = null;
-		private int? poMid = null;
-		private int? hMid = null;
-		private int? gMid = null;
-		private int? bMid = null;
+		private float? zhMid = null;
+		private float? mMid = null;
+		private float? enMid = null;
+		private float? pMid = null;
+		private float? cMid = null;
+		private float? poMid = null;
+		private float? hMid = null;
+		private float? gMid = null;
+		private float? bMid = null;
 
-		private int? zhMode = null;
-		private int? mMode = null;
-		private int? enMode = null;
-		private int? pMode = null;
-		private int? cMode = null;
-		private int? poMode = null;
-		private int? hMode = null;
-		private int? gMode = null;
-		private int? bMode = null;
+		private float? zhMode = null;
+		private float? mMode = null;
+		private float? enMode = null;
+		private float? pMode = null;
+		private float? cMode = null;
+		private float? poMode = null;
+		private float? hMode = null;
+		private float? gMode = null;
+		private float? bMode = null;
 		#endregion
 	}
 }
