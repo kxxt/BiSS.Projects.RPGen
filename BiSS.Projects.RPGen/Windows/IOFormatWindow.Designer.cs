@@ -32,11 +32,6 @@
 			this.metroToggle1 = new MetroFramework.Controls.MetroToggle();
 			this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
 			this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-			this.metroToggle2 = new MetroFramework.Controls.MetroToggle();
-			this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-			this.metroToggle3 = new MetroFramework.Controls.MetroToggle();
-			this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
-			this.metroToggle4 = new MetroFramework.Controls.MetroToggle();
 			this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
 			this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
 			this.metroButton1 = new MetroFramework.Controls.MetroButton();
@@ -49,6 +44,24 @@
 			this.metroTile1 = new MetroFramework.Controls.MetroTile();
 			this.modernButton1 = new RsWork.UI.Controls.ModernButton();
 			this.modernButton2 = new RsWork.UI.Controls.ModernButton();
+			this.sfNumericTextBox1 = new Syncfusion.WinForms.Input.SfNumericTextBox();
+			this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
+			this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
+			this.sfNumericTextBox2 = new Syncfusion.WinForms.Input.SfNumericTextBox();
+			this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
+			this.sfNumericTextBox3 = new Syncfusion.WinForms.Input.SfNumericTextBox();
+			this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
+			this.sfNumericTextBox4 = new Syncfusion.WinForms.Input.SfNumericTextBox();
+			this.metroLabel13 = new MetroFramework.Controls.MetroLabel();
+			this.sfNumericTextBox5 = new Syncfusion.WinForms.Input.SfNumericTextBox();
+			this.metroLabel14 = new MetroFramework.Controls.MetroLabel();
+			this.sfNumericTextBox6 = new Syncfusion.WinForms.Input.SfNumericTextBox();
+			this.metroLabel15 = new MetroFramework.Controls.MetroLabel();
+			this.sfNumericTextBox7 = new Syncfusion.WinForms.Input.SfNumericTextBox();
+			this.metroLabel16 = new MetroFramework.Controls.MetroLabel();
+			this.sfNumericTextBox8 = new Syncfusion.WinForms.Input.SfNumericTextBox();
+			this.metroLabel17 = new MetroFramework.Controls.MetroLabel();
+			this.sfNumericTextBox9 = new Syncfusion.WinForms.Input.SfNumericTextBox();
 			this.SuspendLayout();
 			// 
 			// metroToggle1
@@ -74,66 +87,11 @@
 			// 
 			// metroLabel2
 			// 
-			this.metroLabel2.Location = new System.Drawing.Point(24, 93);
+			this.metroLabel2.Location = new System.Drawing.Point(371, 64);
 			this.metroLabel2.Name = "metroLabel2";
-			this.metroLabel2.Size = new System.Drawing.Size(112, 23);
+			this.metroLabel2.Size = new System.Drawing.Size(62, 23);
 			this.metroLabel2.TabIndex = 3;
-			this.metroLabel2.Text = "输出格式为PPTX";
-			// 
-			// metroToggle2
-			// 
-			this.metroToggle2.Checked = true;
-			this.metroToggle2.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.metroToggle2.DisplayStatus = false;
-			this.metroToggle2.Location = new System.Drawing.Point(142, 93);
-			this.metroToggle2.Name = "metroToggle2";
-			this.metroToggle2.Size = new System.Drawing.Size(57, 23);
-			this.metroToggle2.Style = MetroFramework.MetroColorStyle.Orange;
-			this.metroToggle2.TabIndex = 2;
-			this.metroToggle2.Text = "On";
-			this.metroToggle2.UseVisualStyleBackColor = true;
-			// 
-			// metroLabel3
-			// 
-			this.metroLabel3.Location = new System.Drawing.Point(23, 123);
-			this.metroLabel3.Name = "metroLabel3";
-			this.metroLabel3.Size = new System.Drawing.Size(112, 23);
-			this.metroLabel3.TabIndex = 5;
-			this.metroLabel3.Text = "输入";
-			// 
-			// metroToggle3
-			// 
-			this.metroToggle3.Checked = true;
-			this.metroToggle3.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.metroToggle3.DisplayStatus = false;
-			this.metroToggle3.Location = new System.Drawing.Point(141, 123);
-			this.metroToggle3.Name = "metroToggle3";
-			this.metroToggle3.Size = new System.Drawing.Size(57, 23);
-			this.metroToggle3.Style = MetroFramework.MetroColorStyle.Orange;
-			this.metroToggle3.TabIndex = 4;
-			this.metroToggle3.Text = "On";
-			this.metroToggle3.UseVisualStyleBackColor = true;
-			// 
-			// metroLabel4
-			// 
-			this.metroLabel4.Location = new System.Drawing.Point(24, 156);
-			this.metroLabel4.Name = "metroLabel4";
-			this.metroLabel4.Size = new System.Drawing.Size(112, 23);
-			this.metroLabel4.TabIndex = 7;
-			this.metroLabel4.Text = "输出格式为PPTX";
-			// 
-			// metroToggle4
-			// 
-			this.metroToggle4.Checked = true;
-			this.metroToggle4.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.metroToggle4.DisplayStatus = false;
-			this.metroToggle4.Location = new System.Drawing.Point(142, 156);
-			this.metroToggle4.Name = "metroToggle4";
-			this.metroToggle4.Size = new System.Drawing.Size(57, 23);
-			this.metroToggle4.Style = MetroFramework.MetroColorStyle.Orange;
-			this.metroToggle4.TabIndex = 6;
-			this.metroToggle4.Text = "On";
-			this.metroToggle4.UseVisualStyleBackColor = true;
+			this.metroLabel2.Text = "满分:";
 			// 
 			// metroLabel5
 			// 
@@ -247,7 +205,7 @@
 			this.modernButton1.ForeColor = System.Drawing.Color.Black;
 			this.modernButton1.Image = ((System.Drawing.Image)(resources.GetObject("modernButton1.Image")));
 			this.modernButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.modernButton1.Location = new System.Drawing.Point(24, 315);
+			this.modernButton1.Location = new System.Drawing.Point(33, 315);
 			this.modernButton1.Name = "modernButton1";
 			this.modernButton1.Size = new System.Drawing.Size(165, 64);
 			this.modernButton1.TabIndex = 18;
@@ -271,7 +229,7 @@
 			this.modernButton2.ForeColor = System.Drawing.Color.Black;
 			this.modernButton2.Image = ((System.Drawing.Image)(resources.GetObject("modernButton2.Image")));
 			this.modernButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.modernButton2.Location = new System.Drawing.Point(195, 315);
+			this.modernButton2.Location = new System.Drawing.Point(241, 315);
 			this.modernButton2.Name = "modernButton2";
 			this.modernButton2.Size = new System.Drawing.Size(165, 64);
 			this.modernButton2.TabIndex = 19;
@@ -280,10 +238,217 @@
 			this.modernButton2.UseVisualStyleBackColor = false;
 			this.modernButton2.Click += new System.EventHandler(this.modernButton2_Click);
 			// 
+			// sfNumericTextBox1
+			// 
+			this.sfNumericTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.sfNumericTextBox1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.sfNumericTextBox1.ForeColor = System.Drawing.SystemColors.WindowText;
+			this.sfNumericTextBox1.HideTrailingZeros = true;
+			this.sfNumericTextBox1.Location = new System.Drawing.Point(492, 64);
+			this.sfNumericTextBox1.Name = "sfNumericTextBox1";
+			this.sfNumericTextBox1.Size = new System.Drawing.Size(100, 23);
+			this.sfNumericTextBox1.TabIndex = 20;
+			this.sfNumericTextBox1.Text = "150";
+			this.sfNumericTextBox1.Value = 150D;
+			// 
+			// metroLabel9
+			// 
+			this.metroLabel9.Location = new System.Drawing.Point(439, 64);
+			this.metroLabel9.Name = "metroLabel9";
+			this.metroLabel9.Size = new System.Drawing.Size(47, 23);
+			this.metroLabel9.TabIndex = 21;
+			this.metroLabel9.Text = "语文:";
+			// 
+			// metroLabel10
+			// 
+			this.metroLabel10.Location = new System.Drawing.Point(439, 271);
+			this.metroLabel10.Name = "metroLabel10";
+			this.metroLabel10.Size = new System.Drawing.Size(47, 23);
+			this.metroLabel10.TabIndex = 23;
+			this.metroLabel10.Text = "地理:";
+			// 
+			// sfNumericTextBox2
+			// 
+			this.sfNumericTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.sfNumericTextBox2.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.sfNumericTextBox2.ForeColor = System.Drawing.SystemColors.WindowText;
+			this.sfNumericTextBox2.HideTrailingZeros = true;
+			this.sfNumericTextBox2.Location = new System.Drawing.Point(492, 271);
+			this.sfNumericTextBox2.Name = "sfNumericTextBox2";
+			this.sfNumericTextBox2.Size = new System.Drawing.Size(100, 23);
+			this.sfNumericTextBox2.TabIndex = 22;
+			this.sfNumericTextBox2.Text = "100";
+			this.sfNumericTextBox2.Value = 100D;
+			// 
+			// metroLabel11
+			// 
+			this.metroLabel11.Location = new System.Drawing.Point(439, 242);
+			this.metroLabel11.Name = "metroLabel11";
+			this.metroLabel11.Size = new System.Drawing.Size(47, 23);
+			this.metroLabel11.TabIndex = 25;
+			this.metroLabel11.Text = "历史:";
+			// 
+			// sfNumericTextBox3
+			// 
+			this.sfNumericTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.sfNumericTextBox3.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.sfNumericTextBox3.ForeColor = System.Drawing.SystemColors.WindowText;
+			this.sfNumericTextBox3.HideTrailingZeros = true;
+			this.sfNumericTextBox3.Location = new System.Drawing.Point(492, 242);
+			this.sfNumericTextBox3.Name = "sfNumericTextBox3";
+			this.sfNumericTextBox3.Size = new System.Drawing.Size(100, 23);
+			this.sfNumericTextBox3.TabIndex = 24;
+			this.sfNumericTextBox3.Text = "100";
+			this.sfNumericTextBox3.Value = 100D;
+			// 
+			// metroLabel12
+			// 
+			this.metroLabel12.Location = new System.Drawing.Point(439, 213);
+			this.metroLabel12.Name = "metroLabel12";
+			this.metroLabel12.Size = new System.Drawing.Size(47, 23);
+			this.metroLabel12.TabIndex = 27;
+			this.metroLabel12.Text = "政治:";
+			// 
+			// sfNumericTextBox4
+			// 
+			this.sfNumericTextBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.sfNumericTextBox4.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.sfNumericTextBox4.ForeColor = System.Drawing.SystemColors.WindowText;
+			this.sfNumericTextBox4.HideTrailingZeros = true;
+			this.sfNumericTextBox4.Location = new System.Drawing.Point(492, 213);
+			this.sfNumericTextBox4.Name = "sfNumericTextBox4";
+			this.sfNumericTextBox4.Size = new System.Drawing.Size(100, 23);
+			this.sfNumericTextBox4.TabIndex = 26;
+			this.sfNumericTextBox4.Text = "100";
+			this.sfNumericTextBox4.Value = 100D;
+			// 
+			// metroLabel13
+			// 
+			this.metroLabel13.Location = new System.Drawing.Point(439, 184);
+			this.metroLabel13.Name = "metroLabel13";
+			this.metroLabel13.Size = new System.Drawing.Size(47, 23);
+			this.metroLabel13.TabIndex = 29;
+			this.metroLabel13.Text = "化学:";
+			// 
+			// sfNumericTextBox5
+			// 
+			this.sfNumericTextBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.sfNumericTextBox5.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.sfNumericTextBox5.ForeColor = System.Drawing.SystemColors.WindowText;
+			this.sfNumericTextBox5.HideTrailingZeros = true;
+			this.sfNumericTextBox5.Location = new System.Drawing.Point(492, 184);
+			this.sfNumericTextBox5.Name = "sfNumericTextBox5";
+			this.sfNumericTextBox5.Size = new System.Drawing.Size(100, 23);
+			this.sfNumericTextBox5.TabIndex = 28;
+			this.sfNumericTextBox5.Text = "100";
+			this.sfNumericTextBox5.Value = 100D;
+			// 
+			// metroLabel14
+			// 
+			this.metroLabel14.Location = new System.Drawing.Point(439, 152);
+			this.metroLabel14.Name = "metroLabel14";
+			this.metroLabel14.Size = new System.Drawing.Size(47, 23);
+			this.metroLabel14.TabIndex = 31;
+			this.metroLabel14.Text = "物理:";
+			// 
+			// sfNumericTextBox6
+			// 
+			this.sfNumericTextBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.sfNumericTextBox6.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.sfNumericTextBox6.ForeColor = System.Drawing.SystemColors.WindowText;
+			this.sfNumericTextBox6.HideTrailingZeros = true;
+			this.sfNumericTextBox6.Location = new System.Drawing.Point(492, 152);
+			this.sfNumericTextBox6.Name = "sfNumericTextBox6";
+			this.sfNumericTextBox6.Size = new System.Drawing.Size(100, 23);
+			this.sfNumericTextBox6.TabIndex = 30;
+			this.sfNumericTextBox6.Text = "100";
+			this.sfNumericTextBox6.Value = 100D;
+			// 
+			// metroLabel15
+			// 
+			this.metroLabel15.Location = new System.Drawing.Point(439, 123);
+			this.metroLabel15.Name = "metroLabel15";
+			this.metroLabel15.Size = new System.Drawing.Size(47, 23);
+			this.metroLabel15.TabIndex = 33;
+			this.metroLabel15.Text = "英语:";
+			// 
+			// sfNumericTextBox7
+			// 
+			this.sfNumericTextBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.sfNumericTextBox7.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.sfNumericTextBox7.ForeColor = System.Drawing.SystemColors.WindowText;
+			this.sfNumericTextBox7.HideTrailingZeros = true;
+			this.sfNumericTextBox7.Location = new System.Drawing.Point(492, 123);
+			this.sfNumericTextBox7.Name = "sfNumericTextBox7";
+			this.sfNumericTextBox7.Size = new System.Drawing.Size(100, 23);
+			this.sfNumericTextBox7.TabIndex = 32;
+			this.sfNumericTextBox7.Text = "150";
+			this.sfNumericTextBox7.Value = 150D;
+			// 
+			// metroLabel16
+			// 
+			this.metroLabel16.Location = new System.Drawing.Point(439, 93);
+			this.metroLabel16.Name = "metroLabel16";
+			this.metroLabel16.Size = new System.Drawing.Size(47, 23);
+			this.metroLabel16.TabIndex = 35;
+			this.metroLabel16.Text = "数学:";
+			// 
+			// sfNumericTextBox8
+			// 
+			this.sfNumericTextBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.sfNumericTextBox8.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.sfNumericTextBox8.ForeColor = System.Drawing.SystemColors.WindowText;
+			this.sfNumericTextBox8.HideTrailingZeros = true;
+			this.sfNumericTextBox8.Location = new System.Drawing.Point(492, 93);
+			this.sfNumericTextBox8.Name = "sfNumericTextBox8";
+			this.sfNumericTextBox8.Size = new System.Drawing.Size(100, 23);
+			this.sfNumericTextBox8.TabIndex = 34;
+			this.sfNumericTextBox8.Text = "150";
+			this.sfNumericTextBox8.Value = 150D;
+			// 
+			// metroLabel17
+			// 
+			this.metroLabel17.Location = new System.Drawing.Point(439, 300);
+			this.metroLabel17.Name = "metroLabel17";
+			this.metroLabel17.Size = new System.Drawing.Size(47, 23);
+			this.metroLabel17.TabIndex = 37;
+			this.metroLabel17.Text = "生物:";
+			// 
+			// sfNumericTextBox9
+			// 
+			this.sfNumericTextBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.sfNumericTextBox9.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.sfNumericTextBox9.ForeColor = System.Drawing.SystemColors.WindowText;
+			this.sfNumericTextBox9.HideTrailingZeros = true;
+			this.sfNumericTextBox9.Location = new System.Drawing.Point(492, 300);
+			this.sfNumericTextBox9.Name = "sfNumericTextBox9";
+			this.sfNumericTextBox9.Size = new System.Drawing.Size(100, 23);
+			this.sfNumericTextBox9.TabIndex = 36;
+			this.sfNumericTextBox9.Text = "100";
+			this.sfNumericTextBox9.Value = 100D;
+			// 
 			// IOFormatWindow
 			// 
-			this.ClientSize = new System.Drawing.Size(391, 393);
+			this.ClientSize = new System.Drawing.Size(629, 393);
 			this.ControlBox = false;
+			this.Controls.Add(this.metroLabel17);
+			this.Controls.Add(this.sfNumericTextBox9);
+			this.Controls.Add(this.metroLabel16);
+			this.Controls.Add(this.sfNumericTextBox8);
+			this.Controls.Add(this.metroLabel15);
+			this.Controls.Add(this.sfNumericTextBox7);
+			this.Controls.Add(this.metroLabel14);
+			this.Controls.Add(this.sfNumericTextBox6);
+			this.Controls.Add(this.metroLabel13);
+			this.Controls.Add(this.sfNumericTextBox5);
+			this.Controls.Add(this.metroLabel12);
+			this.Controls.Add(this.sfNumericTextBox4);
+			this.Controls.Add(this.metroLabel11);
+			this.Controls.Add(this.sfNumericTextBox3);
+			this.Controls.Add(this.metroLabel10);
+			this.Controls.Add(this.sfNumericTextBox2);
+			this.Controls.Add(this.metroLabel9);
+			this.Controls.Add(this.sfNumericTextBox1);
 			this.Controls.Add(this.modernButton2);
 			this.Controls.Add(this.modernButton1);
 			this.Controls.Add(this.metroTile1);
@@ -296,12 +461,7 @@
 			this.Controls.Add(this.metroButton1);
 			this.Controls.Add(this.metroTextBox1);
 			this.Controls.Add(this.metroLabel5);
-			this.Controls.Add(this.metroLabel4);
-			this.Controls.Add(this.metroToggle4);
-			this.Controls.Add(this.metroLabel3);
-			this.Controls.Add(this.metroToggle3);
 			this.Controls.Add(this.metroLabel2);
-			this.Controls.Add(this.metroToggle2);
 			this.Controls.Add(this.metroLabel1);
 			this.Controls.Add(this.metroToggle1);
 			this.Name = "IOFormatWindow";
@@ -319,11 +479,6 @@
 		private MetroFramework.Controls.MetroToggle metroToggle1;
 		private MetroFramework.Controls.MetroLabel metroLabel1;
 		private MetroFramework.Controls.MetroLabel metroLabel2;
-		private MetroFramework.Controls.MetroToggle metroToggle2;
-		private MetroFramework.Controls.MetroLabel metroLabel3;
-		private MetroFramework.Controls.MetroToggle metroToggle3;
-		private MetroFramework.Controls.MetroLabel metroLabel4;
-		private MetroFramework.Controls.MetroToggle metroToggle4;
 		private MetroFramework.Controls.MetroLabel metroLabel5;
 		private MetroFramework.Controls.MetroTextBox metroTextBox1;
 		private MetroFramework.Controls.MetroButton metroButton1;
@@ -336,5 +491,23 @@
 		private MetroFramework.Controls.MetroTile metroTile1;
 		private RsWork.UI.Controls.ModernButton modernButton1;
 		private RsWork.UI.Controls.ModernButton modernButton2;
+		private Syncfusion.WinForms.Input.SfNumericTextBox sfNumericTextBox1;
+		private MetroFramework.Controls.MetroLabel metroLabel9;
+		private MetroFramework.Controls.MetroLabel metroLabel10;
+		private Syncfusion.WinForms.Input.SfNumericTextBox sfNumericTextBox2;
+		private MetroFramework.Controls.MetroLabel metroLabel11;
+		private Syncfusion.WinForms.Input.SfNumericTextBox sfNumericTextBox3;
+		private MetroFramework.Controls.MetroLabel metroLabel12;
+		private Syncfusion.WinForms.Input.SfNumericTextBox sfNumericTextBox4;
+		private MetroFramework.Controls.MetroLabel metroLabel13;
+		private Syncfusion.WinForms.Input.SfNumericTextBox sfNumericTextBox5;
+		private MetroFramework.Controls.MetroLabel metroLabel14;
+		private Syncfusion.WinForms.Input.SfNumericTextBox sfNumericTextBox6;
+		private MetroFramework.Controls.MetroLabel metroLabel15;
+		private Syncfusion.WinForms.Input.SfNumericTextBox sfNumericTextBox7;
+		private MetroFramework.Controls.MetroLabel metroLabel16;
+		private Syncfusion.WinForms.Input.SfNumericTextBox sfNumericTextBox8;
+		private MetroFramework.Controls.MetroLabel metroLabel17;
+		private Syncfusion.WinForms.Input.SfNumericTextBox sfNumericTextBox9;
 	}
 }

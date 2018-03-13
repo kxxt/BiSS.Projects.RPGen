@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,12 +16,17 @@ namespace BiSS.Projects.RPGen.Windows
 		private static bool Inited=false;
 		public LogWindow()
 		{
+			Wfsc = WindowsFormsSynchronizationContext.Current;
 			if (Inited) throw new InvalidOperationException("An instance has already been there.");
 			else Inited = true;
 			
 			InitializeComponent();
 			this.metroTextBox1.Text = Program.Logs;
 		}
+
+		private SynchronizationContext wfsc;
+
+		public SynchronizationContext Wfsc { get => this.wfsc; set => this.wfsc = value; }
 
 		private void metroTextBox1_Click(object sender, EventArgs e)
 		{

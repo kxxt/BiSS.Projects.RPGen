@@ -11,7 +11,8 @@ namespace BiSS.Projects.RPGen.Structure
 {
 	public class ScoreModel
 	{
-		private int id;
+		private string name = "Unnamed";
+		protected int id;
 		protected float? zh = null;
 		protected float? m = null;
 		protected float? en = null;
@@ -170,9 +171,23 @@ namespace BiSS.Projects.RPGen.Structure
 		public int? SumGradeRank { get => this.sumGradeRank; set => this.sumGradeRank = value; }
 		[DisplayName("学生ID/考号")]
 		public int Id { get => this.id; set => this.id = value; }
+		[DisplayName("学生姓名")]
+		public string Name { get => this.name; set => this.name = value; }
+
 		public override string ToString()
 		{
 			return Newtonsoft.Json.JsonConvert.SerializeObject(this);
+		}
+
+		public override int GetHashCode()
+		{
+			return id.GetHashCode();
+		}
+
+		public override bool Equals(object obj)
+		{
+			if (!(obj is ScoreModel)) return false;
+			else return id.Equals((obj as ScoreModel).id);
 		}
 	}
 }

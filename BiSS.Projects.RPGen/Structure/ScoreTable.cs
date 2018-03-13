@@ -92,24 +92,37 @@ namespace BiSS.Projects.RPGen.Structure
 		{
 			
 			//todo
-			
-			int zhAverage = -1;
-			int zhSum = 0;
-			//IList<float> Zh=new List<float>(); 
-			MessageBox.Show(score.Values.Count.ToString()+$"\r\n{score}");
+
 			foreach (var s in score)
 			{
-				calcResult[Subjects.Zh][ScoreIndicators.Sum] += s.Value.Zh ?? 0;
-				calcResult[Subjects.M][ScoreIndicators.Sum] += s.Value.M ?? 0;
-				calcResult[Subjects.En][ScoreIndicators.Sum] += s.Value.En ?? 0;
-				calcResult[Subjects.P][ScoreIndicators.Sum] += s.Value.P ?? 0;
-				calcResult[Subjects.C][ScoreIndicators.Sum] += s.Value.C ?? 0;
-				calcResult[Subjects.Po][ScoreIndicators.Sum] += s.Value.Po ?? 0;
-				calcResult[Subjects.H][ScoreIndicators.Sum] += s.Value.H ?? 0;
-				calcResult[Subjects.G][ScoreIndicators.Sum] += s.Value.G ?? 0;
-				calcResult[Subjects.B][ScoreIndicators.Sum] += s.Value.B ?? 0;
-				//Zh.Add(s.Zh??throw new NotSupportedException("Null Value is not supported for calcing mode."));
+				Program.Log(s.Value.ToString());
 			}
+			//IList<float> Zh=new List<float>(); 
+			//MessageBox.Show(score.Values.Count.ToString()+$"\r\n{score}");
+			calcResult[Subjects.Zh][ScoreIndicators.Sum] = score.Values.Sum(sm => sm.Zh??0);
+			calcResult[Subjects.M][ScoreIndicators.Sum] += score.Values.Sum(sm => sm.M ?? 0);
+			calcResult[Subjects.En][ScoreIndicators.Sum] += score.Values.Sum(sm => sm.En ?? 0);
+			calcResult[Subjects.P][ScoreIndicators.Sum] += score.Values.Sum(sm => sm.P ?? 0);
+			calcResult[Subjects.C][ScoreIndicators.Sum] += score.Values.Sum(sm => sm.C ?? 0);
+			calcResult[Subjects.Po][ScoreIndicators.Sum] += score.Values.Sum(sm => sm.Po ?? 0);
+			calcResult[Subjects.H][ScoreIndicators.Sum] += score.Values.Sum(sm => sm.H ?? 0);
+			calcResult[Subjects.G][ScoreIndicators.Sum] += score.Values.Sum(sm => sm.G ?? 0);
+			calcResult[Subjects.B][ScoreIndicators.Sum] += score.Values.Sum(sm => sm.B ?? 0);
+			
+			//foreach (var s in score)
+			//{
+
+			//	calcResult[Subjects.Zh][ScoreIndicators.Sum] += s.Value.Zh ?? 0;
+			//	calcResult[Subjects.M][ScoreIndicators.Sum] += s.Value.M ?? 0;
+			//	calcResult[Subjects.En][ScoreIndicators.Sum] += s.Value.En ?? 0;
+			//	calcResult[Subjects.P][ScoreIndicators.Sum] += s.Value.P ?? 0;
+			//	calcResult[Subjects.C][ScoreIndicators.Sum] += s.Value.C ?? 0;
+			//	calcResult[Subjects.Po][ScoreIndicators.Sum] += s.Value.Po ?? 0;
+			//	calcResult[Subjects.H][ScoreIndicators.Sum] += s.Value.H ?? 0;
+			//	calcResult[Subjects.G][ScoreIndicators.Sum] += s.Value.G ?? 0;
+			//	calcResult[Subjects.B][ScoreIndicators.Sum] += s.Value.B ?? 0;
+			//	//Zh.Add(s.Zh??throw new NotSupportedException("Null Value is not supported for calcing mode."));
+			//}
 			calcResult[Subjects.All][ScoreIndicators.Sum] =
 				calcResult[Subjects.Zh][ScoreIndicators.Sum] +
 				calcResult[Subjects.M][ScoreIndicators.Sum] +
@@ -121,7 +134,7 @@ namespace BiSS.Projects.RPGen.Structure
 				calcResult[Subjects.G][ScoreIndicators.Sum] +
 				calcResult[Subjects.B][ScoreIndicators.Sum];
 			calcResult[Subjects.All][ScoreIndicators.Average] = calcResult[Subjects.All][ScoreIndicators.Sum] / Score.Count;
-
+			//MessageBox.Show("all:");
 			calcResult[Subjects.Zh][ScoreIndicators.Average] = score.Values.Average(sm => sm.Zh ?? 0);
 			calcResult[Subjects.M][ScoreIndicators.Average] = score.Values.Average(sm => sm.M ?? 0);
 			calcResult[Subjects.En][ScoreIndicators.Average] = score.Values.Average(sm => sm.En ?? 0);

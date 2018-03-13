@@ -1,22 +1,30 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BiSS.Projects.RPGen.Debug;
 using BiSS.Projects.RPGen.Op;
 using BiSS.Projects.RPGen.Structure;
+using BiSS.Projects.RPGen.Windows.Wizard;
 using MetroFramework.Forms;
 using Newtonsoft.Json;
 using RsWork.Functions.Log;
 using RsWork.UI.Windows;
-using Spire.Xls;
+using Syncfusion.Data.Extensions;
+using Syncfusion.Presentation;
+using Syncfusion.Windows.Forms.Chart;
 using Syncfusion.XlsIO;
 using static BiSS.Projects.RPGen.Program;
+using ExcelChartType = Syncfusion.XlsIO.ExcelChartType;
+
 namespace BiSS.Projects.RPGen.Windows
 {
 	public partial class MainForm : MetroForm
@@ -185,10 +193,10 @@ namespace BiSS.Projects.RPGen.Windows
 
 		private void modernButton1_Click(object sender, EventArgs e)
 		{
-			Workbook wb;
-			Worksheet ws=null;
+			Spire.Xls.Workbook wb;
+			Spire.Xls.Worksheet ws =null;
 			
-				wb = new Workbook();
+				wb = new Spire.Xls.Workbook();
 				wb.LoadFromFile("Data\\Test\\c5.xlsx");
 				wb.ActiveSheetIndex = 0 + 1;
 				ws = wb.ActiveSheet;
@@ -220,6 +228,7 @@ namespace BiSS.Projects.RPGen.Windows
 
 		private void modernButton3_Click(object sender, EventArgs e)
 		{
+			Log("%TEST%");
 			var ew = new ExcelWindow("Test#3");
 			ew.spreadsheet1.Open("Data\\Test\\c5.xlsx");
 			ew.ShowDialog();
@@ -227,16 +236,19 @@ namespace BiSS.Projects.RPGen.Windows
 			var s=ew.spreadsheet1.ActiveSheet;
 			var l = s.ExportDataTable(s.UsedRange, ExcelExportDataTableOptions.ColumnNames|ExcelExportDataTableOptions.ComputedFormulaValues);
 			//MessageBox.Show($"{l.Rows[0][0].ToString()}");
-			ScoreTable st=new ScoreTable(new Dictionary<string, ScoreModel>(),new InputDataIndicator() );
-			
+			//ScoreTable st=new ScoreTable(new Dictionary<string, ScoreModel>(),new InputDataIndicator() );
+			List<ScoreModel> li=new List<ScoreModel>();
 				for (int j = 0; j < l.Rows.Count; j++)
 				{
-					String name = l.Rows[j][0].ToString();
+					
 					ScoreModel sm=new ScoreModel();
-					for (int i = 1; i < l.Columns.Count; i++)
+					for (int i = 0; i < l.Columns.Count; i++)
 					{
 						switch (i)
 						{
+						case 0:
+							sm.Name = l.Rows[j][i].ToString();
+							break;
 						case 1:
 							sm.Id = Int32.Parse(l.Rows[j][i].ToString());
 							break;
@@ -331,9 +343,154 @@ namespace BiSS.Projects.RPGen.Windows
 							break;
 						}
 					}
-					MessageBox.Show($"%C# {name}%=>%JSON%:\r\n{sm.ToString()}");
+					li.Add(sm);
+					//MessageBox.Show($"%C# {name}%=>%JSON%:\r\n{sm.ToString()}");
 			}
+			IList<(NfSubjects, float)> aveList = Analyzer.Average(li);
+			//BindingList<(NfSubjects, float)> aveBindingList = Analyzer.Average(li);//todo;
+			IList<(NfSubjects, float)> sumList = Analyzer.Sum(li);
+			IList<(NfSubjects, float[])> modeList = Analyzer.Mode(li);
+			IList<(NfSubjects, double)> midList = Analyzer.Mid(li);
+			Log("Average:\r\n"+string.Join(",",aveList));
+			Log("Sum:\r\n" + string.Join(",", sumList));
+			Log("Mode:");
+			foreach (var mode in modeList)
+			{
+				Log($"{mode.Item1.ToString()}:{string.Join(",",mode.Item2)}");
+			}
+			//Log("Mode:\r\n" + string.Join(",",modeList));
+			Log("Mid:\r\n" + string.Join(",",midList));
+			//MessageBox.Show(aveList[0].Item2.ToString());
+			DataVisualization dv=new DataVisualization();
+			dv.lDChartDataSourceBindingSource.DataSource = new LDChartDataSource(aveList);
+
+			#region Data Convert:
+			ChartSeries cs=new ChartSeries("%Title%");
+			ChartDataBindModel cdbm = new ChartDataBindModel(aveList);
+			ChartDataBindAxisLabelModel cdbalm= new ChartDataBindAxisLabelModel(aveList);
+			cdbm.XName = "Item1";
+			cdbalm.LabelName = "Item1";
+			cdbm.YNames = new String[] {"Item2"};
+			cs.SeriesModel = cdbm;
+			dv.chartControl1.Series.Add(cs);
+			dv.chartControl1.PrimaryXAxis.LabelsImpl = cdbalm;
+			dv.chartControl2.Series.Add(cs);
+			dv.chartControl2.PrimaryXAxis.LabelsImpl = cdbalm;
+			dv.chartControl2.PrimaryYAxis.Range = new MinMaxInfo(0, 150, 100);
+			#endregion
+
+			dv.Show();
+
+			//#region PPT Output
+
+			//IPresentation ip = Presentation.Create();
+			//IList<double> avelist_ppt=new List<double>();
+			//foreach (var ii in aveList)
+			//{
+			//	avelist_ppt.Add(ii.Item2);
+			//}
+			//ISlide sl = ip.Slides.Add(SlideLayoutType.Blank);
+			//IPresentationChart ct = sl.Shapes.AddChart(avelist_ppt, 5, 5, 100, 100);
+			//Spire.Presentation.Presentation ppt =new Spire.Presentation.Presentation(File.Open($"{new Random().Next()}.pptx",FileMode.Create,FileAccess.ReadWrite),FileFormat.Pptx2010);
+			//var cts = ppt.Slides[0].Shapes.AppendChart(ChartType.Column3D,new RectangleF(5,5,200,200));
+
+			//foreach (var ave in avelist_ppt)
+			//{
+			//	//cts.Series.Append(ave);
+			//	cts.Series[0].Values.Add(ave);
+			//}
+
+			//ip.Save($"{new Random().Next()}.pptx");
+			//#endregion
+
+			#region ExcelChart
+
+			ExcelEngine ee=new ExcelEngine();
+			IApplication xls = ee.Excel;
+			xls.DefaultVersion = Syncfusion.XlsIO.ExcelVersion.Excel2016;
+			IWorkbook wb= xls.Workbooks.Open("Data\\Test\\c5.xlsx", ExcelOpenType.Automatic);
+			IWorksheet ws = wb.Worksheets.Create("Chart");
+			IChartShape chart = ws.Charts.Add();
+			/////////////////////////////////////////////////////
+			//IChartSerie serie = chart.Series.Add(Syncfusion.XlsIO.ExcelChartType.Column_Clustered);
+			//chart.ChartType = Syncfusion.XlsIO.ExcelChartType.Column_Clustered;
+			IList<string> xave=new List<string>();
+			IList<object> yave = new List<object>();
+			int allavei=Int32.MaxValue,allmidi=Int32.MaxValue;
+			for (var index = 0; index < aveList.Count; index++)
+			{
+				if (aveList[index].Item1 == NfSubjects.All)
+					allavei = index;
+				var ave = aveList[index];
+				xave.Add(ave.Item1.Name());
+				yave.Add(ave.Item2);
+			}
+
+			//serie.EnteredDirectlyValues = yave.ToArray();
+			//serie.Name = "平均分";
+			//serie.EnteredDirectlyCategoryLabels = xave.ToArray();
+			ChartGen.GenChart(chart,xave.ToArray(),yave.ToArray(),"平均分",ExcelChartType.Column_Clustered);
+			////////////////////////////////////////////////
+			//IChartSerie seriemid = chart.Series.Add(Syncfusion.XlsIO.ExcelChartType.Column_Clustered);
+			//chart.ChartType = Syncfusion.XlsIO.ExcelChartType.Column_Clustered;
+			IList<string> xmid = new List<string>();
+			IList<object> ymid = new List<object>();
+			for (var index = 0; index < midList.Count; index++)
+			{
+				if (midList[index].Item1 == NfSubjects.All)
+					allmidi = index;
+				var mid = midList[index];
+				xmid.Add(mid.Item1.Name());
+				ymid.Add(mid.Item2);
+			}
+			ChartGen.GenChart(chart,xmid.ToArray(),ymid.ToArray(),"中位分",ExcelChartType.Column_Clustered);
+			//{{{{{{{{{{{{{{
+			xave.RemoveAt(allavei);
+			yave.RemoveAt(allavei);
+			xmid.RemoveAt(allmidi);
+			ymid.RemoveAt(allmidi);
+			IChartShape leida = ws.Shapes.AddChart();
 			
+			ChartGen.GenChart(leida, xave.ToArray(), yave.ToArray(), "平均分", ExcelChartType.Radar);
+			ChartGen.GenChart(leida, xmid.ToArray(), ymid.ToArray(), "中位分", ExcelChartType.Radar);
+			leida.Name = "学科成绩分布1";
+			leida.ChartTitle= "学科成绩分布1"; 
+			//}}}}}}}}}}}}}}
+			//{{{{{{{{{{{{{{
+			var xyave = Analyzer.ReArrangeData(aveList);
+			var xymid = Analyzer.ReArrangeData(midList);
+			IChartShape leida2 = ws.Shapes.AddChart();
+			
+			ChartGen.GenChart(leida2, xyave.Item1, xyave.Item2, "平均分", ExcelChartType.Radar);
+			ChartGen.GenChart(leida2, xymid.Item1, xymid.Item2, "中位分", ExcelChartType.Radar);
+			leida2.Name = "学科成绩分布2";
+			leida2.ChartTitle = "学科成绩分布2";
+			//}}}}}}}}}}}}}}
+			var ordered =li.OrderBy(pp=>pp.Sum);
+			ChartGen.GenChart(ws.Shapes.AddChart(), ordered.Select(sm=>(object)(sm.Name)).ToArray(), ordered.Select(sm => (object)(sm.Sum ?? 0)).ToArray(), "总分", ExcelChartType.Column_3D);
+			//seriemid.EnteredDirectlyValues = ymid.ToArray();
+			//seriemid.Name = "中位分";
+			//seriemid.EnteredDirectlyCategoryLabels = xmid.ToArray();
+			/////////////////////////////////////////////////
+			xls.Save("output.xlsx");
+			wb.Close();
+			ee.Dispose();
+			#endregion
+		}
+
+		private void modernButton4_Click(object sender, EventArgs e)
+		{
+			new FillExcel().ShowDialog();
+		}
+
+		private void modernButton5_Click(object sender, EventArgs e)
+		{
+			new FormatWindow().Show();
+		}
+
+		private void modernButton6_Click(object sender, EventArgs e)
+		{
+			new Windows.Busy.BusyWindow().Show();
 		}
 	}
 }

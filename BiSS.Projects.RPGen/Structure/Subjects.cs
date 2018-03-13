@@ -20,4 +20,50 @@ namespace BiSS.Projects.RPGen.Structure
 		B  =0b10000000,
 		All=0b11111111
 	}
+	[Flags]
+	public enum NfSubjects
+	{
+		Zh = 0,
+		M = 1,
+		En = 2,
+		P = 3,
+		C = 4,
+		Po = 5,
+		H = 6,
+		G = 7,
+		B = 8,
+		All = 9
+	}
+
+	public static class SubjectsEx
+	{
+		public static string Name(this NfSubjects sub)
+		{
+			switch (sub)
+			{
+				case NfSubjects.Zh:
+					return "语文";
+				case NfSubjects.M:
+					return "数学";
+				case NfSubjects.En:
+					return "英语";
+				case NfSubjects.P:
+					return "物理";
+				case NfSubjects.C:
+					return "化学";
+				case NfSubjects.Po:
+					return "政治";
+				case NfSubjects.H:
+					return "历史";
+				case NfSubjects.G:
+					return "地理";
+				case NfSubjects.B:
+					return "生物";
+				case NfSubjects.All:
+					return "总分";
+				default:
+					return "Undefined";
+			}
+		}
+	}
 }

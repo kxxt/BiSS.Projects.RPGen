@@ -65,6 +65,7 @@
     <Reference Include="MetroFramework.Fonts, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroFramework.Fonts.1.2.0.3\lib\net40\MetroFramework.Fonts.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Vsa, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -109,26 +110,39 @@
     <Reference Include="Syncfusion.Data.WinForms, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
     <Reference Include="Syncfusion.Diagram.Base, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
     <Reference Include="Syncfusion.Diagram.Windows, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.Edit.Windows, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.Gauge.Windows, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
     <Reference Include="Syncfusion.Grid.Base, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
     <Reference Include="Syncfusion.Grid.Windows, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
     <Reference Include="Syncfusion.GridCommon.WinForms, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
     <Reference Include="Syncfusion.GridConverter.Windows, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
     <Reference Include="Syncfusion.GridHelperClasses.Windows, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.HTMLUI.Base, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.HTMLUI.Windows, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.Linq.Base, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
     <Reference Include="Syncfusion.OfficeChart.Base, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.PivotAnalysis.Base, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.PivotAnalysis.Windows, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.PivotChart.Windows, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
     <Reference Include="Syncfusion.Presentation.Base, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.Scripting.Base, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.SfBarcode.Windows, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
     <Reference Include="Syncfusion.SfDataGrid.WinForms, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
     <Reference Include="Syncfusion.SfInput.WinForms, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
     <Reference Include="Syncfusion.SfSmithChart.WinForms, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
     <Reference Include="Syncfusion.Shared.Base, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
     <Reference Include="Syncfusion.Shared.Windows, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
     <Reference Include="Syncfusion.Spreadsheet.Windows, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.Tools.Base, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
     <Reference Include="Syncfusion.Tools.Windows, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
     <Reference Include="Syncfusion.XlsIO.Base, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
     <Reference Include="Syncfusion.XlsIO.Windows, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Numerics" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -145,6 +159,9 @@
     <Compile Include="Config\Config.cs" />
     <Compile Include="Debug\NameGen.cs" />
     <Compile Include="Debug\SampleClass.cs" />
+    <Compile Include="Op\Analyzer.cs" />
+    <Compile Include="Op\ChartGen.cs" />
+    <Compile Include="Op\DisplayChartGen.cs" />
     <Compile Include="Op\ExcelOperator2.cs" />
     <Compile Include="Op\Math.cs" />
     <Compile Include="Structure\CalcResultContainer.cs" />
@@ -152,6 +169,7 @@
     <Compile Include="Op\ExcelOperator.cs" />
     <Compile Include="Structure\DisplayObject.cs" />
     <Compile Include="Structure\InputDataIndicator.cs" />
+    <Compile Include="Structure\LDChartDataSource.cs" />
     <Compile Include="Structure\ScoreIndicators.cs" />
     <Compile Include="Structure\ScoreModel.cs" />
     <Compile Include="Structure\ScoreTable.cs" />
@@ -168,7 +186,19 @@
     <Compile Include="Windows\BusyWindow.Designer.cs">
       <DependentUpon>BusyWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Windows\Busy\BusyWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\Busy\BusyWindow.Designer.cs">
+      <DependentUpon>BusyWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Windows\DataGridViewHelper.cs" />
+    <Compile Include="Windows\DataVisualization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\DataVisualization.Designer.cs">
+      <DependentUpon>DataVisualization.cs</DependentUpon>
+    </Compile>
     <Compile Include="Windows\ExcelWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,6 +249,12 @@
     <Compile Include="Windows\SettingsWindiow.Designer.cs">
       <DependentUpon>SettingsWindiow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Windows\SparklineWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\SparklineWindow.Designer.cs">
+      <DependentUpon>SparklineWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Windows\SplashWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -231,6 +267,24 @@
     <Compile Include="Windows\WarningWindow.Designer.cs">
       <DependentUpon>WarningWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Windows\Wizard\DialogWindows10.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\Wizard\DialogWindows10.Designer.cs">
+      <DependentUpon>DialogWindows10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Wizard\FillExcel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\Wizard\FillExcel.Designer.cs">
+      <DependentUpon>FillExcel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Wizard\FormatWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\Wizard\FormatWindow.Designer.cs">
+      <DependentUpon>FormatWindow.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -242,6 +296,12 @@
     </Compile>
     <EmbeddedResource Include="Windows\AboutWindow.resx">
       <DependentUpon>AboutWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Busy\BusyWindow.resx">
+      <DependentUpon>BusyWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\DataVisualization.resx">
+      <DependentUpon>DataVisualization.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\ExcelWindow.resx">
       <DependentUpon>ExcelWindow.cs</DependentUpon>
@@ -267,11 +327,23 @@
     <EmbeddedResource Include="Windows\SettingsWindiow.resx">
       <DependentUpon>SettingsWindiow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Windows\SparklineWindow.resx">
+      <DependentUpon>SparklineWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Windows\SplashWindow.resx">
       <DependentUpon>SplashWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\WarningWindow.resx">
       <DependentUpon>WarningWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Wizard\DialogWindows10.resx">
+      <DependentUpon>DialogWindows10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Wizard\FillExcel.resx">
+      <DependentUpon>FillExcel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Wizard\FormatWindow.resx">
+      <DependentUpon>FormatWindow.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Data\tmp.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -313,6 +385,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Properties\DataSources\BiSS.Projects.RPGen.Structure.DisplayObject.datasource" />
+    <None Include="Properties\DataSources\BiSS.Projects.RPGen.Structure.LDChartDataSource.datasource" />
     <None Include="Properties\DataSources\BiSS.Projects.RPGen.Structure.ScoreTable.datasource" />
     <None Include="Properties\DataSources\BiSS.Projects.RPGen.Windows.MainForm.datasource" />
     <None Include="Properties\DataSources\Program.datasource" />
