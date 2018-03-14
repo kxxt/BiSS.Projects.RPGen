@@ -47,7 +47,7 @@
 			this.sfButton1.AccessibleName = "Button";
 			this.sfButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.sfButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-			this.sfButton1.Location = new System.Drawing.Point(684, 107);
+			this.sfButton1.Location = new System.Drawing.Point(723, 104);
 			this.sfButton1.Name = "sfButton1";
 			this.sfButton1.Size = new System.Drawing.Size(113, 40);
 			this.sfButton1.TabIndex = 0;
@@ -57,7 +57,7 @@
 			// FillExcel
 			// 
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-			this.ClientSize = new System.Drawing.Size(800, 152);
+			this.ClientSize = new System.Drawing.Size(839, 149);
 			this.Controls.Add(this.sfButton1);
 			this.Name = "FillExcel";
 			this.Text = "填写Excel";

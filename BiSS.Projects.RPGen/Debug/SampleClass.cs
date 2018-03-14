@@ -4,9 +4,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MathNet;
-using MathNet.Numerics;
-using MathNet.Numerics.Statistics;
+//using MathNet;
+//using MathNet.Numerics;
+//using MathNet.Numerics.Statistics;
 namespace BiSS.Projects.RPGen.Debug
 {
 	public class SampleClass
@@ -31,7 +31,7 @@ namespace BiSS.Projects.RPGen.Debug
 
 		public static void TestFunctions()
 		{
-			Statistics.Entropy(new List<double>() {12, 3, 124, 3, 24, 325, 34, 423, 5, 435, 23, 4356});
+			//Statistics.Entropy(new List<double>() {12, 3, 124, 3, 24, 325, 34, 423, 5, 435, 23, 4356});
 		}
 
 	}

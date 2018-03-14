@@ -42,14 +42,11 @@
 			// 
 			// metroProgressSpinner2
 			// 
-			this.metroProgressSpinner2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.metroProgressSpinner2.Location = new System.Drawing.Point(155, 70);
+			this.metroProgressSpinner2.Location = new System.Drawing.Point(140, 65);
 			this.metroProgressSpinner2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.metroProgressSpinner2.Maximum = 360;
 			this.metroProgressSpinner2.Name = "metroProgressSpinner2";
-			this.metroProgressSpinner2.Size = new System.Drawing.Size(282, 254);
+			this.metroProgressSpinner2.Size = new System.Drawing.Size(295, 295);
 			this.metroProgressSpinner2.Speed = 3F;
 			this.metroProgressSpinner2.Style = MetroFramework.MetroColorStyle.Orange;
 			this.metroProgressSpinner2.TabIndex = 1;
@@ -59,14 +56,13 @@
 			// 
 			// metroLabel1
 			// 
-			this.metroLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			this.metroLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.metroLabel1.AutoSize = true;
 			this.metroLabel1.BackColor = System.Drawing.Color.Black;
 			this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
 			this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
 			this.metroLabel1.LabelMode = MetroFramework.Controls.MetroLabelMode.Selectable;
-			this.metroLabel1.Location = new System.Drawing.Point(224, 396);
+			this.metroLabel1.Location = new System.Drawing.Point(235, 393);
 			this.metroLabel1.Name = "metroLabel1";
 			this.metroLabel1.Size = new System.Drawing.Size(119, 25);
 			this.metroLabel1.Style = MetroFramework.MetroColorStyle.Black;
@@ -78,12 +74,14 @@
 			// 
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-			this.ClientSize = new System.Drawing.Size(632, 475);
+			this.ClientSize = new System.Drawing.Size(589, 448);
 			this.ControlBox = false;
 			this.Controls.Add(this.metroLabel1);
 			this.Controls.Add(this.metroProgressSpinner2);
 			this.Font = new System.Drawing.Font("微软雅黑 Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.MaximizeBox = false;
 			this.Name = "BusyWindow";
 			this.ShowIcon = false;
 			this.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));

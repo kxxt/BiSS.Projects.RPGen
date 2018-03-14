@@ -490,7 +490,16 @@ namespace BiSS.Projects.RPGen.Windows
 
 		private void modernButton6_Click(object sender, EventArgs e)
 		{
-			new Windows.Busy.BusyWindow().Show();
+			var w = new Windows.Busy.BusyWindow();
+			w.Worker.DoWork += (s,args)=>{
+				for (int i = 1; i <= 10; i++)
+				{
+					MessageBox.Show($"#Test id={i}");
+					Thread.Sleep(500);
+				}
+			};
+			//Thread.Sleep();
+			w.ShowDialog();
 		}
 	}
 }
