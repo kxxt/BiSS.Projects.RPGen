@@ -49,8 +49,6 @@
 			this.saveFileDialog_XLSX = new System.Windows.Forms.SaveFileDialog();
 			this.metroTile9 = new MetroFramework.Controls.MetroTile();
 			this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-			this.modernButton1 = new RsWork.UI.Controls.ModernButton();
-			this.modernButton3 = new RsWork.UI.Controls.ModernButton();
 			this.modernButton4 = new RsWork.UI.Controls.ModernButton();
 			this.modernButton5 = new RsWork.UI.Controls.ModernButton();
 			this.modernButton6 = new RsWork.UI.Controls.ModernButton();
@@ -333,50 +331,6 @@
 			this.metroLabel1.Text = "双击\"状态\"查看应用程序日志";
 			this.metroLabel1.Theme = MetroFramework.MetroThemeStyle.Dark;
 			// 
-			// modernButton1
-			// 
-			this.modernButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.modernButton1.BackColor = System.Drawing.Color.Transparent;
-			this.modernButton1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
-			this.modernButton1.DisabledBorderColor = System.Drawing.Color.DarkGray;
-			this.modernButton1.DisabledForeColor = System.Drawing.Color.DarkGray;
-			this.modernButton1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
-			this.modernButton1.FlatAppearance.BorderSize = 2;
-			this.modernButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.modernButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-			this.modernButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.modernButton1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-			this.modernButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
-			this.modernButton1.Location = new System.Drawing.Point(580, 10);
-			this.modernButton1.Name = "modernButton1";
-			this.modernButton1.Size = new System.Drawing.Size(32, 32);
-			this.modernButton1.TabIndex = 21;
-			this.modernButton1.Text = "T";
-			this.modernButton1.UseVisualStyleBackColor = false;
-			this.modernButton1.Click += new System.EventHandler(this.modernButton1_Click);
-			// 
-			// modernButton3
-			// 
-			this.modernButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.modernButton3.BackColor = System.Drawing.Color.Transparent;
-			this.modernButton3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
-			this.modernButton3.DisabledBorderColor = System.Drawing.Color.DarkGray;
-			this.modernButton3.DisabledForeColor = System.Drawing.Color.DarkGray;
-			this.modernButton3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
-			this.modernButton3.FlatAppearance.BorderSize = 2;
-			this.modernButton3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.modernButton3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-			this.modernButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.modernButton3.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-			this.modernButton3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
-			this.modernButton3.Location = new System.Drawing.Point(542, 10);
-			this.modernButton3.Name = "modernButton3";
-			this.modernButton3.Size = new System.Drawing.Size(32, 32);
-			this.modernButton3.TabIndex = 22;
-			this.modernButton3.Text = "T";
-			this.modernButton3.UseVisualStyleBackColor = false;
-			this.modernButton3.Click += new System.EventHandler(this.modernButton3_Click);
-			// 
 			// modernButton4
 			// 
 			this.modernButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -391,7 +345,7 @@
 			this.modernButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.modernButton4.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
 			this.modernButton4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
-			this.modernButton4.Location = new System.Drawing.Point(504, 10);
+			this.modernButton4.Location = new System.Drawing.Point(580, 10);
 			this.modernButton4.Name = "modernButton4";
 			this.modernButton4.Size = new System.Drawing.Size(32, 32);
 			this.modernButton4.TabIndex = 23;
@@ -413,7 +367,7 @@
 			this.modernButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.modernButton5.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
 			this.modernButton5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
-			this.modernButton5.Location = new System.Drawing.Point(466, 10);
+			this.modernButton5.Location = new System.Drawing.Point(542, 10);
 			this.modernButton5.Name = "modernButton5";
 			this.modernButton5.Size = new System.Drawing.Size(32, 32);
 			this.modernButton5.TabIndex = 24;
@@ -435,7 +389,7 @@
 			this.modernButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.modernButton6.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
 			this.modernButton6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(73)))), ((int)(((byte)(16)))));
-			this.modernButton6.Location = new System.Drawing.Point(428, 10);
+			this.modernButton6.Location = new System.Drawing.Point(504, 10);
 			this.modernButton6.Name = "modernButton6";
 			this.modernButton6.Size = new System.Drawing.Size(32, 32);
 			this.modernButton6.TabIndex = 25;
@@ -451,8 +405,6 @@
 			this.Controls.Add(this.modernButton6);
 			this.Controls.Add(this.modernButton5);
 			this.Controls.Add(this.modernButton4);
-			this.Controls.Add(this.modernButton3);
-			this.Controls.Add(this.modernButton1);
 			this.Controls.Add(this.metroLabel1);
 			this.Controls.Add(this.metroTile9);
 			this.Controls.Add(this.metroTile8);
@@ -505,8 +457,6 @@
 		private System.Windows.Forms.SaveFileDialog saveFileDialog_XLSX;
 		private MetroFramework.Controls.MetroTile metroTile9;
 		private MetroFramework.Controls.MetroLabel metroLabel1;
-		private RsWork.UI.Controls.ModernButton modernButton1;
-		private RsWork.UI.Controls.ModernButton modernButton3;
 		private RsWork.UI.Controls.ModernButton modernButton4;
 		private RsWork.UI.Controls.ModernButton modernButton5;
 		private RsWork.UI.Controls.ModernButton modernButton6;

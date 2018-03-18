@@ -7,13 +7,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BiSS.Projects.RPGen.Windows;
 
-using Spire.Xls;
+
 
 using System.Reflection;
 using System.Runtime.Remoting.Messaging;
 using BiSS.Projects.RPGen.Structure;
 using System.Dynamic;
 using System.Threading;
+using BiSS.Projects.RPGen.Op;
+using Syncfusion.XlsIO;
 
 namespace BiSS.Projects.RPGen
 {
@@ -85,7 +87,10 @@ namespace BiSS.Projects.RPGen
 		private static string envDir = Environment.CurrentDirectory+"\\";
 		private static string dataDir = EnvDir + "Data"+"\\";
 		private static ExpandoObject data=new ExpandoObject();
-	
+		private static string title="成绩报告";
+		private static string className="本班";
+		private static string author = "Believers in Science Studio";
+
 		public static bool DebugEnabled
 		{
 			get => debugEnabled;
@@ -129,6 +134,99 @@ namespace BiSS.Projects.RPGen
 			{ NfSubjects.B, 100 } 
 			
 		};
+
+		public static void SaveExcel(IList<ScoreModel> list,string pathWithoutLine,string mname,bool v2007=true)
+		{
+			IList<(NfSubjects, float)> aveList = Analyzer.Average(list);
+			//BindingList<(NfSubjects, float)> aveBindingList = Analyzer.Average(li);//todo;
+			IList<(NfSubjects, float)> sumList = Analyzer.Sum(list);
+			IList<(NfSubjects, float[])> modeList = Analyzer.Mode(list);
+			IList<(NfSubjects, double)> midList = Analyzer.Mid(list);
+			Log("Average:\r\n" + string.Join(",", aveList));
+			Log("Sum:\r\n" + string.Join(",", sumList));
+			Log("Mode:");
+			foreach (var mode in modeList)
+			{
+				Log($"{mode.Item1.ToString()}:{string.Join(",", mode.Item2)}");
+			}
+			//Log("Mode:\r\n" + string.Join(",",modeList));
+			Log("Mid:\r\n" + string.Join(",", midList));
+
+			ExcelEngine ee = new ExcelEngine();
+			
+			IApplication xls = ee.Excel;
+			
+			xls.DefaultVersion = Syncfusion.XlsIO.ExcelVersion.Excel2016;
+			IWorkbook wb = xls.Workbooks.Create();
+			wb.Version = v2007 ? ExcelVersion.Excel2016 : ExcelVersion.Excel97to2003;
+			IWorksheet ws = wb.ActiveSheet;
+			IChartShape chart = ws.Charts.Add();
+			/////////////////////////////////////////////////////
+			//IChartSerie serie = chart.Series.Add(Syncfusion.XlsIO.ExcelChartType.Column_Clustered);
+			//chart.ChartType = Syncfusion.XlsIO.ExcelChartType.Column_Clustered;
+			IList<string> xave = new List<string>();
+			IList<object> yave = new List<object>();
+			int allavei = Int32.MaxValue, allmidi = Int32.MaxValue;
+			for (var index = 0; index < aveList.Count; index++)
+			{
+				if (aveList[index].Item1 == NfSubjects.All)
+					allavei = index;
+				var ave = aveList[index];
+				xave.Add(ave.Item1.Name());
+				yave.Add(ave.Item2);
+			}
+
+			//serie.EnteredDirectlyValues = yave.ToArray();
+			//serie.Name = "平均分";
+			//serie.EnteredDirectlyCategoryLabels = xave.ToArray();
+			ChartGen.GenChart(chart, xave.ToArray(), yave.ToArray(), "平均分", ExcelChartType.Column_Clustered);
+			////////////////////////////////////////////////
+			//IChartSerie seriemid = chart.Series.Add(Syncfusion.XlsIO.ExcelChartType.Column_Clustered);
+			//chart.ChartType = Syncfusion.XlsIO.ExcelChartType.Column_Clustered;
+			IList<string> xmid = new List<string>();
+			IList<object> ymid = new List<object>();
+			for (var index = 0; index < midList.Count; index++)
+			{
+				if (midList[index].Item1 == NfSubjects.All)
+					allmidi = index;
+				var mid = midList[index];
+				xmid.Add(mid.Item1.Name());
+				ymid.Add(mid.Item2);
+			}
+			ChartGen.GenChart(chart, xmid.ToArray(), ymid.ToArray(), "中位分", ExcelChartType.Column_Clustered);
+			//{{{{{{{{{{{{{{
+			xave.RemoveAt(allavei);
+			yave.RemoveAt(allavei);
+			xmid.RemoveAt(allmidi);
+			ymid.RemoveAt(allmidi);
+			IChartShape leida = ws.Shapes.AddChart();
+
+			ChartGen.GenChart(leida, xave.ToArray(), yave.ToArray(), "平均分", ExcelChartType.Radar);
+			ChartGen.GenChart(leida, xmid.ToArray(), ymid.ToArray(), "中位分", ExcelChartType.Radar);
+			leida.Name = "学科成绩分布1";
+			leida.ChartTitle = "学科成绩分布1";
+			//}}}}}}}}}}}}}}
+			//{{{{{{{{{{{{{{
+			var xyave = Analyzer.ReArrangeData(aveList);
+			var xymid = Analyzer.ReArrangeData(midList);
+			IChartShape leida2 = ws.Shapes.AddChart();
+
+			ChartGen.GenChart(leida2, xyave.Item1, xyave.Item2, "平均分", ExcelChartType.Radar);
+			ChartGen.GenChart(leida2, xymid.Item1, xymid.Item2, "中位分", ExcelChartType.Radar);
+			leida2.Name = "学科成绩分布2";
+			leida2.ChartTitle = "学科成绩分布2";
+			//}}}}}}}}}}}}}}
+			var ordered = list.OrderBy(pp => pp.Sum);
+			ChartGen.GenChart(ws.Shapes.AddChart(), ordered.Select(sm => (object)(sm.Name)).ToArray(), ordered.Select(sm => (object)(sm.Sum ?? 0)).ToArray(), "总分", ExcelChartType.Column_Clustered);
+			//seriemid.EnteredDirectlyValues = ymid.ToArray();
+			//seriemid.Name = "中位分";
+			//seriemid.EnteredDirectlyCategoryLabels = xmid.ToArray();
+			/////////////////////////////////////////////////
+			xls.Save(pathWithoutLine+"\\"+mname+(v2007?".xlsx":".xls"));
+			wb.Close();
+			ee.Dispose();
+		}
+
 		public static float AllFullScore
 		{
 			get => FullScore[NfSubjects.Zh] + FullScore[NfSubjects.Zh] + FullScore[NfSubjects.Zh] + FullScore[NfSubjects.M] +
@@ -173,6 +271,9 @@ namespace BiSS.Projects.RPGen
 		}
 
 		public static dynamic Data { get => data; set => data = value; }
+		public static string Title { get => title; set => title = value; }
+		public static string ClassName { get => className; set => className = value; }
+		public static string Author { get => author; set => author = value; }
 
 		public static ExcelWindow ExcelWindow;
 		private static string log = "!Application Log!\r\n";

@@ -28,20 +28,20 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.subtitle = new System.Windows.Forms.Label();
+			this.subTitle = new System.Windows.Forms.Label();
 			this.title = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
-			// subtitle
+			// subTitle
 			// 
-			this.subtitle.AutoSize = true;
-			this.subtitle.Font = new System.Drawing.Font("微软雅黑", 12F);
-			this.subtitle.ForeColor = System.Drawing.Color.Orange;
-			this.subtitle.Location = new System.Drawing.Point(9, 34);
-			this.subtitle.Name = "subtitle";
-			this.subtitle.Size = new System.Drawing.Size(71, 21);
-			this.subtitle.TabIndex = 4;
-			this.subtitle.Text = "sub title";
+			this.subTitle.AutoSize = true;
+			this.subTitle.Font = new System.Drawing.Font("微软雅黑", 12F);
+			this.subTitle.ForeColor = System.Drawing.Color.Orange;
+			this.subTitle.Location = new System.Drawing.Point(9, 34);
+			this.subTitle.Name = "subTitle";
+			this.subTitle.Size = new System.Drawing.Size(71, 21);
+			this.subTitle.TabIndex = 4;
+			this.subTitle.Text = "sub title";
 			// 
 			// title
 			// 
@@ -57,8 +57,8 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-			this.ClientSize = new System.Drawing.Size(564, 210);
-			this.Controls.Add(this.subtitle);
+			this.ClientSize = new System.Drawing.Size(590, 208);
+			this.Controls.Add(this.subTitle);
 			this.Controls.Add(this.title);
 			this.DoubleBuffered = true;
 			this.Font = new System.Drawing.Font("微软雅黑 Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -74,7 +74,7 @@
 
 		#endregion
 
-		public System.Windows.Forms.Label subtitle;
+		public System.Windows.Forms.Label subTitle;
 		public System.Windows.Forms.Label title;
 	}
 }

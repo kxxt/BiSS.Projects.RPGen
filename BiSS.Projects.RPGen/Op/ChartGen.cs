@@ -27,5 +27,6 @@ namespace BiSS.Projects.RPGen.Op
 			s.EnteredDirectlyCategoryLabels = x;
 			
 		}
+
 	}
 }

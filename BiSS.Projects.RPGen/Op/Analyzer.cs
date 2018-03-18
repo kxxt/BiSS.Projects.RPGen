@@ -13,6 +13,24 @@ namespace BiSS.Projects.RPGen.Op
 {
 	public static  class Analyzer
 	{
+		public static Dictionary<NfSubjects,Dictionary<Level,float>> GetSeparator(Dictionary<NfSubjects,float> fs, Dictionary<Level, int> spr100)
+		{
+			var ret=new Dictionary<NfSubjects, Dictionary<Level, float>>();
+			for (NfSubjects sub = NfSubjects.Zh; sub <= NfSubjects.All; sub++)
+			{
+				for (Level lv = Level.A; lv <= Level.D; lv++)
+				{
+					ret[sub][lv] = get_seprated(fs[sub], spr100[lv]);
+				}
+			}
+
+			return ret;
+		}
+
+		private static float get_seprated(float full,int spr100)
+		{
+			return full * (spr100 / 100f);
+		}
 		public static (object[],object[]) ReArrangeData(IList<(NfSubjects,float)> li)
 		{
 			IList<(NfSubjects, float)> lic=new List<(NfSubjects, float)>();

@@ -18,8 +18,30 @@ namespace BiSS.Projects.RPGen.Windows.Busy
 		{
 			InitializeComponent();
 			//this.Worker.DoWork += this.TestDoWorkMethod;
-			this.Worker.RunWorkerCompleted += (s,args) => this.Close();
+			this.Worker.DoWork += this.Worker_DoWork;
+			this.Worker.RunWorkerCompleted += this.Worker_RunWorkerCompleted;
+			
 			this.Worker.RunWorkerAsync();
+		}
+
+		private void Worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+		{
+			//TimeSpan ts = DateTime.Now - dt;
+			//if (ts.Seconds <= 3)
+			//{
+				
+			//	Thread.Sleep(2000);
+			//}
+				
+			//this.Close();
+			Thread.Sleep(2000);
+			this.Close();
+		}
+
+		private DateTime dt;
+		private void Worker_DoWork(object sender, DoWorkEventArgs e)
+		{
+			dt=DateTime.Now;
 		}
 
 		private void TestDoWorkMethod(object sender, DoWorkEventArgs e)
@@ -44,6 +66,11 @@ namespace BiSS.Projects.RPGen.Windows.Busy
 		private void BusyWindow_Load(object sender, EventArgs e)
 		{
 			
+		}
+
+		private void BusyWindow_Shown(object sender, EventArgs e)
+		{
+			this.OnPaint(new PaintEventArgs(this.CreateGraphics(), this.ClientRectangle));
 		}
 	}
 }

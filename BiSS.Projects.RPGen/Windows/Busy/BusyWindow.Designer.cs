@@ -62,7 +62,7 @@
 			this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
 			this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
 			this.metroLabel1.LabelMode = MetroFramework.Controls.MetroLabelMode.Selectable;
-			this.metroLabel1.Location = new System.Drawing.Point(235, 393);
+			this.metroLabel1.Location = new System.Drawing.Point(235, 392);
 			this.metroLabel1.Name = "metroLabel1";
 			this.metroLabel1.Size = new System.Drawing.Size(119, 25);
 			this.metroLabel1.Style = MetroFramework.MetroColorStyle.Black;
@@ -74,7 +74,7 @@
 			// 
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-			this.ClientSize = new System.Drawing.Size(589, 448);
+			this.ClientSize = new System.Drawing.Size(615, 423);
 			this.ControlBox = false;
 			this.Controls.Add(this.metroLabel1);
 			this.Controls.Add(this.metroProgressSpinner2);
@@ -87,6 +87,7 @@
 			this.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
 			this.Text = "正在加载中,请稍候....";
 			this.Load += new System.EventHandler(this.BusyWindow_Load);
+			this.Shown += new System.EventHandler(this.BusyWindow_Shown);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

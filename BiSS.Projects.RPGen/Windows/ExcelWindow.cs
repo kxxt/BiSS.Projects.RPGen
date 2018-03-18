@@ -155,7 +155,7 @@ namespace BiSS.Projects.RPGen.Windows
 				Error = true;
 				DialogWindows10 dlg=new DialogWindows10();
 				dlg.title.Text = "错误";
-				dlg.subtitle.Text = "表格中有错误数据,可能是数字中混入了字母,请检查并改正.";
+				dlg.subTitle.Text = "表格中有错误数据,可能是数字中混入了字母,请检查并改正.";
 				dlg.ShowDialog();
 				li = null;
 			}
@@ -163,11 +163,11 @@ namespace BiSS.Projects.RPGen.Windows
 			return li;
 		}
 
-		private bool error = false;
+		private bool? error = null;
 		private string fileName = "";
 
 		public string FileName { get => this.fileName;  }
-		public bool Error { get => this.error; set => this.error = value; }
+		public bool? Error { get => this.error; set => this.error = value; }
 
 		private void ExcelWindow_FormClosing(object sender, FormClosingEventArgs e)
 		{

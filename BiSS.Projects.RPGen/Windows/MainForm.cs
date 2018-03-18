@@ -35,7 +35,7 @@ namespace BiSS.Projects.RPGen.Windows
 			if (!Program.DebugEnabled)
 			{
 				modernButton2.Visible = false;
-				modernButton1.Visible = false;
+				
 			}
 				
 			Program.DebugEnabledChanged +=new EventHandler<DebugEnabledChangedEventArgs>(this.DebugEnabledChanged); 
@@ -44,7 +44,7 @@ namespace BiSS.Projects.RPGen.Windows
 		private void DebugEnabledChanged(object sender, DebugEnabledChangedEventArgs e)
 		{
 			modernButton2.Visible = e.Value;
-			modernButton1.Visible = e.Value;
+			
 		}
 		private void closebtn_Click(object sender, System.EventArgs e)
 		{
@@ -58,31 +58,32 @@ namespace BiSS.Projects.RPGen.Windows
 
 		private void modernButton2_Click(object sender, System.EventArgs e)
 		{
-			Log($"Test#1 Started @{DateTime.Now.ToString("h:mm:ss tt zz")}.");
-			//MessageBox.Show(Application.StartupPath + @"\Web\loading.html");
-			//new IntroductionWindow().Show();
-			var rand = new Random();
-			float r = 0f;
-			int rr = 0;
-			var st = new Structure.ScoreTable(new Dictionary<string, ScoreModel>(),new InputDataIndicator());
-			var gw = new GridWindow("测试成绩数据");
-			NameGen ng=new NameGen();
-			for (int i = 1; i <= 100; i++)
-			{
+			new DialogWindows10With1Btn().Show();
+			//Log($"Test#1 Started @{DateTime.Now.ToString("h:mm:ss tt zz")}.");
+			////MessageBox.Show(Application.StartupPath + @"\Web\loading.html");
+			////new IntroductionWindow().Show();
+			//var rand = new Random();
+			//float r = 0f;
+			//int rr = 0;
+			//var st = new Structure.ScoreTable(new Dictionary<string, ScoreModel>(),new InputDataIndicator());
+			//var gw = new GridWindow("测试成绩数据");
+			//NameGen ng=new NameGen();
+			//for (int i = 1; i <= 100; i++)
+			//{
 				
-				r =  rand.Next(0,1500)/10f;
-				rr = rand.Next(1,100);
-				st.Add(ng.Rand2(),new ScoreModel(rr,rr,r,r,r,r,r,r,r,r,r,rr,rr,rr,rr,rr,rr,rr,rr,rr,rr,rr,rr,rr,rr,rr,rr,rr,rr));
-			}
-			//st.Add(5001.ToString(), new ScoreModel(rr,rr,r, r, r, r, r, r, r, r, r, rr, rr, rr, rr, rr, rr, rr, rr, rr));
-			r = rand.Next(1, 100);
-			//MessageBox.Show($"id:{r},zh:{st.Score[r.ToString()].Zh}", "Finished");
-			var ex=st.Export();
-			foreach (var i in ex)
-			{
-				gw.DisplayObjectBindingSource.Add(i);
-			}
-			gw.Show();
+			//	r =  rand.Next(0,1500)/10f;
+			//	rr = rand.Next(1,100);
+			//	st.Add(ng.Rand2(),new ScoreModel(rr,rr,r,r,r,r,r,r,r,r,r,rr,rr,rr,rr,rr,rr,rr,rr,rr,rr,rr,rr,rr,rr,rr,rr,rr,rr));
+			//}
+			////st.Add(5001.ToString(), new ScoreModel(rr,rr,r, r, r, r, r, r, r, r, r, rr, rr, rr, rr, rr, rr, rr, rr, rr));
+			//r = rand.Next(1, 100);
+			////MessageBox.Show($"id:{r},zh:{st.Score[r.ToString()].Zh}", "Finished");
+			//var ex=st.Export();
+			//foreach (var i in ex)
+			//{
+			//	gw.DisplayObjectBindingSource.Add(i);
+			//}
+			//gw.Show();
 
 			//st.CalcAverage();
 		}
@@ -191,35 +192,7 @@ namespace BiSS.Projects.RPGen.Windows
 			openFileDialog_XLSX.ShowDialog();
 		}
 
-		private void modernButton1_Click(object sender, EventArgs e)
-		{
-			Spire.Xls.Workbook wb;
-			Spire.Xls.Worksheet ws =null;
-			
-				wb = new Spire.Xls.Workbook();
-				wb.LoadFromFile("Data\\Test\\c5.xlsx");
-				wb.ActiveSheetIndex = 0 + 1;
-				ws = wb.ActiveSheet;
-			
-			//var dgv=new DataGridView();
-			//dgv.Dock = DockStyle.Fill;
-			//dgv.DoubleBuffered(true);
-			//try { dgv.DataSource = ws.ExportDataTable(); } catch(Exception ex) { Log(Logger.GetExceptionInfo(ex));}
-			
-			
-			//Form frm = new Form();
-			//frm.Controls.Add(dgv);
-			//frm.ShowDialog();
-			ScoreTable st=new ScoreTable(new Dictionary<string, ScoreModel>(),new InputDataIndicator() );
-			var data= ws.ExportDataTable();
-			//for (int i = 0; i < data.Rows.Count; i++)
-			//{
-			//	data.Rows[i][1] = Convert.ToInt32(data.Rows[i][1].ToString());
-			//}
-			GridEditWindow gew=new GridEditWindow("编辑成绩");
-			gew.DataGridView.DataSource = data;
-			gew.Show();
-		}
+		
 
 		private void metroTile4_Click(object sender, EventArgs e)
 		{

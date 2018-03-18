@@ -24,6 +24,13 @@ namespace BiSS.Projects.RPGen.Windows
 			this.metroTextBox1.Text = Program.Logs;
 		}
 
+		protected override void OnClosing(CancelEventArgs e)
+		{
+			e.Cancel = true;
+			this.Visible = false;
+			//base.OnClosing(e);
+		}
+
 		private SynchronizationContext wfsc;
 
 		public SynchronizationContext Wfsc { get => this.wfsc; set => this.wfsc = value; }

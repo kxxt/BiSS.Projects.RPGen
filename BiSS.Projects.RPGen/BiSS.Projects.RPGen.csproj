@@ -101,7 +101,9 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
     <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config\Config.cs" />
@@ -114,10 +116,10 @@
     <Compile Include="Op\Math.cs" />
     <Compile Include="Structure\CalcResultContainer.cs" />
     <Compile Include="Op\DataReader.cs" />
-    <Compile Include="Op\ExcelOperator.cs" />
     <Compile Include="Structure\DisplayObject.cs" />
     <Compile Include="Structure\InputDataIndicator.cs" />
     <Compile Include="Structure\LDChartDataSource.cs" />
+    <Compile Include="Structure\Level.cs" />
     <Compile Include="Structure\ScoreIndicators.cs" />
     <Compile Include="Structure\ScoreModel.cs" />
     <Compile Include="Structure\ScoreTable.cs" />
@@ -215,11 +217,23 @@
     <Compile Include="Windows\WarningWindow.Designer.cs">
       <DependentUpon>WarningWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Windows\Windows10Btn2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\Windows10Btn1.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Windows\Wizard\DialogWindows10.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Windows\Wizard\DialogWindows10.Designer.cs">
       <DependentUpon>DialogWindows10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Wizard\DialogWindows10With1Btn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\Wizard\DialogWindows10With1Btn.Designer.cs">
+      <DependentUpon>DialogWindows10With1Btn.cs</DependentUpon>
     </Compile>
     <Compile Include="Windows\Wizard\FillExcel.cs">
       <SubType>Form</SubType>
@@ -287,51 +301,56 @@
     <EmbeddedResource Include="Windows\Wizard\DialogWindows10.resx">
       <DependentUpon>DialogWindows10.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Wizard\DialogWindows10With1Btn.resx">
+      <DependentUpon>DialogWindows10With1Btn.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Windows\Wizard\FillExcel.resx">
       <DependentUpon>FillExcel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Wizard\FormatWindow.resx">
       <DependentUpon>FormatWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Data\tmp.xlsx">
+    <Content Include="Data\tmp.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Data\TEMPLATE.XLSX">
+    </Content>
+    <Content Include="Data\TEMPLATE.XLSX">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Data\Test\c5.xlsx">
+    </Content>
+    <Content Include="Data\Test\c5.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    </Content>
+    <None Include="Data\README.MD" />
+    <None Include="Data\readme.rtf" />
     <None Include="freespire.office.2.15.0.nupkg" />
     <None Include="freespire.presentation.2.1.0.nupkg" />
     <None Include="packages.config" />
-    <None Include="Data\DIRECT_TEMPLATE.PPTX">
+    <Content Include="Data\DIRECT_TEMPLATE.PPTX">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Data\GRAPH_PAGE_1.PPTX">
+    </Content>
+    <Content Include="Data\GRAPH_PAGE_1.PPTX">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Data\GRAPH_PAGE_2.PPTX">
+    </Content>
+    <Content Include="Data\GRAPH_PAGE_2.PPTX">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Data\GRAPH_PAGE_3.PPTX">
+    </Content>
+    <Content Include="Data\GRAPH_PAGE_3.PPTX">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Data\GRID_PAGE_1.PPTX">
+    </Content>
+    <Content Include="Data\GRID_PAGE_1.PPTX">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Data\LIST_PAGE.PPTX">
+    </Content>
+    <Content Include="Data\LIST_PAGE.PPTX">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Data\THEME.THMX">
+    </Content>
+    <Content Include="Data\THEME.THMX">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Data\TITLE_TEMPLATE_1.PPTX">
+    </Content>
+    <Content Include="Data\TITLE_TEMPLATE_1.PPTX">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Data\TITLE_TEMPLATE_2.PPTX">
+    </Content>
+    <Content Include="Data\TITLE_TEMPLATE_2.PPTX">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    </Content>
     <None Include="Properties\DataSources\BiSS.Projects.RPGen.Structure.DisplayObject.datasource" />
     <None Include="Properties\DataSources\BiSS.Projects.RPGen.Structure.LDChartDataSource.datasource" />
     <None Include="Properties\DataSources\BiSS.Projects.RPGen.Structure.ScoreTable.datasource" />
@@ -356,9 +375,9 @@
   <ItemGroup>
     <Content Include="MetroFramework.txt" />
     <Content Include="RPGenIcon-Colored.ico" />
-    <Content Include="Web\loading.html">
+    <None Include="Web\loading.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RsWork.UI\RsWork.UI\RsWork.UI.csproj">

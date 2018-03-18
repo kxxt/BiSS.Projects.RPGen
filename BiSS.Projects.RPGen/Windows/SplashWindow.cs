@@ -41,7 +41,7 @@ namespace BiSS.Projects.RPGen.Windows
 		private void DoWork()
 		{
 			//todo:
-			Thread.Sleep(2000);
+			Thread.Sleep(1000);
 		}
 
 		private void bgw_DoWork(object sender, DoWorkEventArgs e)
