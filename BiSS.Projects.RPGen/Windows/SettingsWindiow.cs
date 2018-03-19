@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using BiSS.Projects.RPGen.Debug;
 
 namespace BiSS.Projects.RPGen.Windows
 {
@@ -30,6 +31,17 @@ namespace BiSS.Projects.RPGen.Windows
 		private void metroToggle1_CheckedChanged(object sender, EventArgs e)
 		{
 			Program.ShowCellInfo = metroToggle1.Checked;
+		}
+
+		private void windows10Btn11_Click(object sender, EventArgs e)
+		{
+			MessageBox.Show(
+				"int@1: "+SampleClass.TestAnalyzerCount(1).ToString()+"\r\n"+
+				"int@2 " + SampleClass.TestAnalyzerCount(2).ToString() + "\r\n" +
+				"float@1: " + SampleClass.TestAnalyzerCount(3).ToString() + "\r\n" +
+				"float@1: " + SampleClass.TestAnalyzerCount(4).ToString() + "\r\n" 
+
+				);
 		}
 	}
 }

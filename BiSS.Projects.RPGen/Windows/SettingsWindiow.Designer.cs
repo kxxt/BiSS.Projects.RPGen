@@ -33,6 +33,9 @@
 			this.closebtn = new RsWork.UI.Controls.ModernButton();
 			this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
 			this.metroToggle1 = new MetroFramework.Controls.MetroToggle();
+			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.windows10Btn11 = new BiSS.Projects.RPGen.Windows.Windows10Btn1();
+			this.groupBox1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// title
@@ -86,7 +89,7 @@
 			this.closebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.closebtn.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
 			this.closebtn.ForeColor = System.Drawing.Color.White;
-			this.closebtn.Location = new System.Drawing.Point(508, 8);
+			this.closebtn.Location = new System.Drawing.Point(722, 8);
 			this.closebtn.Name = "closebtn";
 			this.closebtn.Size = new System.Drawing.Size(32, 32);
 			this.closebtn.TabIndex = 4;
@@ -121,11 +124,42 @@
 			this.metroToggle1.UseVisualStyleBackColor = true;
 			this.metroToggle1.CheckedChanged += new System.EventHandler(this.metroToggle1_CheckedChanged);
 			// 
+			// groupBox1
+			// 
+			this.groupBox1.Controls.Add(this.windows10Btn11);
+			this.groupBox1.ForeColor = System.Drawing.Color.White;
+			this.groupBox1.Location = new System.Drawing.Point(15, 162);
+			this.groupBox1.Name = "groupBox1";
+			this.groupBox1.Size = new System.Drawing.Size(739, 349);
+			this.groupBox1.TabIndex = 7;
+			this.groupBox1.TabStop = false;
+			this.groupBox1.Text = "调试函数";
+			// 
+			// windows10Btn11
+			// 
+			this.windows10Btn11.AccessibleName = "Button";
+			this.windows10Btn11.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+			this.windows10Btn11.Location = new System.Drawing.Point(6, 32);
+			this.windows10Btn11.Name = "windows10Btn11";
+			this.windows10Btn11.Size = new System.Drawing.Size(174, 28);
+			this.windows10Btn11.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
+			this.windows10Btn11.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(93)))), ((int)(((byte)(166)))));
+			this.windows10Btn11.Style.FocusedForeColor = System.Drawing.Color.White;
+			this.windows10Btn11.Style.ForeColor = System.Drawing.Color.White;
+			this.windows10Btn11.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(103)))), ((int)(((byte)(184)))));
+			this.windows10Btn11.Style.HoverForeColor = System.Drawing.Color.White;
+			this.windows10Btn11.Style.PressedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(93)))), ((int)(((byte)(166)))));
+			this.windows10Btn11.Style.PressedForeColor = System.Drawing.Color.White;
+			this.windows10Btn11.TabIndex = 0;
+			this.windows10Btn11.Text = "T Analyzer->CountInRange()";
+			this.windows10Btn11.Click += new System.EventHandler(this.windows10Btn11_Click);
+			// 
 			// SettingsWindiow
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 26F);
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-			this.ClientSize = new System.Drawing.Size(552, 243);
+			this.ClientSize = new System.Drawing.Size(766, 528);
+			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.metroLabel2);
 			this.Controls.Add(this.metroToggle1);
 			this.Controls.Add(this.closebtn);
@@ -139,6 +173,8 @@
 			this.Controls.SetChildIndex(this.closebtn, 0);
 			this.Controls.SetChildIndex(this.metroToggle1, 0);
 			this.Controls.SetChildIndex(this.metroLabel2, 0);
+			this.Controls.SetChildIndex(this.groupBox1, 0);
+			this.groupBox1.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -151,5 +187,7 @@
 		private RsWork.UI.Controls.ModernButton closebtn;
 		private MetroFramework.Controls.MetroLabel metroLabel2;
 		private MetroFramework.Controls.MetroToggle metroToggle1;
+		private System.Windows.Forms.GroupBox groupBox1;
+		private Windows10Btn1 windows10Btn11;
 	}
 }
