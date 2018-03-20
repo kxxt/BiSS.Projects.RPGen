@@ -12,7 +12,24 @@ namespace BiSS.Projects.RPGen.Structure
 	{
 		A=1,B=2,C=3,D=4
 	}
-
+	public static class LevelEx{
+		public static string Name(this Level l)
+		{
+			switch (l)
+			{
+				case Level.A:
+					return "A";
+				case Level.B:
+					return "B";
+				case Level.C:
+					return "C";
+				case Level.D:
+					return "D";
+				default:
+					return "EX_LEVEL";
+			}
+		}
+	}
 	public  class DLevel
 	{
 		private Dictionary<string,float[]> value=new Dictionary<string, float[]>();

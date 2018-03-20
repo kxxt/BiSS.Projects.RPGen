@@ -34,6 +34,7 @@
 			this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
 			this.metroToggle1 = new MetroFramework.Controls.MetroToggle();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.windows10Btn21 = new BiSS.Projects.RPGen.Windows.Windows10Btn2();
 			this.windows10Btn11 = new BiSS.Projects.RPGen.Windows.Windows10Btn1();
 			this.groupBox1.SuspendLayout();
 			this.SuspendLayout();
@@ -126,6 +127,7 @@
 			// 
 			// groupBox1
 			// 
+			this.groupBox1.Controls.Add(this.windows10Btn21);
 			this.groupBox1.Controls.Add(this.windows10Btn11);
 			this.groupBox1.ForeColor = System.Drawing.Color.White;
 			this.groupBox1.Location = new System.Drawing.Point(15, 162);
@@ -134,6 +136,23 @@
 			this.groupBox1.TabIndex = 7;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "调试函数";
+			// 
+			// windows10Btn21
+			// 
+			this.windows10Btn21.AccessibleName = "Button";
+			this.windows10Btn21.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+			this.windows10Btn21.Location = new System.Drawing.Point(6, 67);
+			this.windows10Btn21.Name = "windows10Btn21";
+			this.windows10Btn21.Size = new System.Drawing.Size(174, 28);
+			this.windows10Btn21.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+			this.windows10Btn21.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+			this.windows10Btn21.Style.ForeColor = System.Drawing.Color.Black;
+			this.windows10Btn21.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+			this.windows10Btn21.Style.HoverForeColor = System.Drawing.Color.Black;
+			this.windows10Btn21.Style.PressedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
+			this.windows10Btn21.TabIndex = 1;
+			this.windows10Btn21.Text = "T Analyzer->GetSeprators\r\n";
+			this.windows10Btn21.Click += new System.EventHandler(this.windows10Btn21_Click);
 			// 
 			// windows10Btn11
 			// 
@@ -166,6 +185,7 @@
 			this.Controls.Add(this.metroLabel1);
 			this.Controls.Add(this.debugEnabledToggle);
 			this.Name = "SettingsWindiow";
+			this.TopMost = false;
 			this.Controls.SetChildIndex(this.debugEnabledToggle, 0);
 			this.Controls.SetChildIndex(this.metroLabel1, 0);
 			this.Controls.SetChildIndex(this.title, 0);
@@ -189,5 +209,6 @@
 		private MetroFramework.Controls.MetroToggle metroToggle1;
 		private System.Windows.Forms.GroupBox groupBox1;
 		private Windows10Btn1 windows10Btn11;
+		private Windows10Btn2 windows10Btn21;
 	}
 }

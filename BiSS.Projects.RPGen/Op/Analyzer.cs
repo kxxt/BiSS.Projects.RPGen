@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BiSS.Projects.RPGen.Structure;
 using RsWork.Functions.Log;
+using Syncfusion.CompoundFile.XlsIO.Net;
 using Syncfusion.Data.Extensions;
 using Syncfusion.Windows.Forms.Chart;
 using Syncfusion.XlsIO.Implementation.PivotAnalysis;
@@ -13,6 +14,7 @@ namespace BiSS.Projects.RPGen.Op
 {
 	public static  class Analyzer
 	{
+
 		[Passed]
 		public static int CountItemInRange<T1,T2>(this IEnumerable<T1> l, T2 low, T2 high,Func<T1,T2> selector) where T2 : IComparable<T2>
 		{
@@ -38,23 +40,47 @@ namespace BiSS.Projects.RPGen.Op
 
 			return cnt;
 		}
-		public static Dictionary<NfSubjects,Dictionary<Level,float>> GetSeparator(Dictionary<NfSubjects,float> fs, Dictionary<Level, int> spr100)
-		{
-			var ret=new Dictionary<NfSubjects, Dictionary<Level, float>>();
-			for (NfSubjects sub = NfSubjects.Zh; sub <= NfSubjects.All; sub++)
-			{
-				for (Level lv = Level.A; lv <= Level.D; lv++)
-				{
-					ret[sub][lv] = get_seprated(fs[sub], spr100[lv]);
-				}
-			}
 
-			return ret;
+		//public static Directory<NfSubjects, Directory<Level, (float, float)>> GetSepratedRange(Dictionary<NfSubjects,float> fullScore, Dictionary<NfSubjects, Dictionary<Level, float>> spr)
+		//{
+			
+		//}
+
+		public static Dictionary<NfSubjects,Dictionary<Level,float>> GetSeparator(Dictionary<NfSubjects,float> fs, Dictionary<Level, float> spr)
+		{
+			if (spr[Level.A] > spr[Level.B] &&
+			    spr[Level.B] > spr[Level.C] &&
+			    spr[Level.C] > spr[Level.D])
+			{
+				foreach (float s in spr.Values)
+				{
+					if(!(0<=s&&s<1))
+						throw new ArgumentOutOfRangeException(nameof(spr),"Each member of {spr} should be in Range [0,1)!");
+						
+				}
+				var ret = new Dictionary<NfSubjects, Dictionary<Level, float>>();
+				for (NfSubjects sub = NfSubjects.Zh; sub <= NfSubjects.All; sub++)
+				{
+					for (Level lv = Level.A; lv <= Level.D; lv++)
+					{
+						if(!ret.ContainsKey(sub))
+							ret[sub]=new Dictionary<Level, float>();
+						ret[sub][lv] = get_seprated(fs[sub], spr[lv]);
+					}
+				}
+
+				return ret;
+			}
+			else
+			{
+				throw new ArgumentException("Seprators should be input ordered!A=>D,Highest=>Lowest");
+			}
+			
 		}
 
-		private static float get_seprated(float full,int spr100)
+		private static float get_seprated(float full,float spr)
 		{
-			return full * (spr100 / 100f);
+			return full * spr;
 		}
 		public static (object[],object[]) ReArrangeData(IList<(NfSubjects,float)> li)
 		{
