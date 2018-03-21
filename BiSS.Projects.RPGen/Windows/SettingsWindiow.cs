@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using BiSS.Projects.RPGen.Debug;
@@ -10,7 +11,7 @@ using BiSS.Projects.RPGen.Op;
 using BiSS.Projects.RPGen.Structure;
 using static BiSS.Projects.RPGen.Structure.Level;
 using static BiSS.Projects.RPGen.Structure.NfSubjects;
-
+using static BiSS.Projects.RPGen.Program;
 namespace BiSS.Projects.RPGen.Windows
 {
 	public partial class SettingsWindiow : RsWork.UI.Windows.ModernDialogBase
@@ -166,6 +167,23 @@ namespace BiSS.Projects.RPGen.Windows
 		private void windows10Btn22_Click(object sender, EventArgs e)
 		{
 			IList<ScoreModel> x = Program.Data.TestData;
+			var zh = x.Select(sm => sm.Zh??0);
+			var sprs= Analyzer.GetSepratorPerSubject(Program.FullScore[Zh], new Dictionary<Level, float>()
+			{
+				[A] = 0.9f,
+				[Level.B] = 0.8f,
+				[Level.C] = 0.6f,
+				[D] = 0.0f
+			});
+			int lvA = zh.CountItemInRange(sprs[Level.A], FullScore[Zh]);
+			int lvB = zh.CountItemInRange(sprs[Level.B], sprs[Level.A]);
+			int lvC = zh.CountItemInRange(sprs[Level.C], sprs[Level.B]);
+			int lvD = zh.CountItemInRange(sprs[Level.D], sprs[Level.C]);
+			MessageBox.Show(
+				$"SEPRATORS:\r\n"+$"A:{sprs[A]}\r\n"+ $"B:{sprs[Level.B]}\r\n"+$"C:{sprs[Level.C]}\r\n"+$"D:{sprs[D]}\r\n"+
+				"===============\r\n"+
+				$"A:{lvA}\r\n"+ $"B:{lvB}\r\n"+$"C:{lvC}\r\n"+$"D:{lvD}\r\n"
+				);
 		}
 	}
 }
