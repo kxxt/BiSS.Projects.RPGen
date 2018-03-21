@@ -36,6 +36,7 @@
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.windows10Btn21 = new BiSS.Projects.RPGen.Windows.Windows10Btn2();
 			this.windows10Btn11 = new BiSS.Projects.RPGen.Windows.Windows10Btn1();
+			this.windows10Btn22 = new BiSS.Projects.RPGen.Windows.Windows10Btn2();
 			this.groupBox1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -127,6 +128,7 @@
 			// 
 			// groupBox1
 			// 
+			this.groupBox1.Controls.Add(this.windows10Btn22);
 			this.groupBox1.Controls.Add(this.windows10Btn21);
 			this.groupBox1.Controls.Add(this.windows10Btn11);
 			this.groupBox1.ForeColor = System.Drawing.Color.White;
@@ -173,6 +175,23 @@
 			this.windows10Btn11.Text = "T Analyzer->CountInRange()";
 			this.windows10Btn11.Click += new System.EventHandler(this.windows10Btn11_Click);
 			// 
+			// windows10Btn22
+			// 
+			this.windows10Btn22.AccessibleName = "Button";
+			this.windows10Btn22.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+			this.windows10Btn22.Location = new System.Drawing.Point(6, 101);
+			this.windows10Btn22.Name = "windows10Btn22";
+			this.windows10Btn22.Size = new System.Drawing.Size(174, 28);
+			this.windows10Btn22.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+			this.windows10Btn22.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+			this.windows10Btn22.Style.ForeColor = System.Drawing.Color.Black;
+			this.windows10Btn22.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+			this.windows10Btn22.Style.HoverForeColor = System.Drawing.Color.Black;
+			this.windows10Btn22.Style.PressedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
+			this.windows10Btn22.TabIndex = 2;
+			this.windows10Btn22.Text = "T Count Test Data\r\n";
+			this.windows10Btn22.Click += new System.EventHandler(this.windows10Btn22_Click);
+			// 
 			// SettingsWindiow
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 26F);
@@ -210,5 +229,6 @@
 		private System.Windows.Forms.GroupBox groupBox1;
 		private Windows10Btn1 windows10Btn11;
 		private Windows10Btn2 windows10Btn21;
+		private Windows10Btn2 windows10Btn22;
 	}
 }

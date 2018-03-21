@@ -60,7 +60,7 @@ namespace BiSS.Projects.RPGen.Windows.Wizard
 			ew.spreadsheet1.Open($"Temp\\{Program.XlsFile}");
 			MessageBox.Show("单击确定以继续...\r\n您可能需要等待一段时间...",WriteObject(ew.spreadsheet1.ActiveSheet)??"提示");
 			Log("Loop Begin");
-			Busy.BusyWindow busy=new Busy.BusyWindow();
+			//Busy.BusyWindow busy=new Busy.BusyWindow();
 			//busy.Worker.DoWork += (___s___, ___args___) => {
 			//	while (ew.Export() == null)
 			//	{
@@ -88,6 +88,15 @@ namespace BiSS.Projects.RPGen.Windows.Wizard
 			{
 				var data = ew.Export();
 				Program.Data.X = data;
+				/////////////////////
+				if (Program.DebugEnabled)
+				{
+					string json = JsonConvert.SerializeObject(data);
+					MessageBox.Show(json);
+					File.Create("test.dat").Close();
+					File.AppendAllText("test.dat", json, Encoding.UTF8);
+				}
+				//////////////////////
 				MessageBox.Show(JsonConvert.SerializeObject(data[0]),"测试数据");
 				this.Hide();
 				var fmt=new FormatWindow();

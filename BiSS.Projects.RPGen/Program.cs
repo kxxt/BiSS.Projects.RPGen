@@ -13,8 +13,10 @@ using System.Reflection;
 using System.Runtime.Remoting.Messaging;
 using BiSS.Projects.RPGen.Structure;
 using System.Dynamic;
+using System.Runtime.CompilerServices;
 using System.Threading;
 using BiSS.Projects.RPGen.Op;
+using Newtonsoft.Json;
 using Syncfusion.XlsIO;
 
 namespace BiSS.Projects.RPGen
@@ -35,6 +37,9 @@ namespace BiSS.Projects.RPGen
 #endif
 			
 			DataDir = EnvDir + "Data\\";
+			if(DebugEnabled)
+				if (File.Exists("test.dat"))
+					Data.TestData = JsonConvert.DeserializeObject<IList<ScoreModel>>(File.ReadAllText("test.dat"));
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			//MetroFramework.Fonts.FontResolver fontResolver = new FontResolver();

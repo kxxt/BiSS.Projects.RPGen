@@ -75,8 +75,8 @@ namespace BiSS.Projects.RPGen.Windows
 				} ,
 				[M] = new Dictionary<Level, float>()
 				{
-					[A] = 0.9f,
-					[Level.B] = 0.8f,
+					[A] = 0.8f,
+					[Level.B] = 0.7f,
 					[Level.C] = 0.6f,
 					[D] = 0.0f
 				},
@@ -149,7 +149,23 @@ namespace BiSS.Projects.RPGen.Windows
 				}
 			}
 
-			MessageBox.Show(tststr,"TEST");
+			MessageBox.Show(tststr,"TEST1");
+			tststr = "";
+			var res2 = Analyzer.GetSeparator(fs, spr);
+			foreach (var v in res2)
+			{
+				tststr += $"{v.Key.Name()} :\r\n";
+				foreach (var sc in v.Value)
+				{
+					tststr += (space + sc.Key.Name() + " : " + sc.Value + "\r\n");
+				}
+			}
+			MessageBox.Show(tststr, "TEST2");
+		}
+
+		private void windows10Btn22_Click(object sender, EventArgs e)
+		{
+			IList<ScoreModel> x = Program.Data.TestData;
 		}
 	}
 }

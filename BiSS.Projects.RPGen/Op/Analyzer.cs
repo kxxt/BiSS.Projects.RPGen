@@ -43,9 +43,45 @@ namespace BiSS.Projects.RPGen.Op
 
 		//public static Directory<NfSubjects, Directory<Level, (float, float)>> GetSepratedRange(Dictionary<NfSubjects,float> fullScore, Dictionary<NfSubjects, Dictionary<Level, float>> spr)
 		//{
-			
-		//}
 
+		//}
+		public static Dictionary<NfSubjects, Dictionary<Level, float>> GetSeparator(Dictionary<NfSubjects, float> fs,
+			Dictionary<NfSubjects, Dictionary<Level, float>> spr)
+		{
+			var ret = new Dictionary<NfSubjects, Dictionary<Level, float>>();
+			for (NfSubjects sub = NfSubjects.Zh; sub <= NfSubjects.All; sub++)
+			{
+				ret[sub] = GetSepratorPerSubject(fs[sub], spr[sub]);
+			}
+
+			return ret;
+		}
+		[Passed()]
+		static Dictionary<Level, float> GetSepratorPerSubject(float fullScore,Dictionary<Level, float> spr)
+		{
+			if (spr[Level.A] > spr[Level.B] &&
+			    spr[Level.B] > spr[Level.C] &&
+			    spr[Level.C] > spr[Level.D])
+			{
+				var ret=new Dictionary<Level,float>();
+				foreach (var s in spr)
+				{
+					if (!(0 <= s.Value && s.Value < 1))
+						throw new ArgumentOutOfRangeException(nameof(spr), "Each member of {spr} should be in Range [0,1)!");
+					else
+					{
+						ret[s.Key] = get_seprated(fullScore, s.Value);
+					}
+				}
+
+				return ret;
+			}
+			else
+			{
+				throw new ArgumentException("Seprators should be input ordered!A=>D,Highest=>Lowest");
+			}
+		}
+		[Passed()]
 		public static Dictionary<NfSubjects,Dictionary<Level,float>> GetSeparator(Dictionary<NfSubjects,float> fs, Dictionary<Level, float> spr)
 		{
 			if (spr[Level.A] > spr[Level.B] &&
@@ -77,7 +113,7 @@ namespace BiSS.Projects.RPGen.Op
 			}
 			
 		}
-
+		[Passed()]
 		private static float get_seprated(float full,float spr)
 		{
 			return full * spr;
