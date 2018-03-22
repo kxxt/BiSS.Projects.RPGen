@@ -34,9 +34,10 @@
 			this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
 			this.metroToggle1 = new MetroFramework.Controls.MetroToggle();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.windows10Btn22 = new BiSS.Projects.RPGen.Windows.Windows10Btn2();
 			this.windows10Btn21 = new BiSS.Projects.RPGen.Windows.Windows10Btn2();
 			this.windows10Btn11 = new BiSS.Projects.RPGen.Windows.Windows10Btn1();
-			this.windows10Btn22 = new BiSS.Projects.RPGen.Windows.Windows10Btn2();
+			this.windows10Btn23 = new BiSS.Projects.RPGen.Windows.Windows10Btn2();
 			this.groupBox1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -128,6 +129,7 @@
 			// 
 			// groupBox1
 			// 
+			this.groupBox1.Controls.Add(this.windows10Btn23);
 			this.groupBox1.Controls.Add(this.windows10Btn22);
 			this.groupBox1.Controls.Add(this.windows10Btn21);
 			this.groupBox1.Controls.Add(this.windows10Btn11);
@@ -138,6 +140,23 @@
 			this.groupBox1.TabIndex = 7;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "调试函数";
+			// 
+			// windows10Btn22
+			// 
+			this.windows10Btn22.AccessibleName = "Button";
+			this.windows10Btn22.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+			this.windows10Btn22.Location = new System.Drawing.Point(6, 101);
+			this.windows10Btn22.Name = "windows10Btn22";
+			this.windows10Btn22.Size = new System.Drawing.Size(174, 28);
+			this.windows10Btn22.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+			this.windows10Btn22.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+			this.windows10Btn22.Style.ForeColor = System.Drawing.Color.Black;
+			this.windows10Btn22.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+			this.windows10Btn22.Style.HoverForeColor = System.Drawing.Color.Black;
+			this.windows10Btn22.Style.PressedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
+			this.windows10Btn22.TabIndex = 2;
+			this.windows10Btn22.Text = "T Count Test Data\r\n";
+			this.windows10Btn22.Click += new System.EventHandler(this.windows10Btn22_Click);
 			// 
 			// windows10Btn21
 			// 
@@ -175,22 +194,22 @@
 			this.windows10Btn11.Text = "T Analyzer->CountInRange()";
 			this.windows10Btn11.Click += new System.EventHandler(this.windows10Btn11_Click);
 			// 
-			// windows10Btn22
+			// windows10Btn23
 			// 
-			this.windows10Btn22.AccessibleName = "Button";
-			this.windows10Btn22.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-			this.windows10Btn22.Location = new System.Drawing.Point(6, 101);
-			this.windows10Btn22.Name = "windows10Btn22";
-			this.windows10Btn22.Size = new System.Drawing.Size(174, 28);
-			this.windows10Btn22.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-			this.windows10Btn22.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-			this.windows10Btn22.Style.ForeColor = System.Drawing.Color.Black;
-			this.windows10Btn22.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-			this.windows10Btn22.Style.HoverForeColor = System.Drawing.Color.Black;
-			this.windows10Btn22.Style.PressedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
-			this.windows10Btn22.TabIndex = 2;
-			this.windows10Btn22.Text = "T Count Test Data\r\n";
-			this.windows10Btn22.Click += new System.EventHandler(this.windows10Btn22_Click);
+			this.windows10Btn23.AccessibleName = "Button";
+			this.windows10Btn23.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+			this.windows10Btn23.Location = new System.Drawing.Point(6, 135);
+			this.windows10Btn23.Name = "windows10Btn23";
+			this.windows10Btn23.Size = new System.Drawing.Size(174, 28);
+			this.windows10Btn23.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+			this.windows10Btn23.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+			this.windows10Btn23.Style.ForeColor = System.Drawing.Color.Black;
+			this.windows10Btn23.Style.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+			this.windows10Btn23.Style.HoverForeColor = System.Drawing.Color.Black;
+			this.windows10Btn23.Style.PressedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
+			this.windows10Btn23.TabIndex = 3;
+			this.windows10Btn23.Text = "T Count Test Data (Analyzer)\r\n";
+			this.windows10Btn23.Click += new System.EventHandler(this.windows10Btn23_Click);
 			// 
 			// SettingsWindiow
 			// 
@@ -230,5 +249,6 @@
 		private Windows10Btn1 windows10Btn11;
 		private Windows10Btn2 windows10Btn21;
 		private Windows10Btn2 windows10Btn22;
+		private Windows10Btn2 windows10Btn23;
 	}
 }

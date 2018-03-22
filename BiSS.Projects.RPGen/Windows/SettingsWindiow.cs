@@ -185,5 +185,23 @@ namespace BiSS.Projects.RPGen.Windows
 				$"A:{lvA}\r\n"+ $"B:{lvB}\r\n"+$"C:{lvC}\r\n"+$"D:{lvD}\r\n"
 				);
 		}
+
+		private void windows10Btn23_Click(object sender, EventArgs e)
+		{
+			IList<ScoreModel> x = Program.Data.TestData;
+			var sprs = Analyzer.GetSepratorPerSubject(Program.FullScore[Zh], new Dictionary<Level, float>()
+			{
+				[A] = 0.9f,
+				[Level.B] = 0.8f,
+				[Level.C] = 0.6f,
+				[D] = 0.0f
+			});
+			var xxx = x.CountStuNumPerLevelPerSubject(NfSubjects.Zh, Program.FullScore[NfSubjects.Zh], sprs);
+			MessageBox.Show(
+				$"SEPRATORS:\r\n" + $"A:{sprs[A]}\r\n" + $"B:{sprs[Level.B]}\r\n" + $"C:{sprs[Level.C]}\r\n" + $"D:{sprs[D]}\r\n" +
+				"===============\r\n" +
+				$"A:{xxx[Level.A.Id()]}\r\n" + $"B:{xxx[Level.B.Id()]}\r\n" + $"C:{xxx[Level.C.Id()]}\r\n" + $"D:{xxx[Level.D.Id()]}\r\n"
+			);
+		}
 	}
 }

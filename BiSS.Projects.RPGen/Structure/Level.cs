@@ -29,6 +29,22 @@ namespace BiSS.Projects.RPGen.Structure
 					return "EX_LEVEL";
 			}
 		}
+		public static int Id(this Level l)
+		{
+			switch (l)
+			{
+				case Level.A:
+					return 1;
+				case Level.B:
+					return 2;
+				case Level.C:
+					return 3;
+				case Level.D:
+					return 4;
+				default:
+					return Int32.MinValue;
+			}
+		}
 	}
 	public  class DLevel
 	{

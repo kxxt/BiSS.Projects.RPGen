@@ -189,5 +189,37 @@ namespace BiSS.Projects.RPGen.Structure
 			if (!(obj is ScoreModel)) return false;
 			else return id.Equals((obj as ScoreModel).id);
 		}
+
+		public float? this[NfSubjects sub]
+		{
+			get
+			{
+				switch (sub)
+				{
+					case NfSubjects.Zh:
+						return zh;
+					case NfSubjects.M:
+						return m;
+					case NfSubjects.En:
+						return en;
+					case NfSubjects.P:
+						return p;
+					case NfSubjects.C:
+						return c;
+					case NfSubjects.Po:
+						return po;
+					case NfSubjects.H:
+						return h;
+					case NfSubjects.G:
+						return g;
+					case NfSubjects.B:
+						return b;
+					case NfSubjects.All:
+						return Sum;
+					default:
+						return null;
+				}
+			}
+		}
 	}
 }

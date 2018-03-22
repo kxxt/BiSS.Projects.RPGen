@@ -15,10 +15,20 @@ namespace BiSS.Projects.RPGen.Op
 {
 	public static  class Analyzer
 	{
-		public static int[] CountStuNumPerLevelPerSubject(this IList<ScoreModel> li,Dictionary<Level,float> spr)
+		public static int[] CountStuNumPerLevelPerSubject(this IList<ScoreModel> li,NfSubjects sub,float fullScore,Dictionary<Level,float> spr)
 		{
+			int[] ret=new int[]{Int32.MinValue, -1,-1,-1,-1};
+			var s = li.Select(sm => sm[sub]??0);
+			var sprs = GetSepratorPerSubject(fullScore,spr);
+			sprs[0] = fullScore;
+			var stmpList = s.ToList();//reduce mutiplie enumerate
+			for (Level lv = Level.A; lv <= Level.D; lv++)
+			{
+				
+				ret[lv.Id()] = stmpList.CountItemInRange(sprs[lv],sprs[lv-1]);
+			}
 
-			return null;
+			return ret;
 		}
 
 		[Passed]
