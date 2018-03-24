@@ -7,11 +7,13 @@ using System.IO;
 using System.Text;
 using System.Windows.Forms;
 using BiSS.Projects.RPGen.Structure;
+using Syncfusion.WinForms.Input;
 
 namespace BiSS.Projects.RPGen.Windows.Wizard
 {
 	public partial class FormatWindow : BiSS.Projects.RPGen.Windows.Wizard.DialogWindows10
 	{
+		private Syncfusion.WinForms.Input.SfNumericTextBox[,] tbs;
 		private string path="$";
 
 		public string Path { get => this.path; set => this.path = value; }
@@ -19,6 +21,30 @@ namespace BiSS.Projects.RPGen.Windows.Wizard
 		public FormatWindow()
 		{
 			InitializeComponent();
+			tbs=new SfNumericTextBox[4,9];
+			Point cur = new Point(392, 135);
+			Size padding =new Size(5,4);
+			int pdx=5,pdy=4;//curx:current X,cury:current y;pdx:X padding,pdy:Y padding
+			for (int i = 1; i <= 4; i++)
+			{
+				for (int j = 1; j <= 9; j++)
+				{
+					tbs[i,j].Location=new Point(cur.X,cur.Y);
+					cur.X += (100 + padding.Width);
+					cur.Y += (23 + padding.Height);
+					tbs[i,j]=new SfNumericTextBox();
+					tbs[i,j].BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+					tbs[i,j].Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+					tbs[i, j].ForeColor = System.Drawing.SystemColors.WindowText;
+					tbs[i, j].FormatMode = Syncfusion.WinForms.Input.Enums.FormatMode.Percent;
+					tbs[i, j].HideTrailingZeros = true;
+					//tbs[i, j].Location = new System.Drawing.Point(710, 342);
+					tbs[i, j].MaxValue = 100D;
+					tbs[i, j].MinValue = 0D;
+					this.sfNumericTextBox44.Size = new System.Drawing.Size(100, 23);
+
+				}
+			}
 		}
 
 		private void metroTextBox1_Click(object sender, EventArgs e)

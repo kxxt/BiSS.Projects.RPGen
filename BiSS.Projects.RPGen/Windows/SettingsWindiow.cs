@@ -189,16 +189,22 @@ namespace BiSS.Projects.RPGen.Windows
 		private void windows10Btn23_Click(object sender, EventArgs e)
 		{
 			IList<ScoreModel> x = Program.Data.TestData;
-			var sprs = Analyzer.GetSepratorPerSubject(Program.FullScore[Zh], new Dictionary<Level, float>()
+			var __sprs = Analyzer.GetSepratorPerSubject(Program.FullScore[Zh], new Dictionary<Level, float>()
 			{
 				[A] = 0.9f,
 				[Level.B] = 0.8f,
 				[Level.C] = 0.6f,
 				[D] = 0.0f
 			});
-			var xxx = x.CountStuNumPerLevelPerSubject(NfSubjects.Zh, Program.FullScore[NfSubjects.Zh], sprs);
+			int[] xxx = x.CountStuNumPerLevelPerSubject(NfSubjects.Zh, Program.FullScore[NfSubjects.Zh], new Dictionary<Level, float>()
+			{
+				[A] = 0.9f,
+				[Level.B] = 0.8f,
+				[Level.C] = 0.6f,
+				[D] = 0.0f
+			});
 			MessageBox.Show(
-				$"SEPRATORS:\r\n" + $"A:{sprs[A]}\r\n" + $"B:{sprs[Level.B]}\r\n" + $"C:{sprs[Level.C]}\r\n" + $"D:{sprs[D]}\r\n" +
+				$"SEPRATORS:\r\n" + $"A:{__sprs[A]}\r\n" + $"B:{__sprs[Level.B]}\r\n" + $"C:{__sprs[Level.C]}\r\n" + $"D:{__sprs[D]}\r\n" +
 				"===============\r\n" +
 				$"A:{xxx[Level.A.Id()]}\r\n" + $"B:{xxx[Level.B.Id()]}\r\n" + $"C:{xxx[Level.C.Id()]}\r\n" + $"D:{xxx[Level.D.Id()]}\r\n"
 			);

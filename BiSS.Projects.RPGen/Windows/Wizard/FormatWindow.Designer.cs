@@ -32,7 +32,7 @@
 			this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
 			this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
 			this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-			this.dotdotdot = new Syncfusion.WinForms.Controls.SfButton();
+			this.dotdotdot = new BiSS.Projects.RPGen.Windows.Windows10Btn1();
 			this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
 			this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
 			this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
@@ -135,7 +135,7 @@
 			this.metroTextBox1.Location = new System.Drawing.Point(13, 87);
 			this.metroTextBox1.Name = "metroTextBox1";
 			this.metroTextBox1.Size = new System.Drawing.Size(280, 23);
-			this.metroTextBox1.TabIndex = 5;
+			this.metroTextBox1.TabIndex = 0;
 			this.metroTextBox1.Click += new System.EventHandler(this.metroTextBox1_Click);
 			// 
 			// metroLabel1
@@ -156,7 +156,7 @@
 			this.dotdotdot.Location = new System.Drawing.Point(300, 87);
 			this.dotdotdot.Name = "dotdotdot";
 			this.dotdotdot.Size = new System.Drawing.Size(54, 23);
-			this.dotdotdot.TabIndex = 7;
+			this.dotdotdot.TabIndex = 1;
 			this.dotdotdot.Text = "选择...";
 			this.dotdotdot.Click += new System.EventHandler(this.dotdotdot_Click);
 			// 
@@ -186,7 +186,7 @@
 			this.metroLabel6.Location = new System.Drawing.Point(12, 116);
 			this.metroLabel6.Name = "metroLabel6";
 			this.metroLabel6.Size = new System.Drawing.Size(41, 25);
-			this.metroLabel6.TabIndex = 14;
+			this.metroLabel6.TabIndex = 16;
 			this.metroLabel6.Text = "PPT";
 			// 
 			// metroToggle2
@@ -199,15 +199,14 @@
 			this.metroToggle2.Name = "metroToggle2";
 			this.metroToggle2.Size = new System.Drawing.Size(50, 25);
 			this.metroToggle2.Style = MetroFramework.MetroColorStyle.Orange;
-			this.metroToggle2.TabIndex = 13;
+			this.metroToggle2.TabIndex = 2;
 			this.metroToggle2.Text = "On";
 			this.metroToggle2.UseVisualStyleBackColor = true;
 			this.metroToggle2.CheckedChanged += new System.EventHandler(this.metroToggle2_CheckedChanged);
 			// 
 			// metroLabel17
 			// 
-			this.metroLabel17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.metroLabel17.Location = new System.Drawing.Point(175, 372);
+			this.metroLabel17.Location = new System.Drawing.Point(175, 370);
 			this.metroLabel17.Name = "metroLabel17";
 			this.metroLabel17.Size = new System.Drawing.Size(47, 23);
 			this.metroLabel17.TabIndex = 56;
@@ -215,23 +214,21 @@
 			// 
 			// sfNumericTextBox9
 			// 
-			this.sfNumericTextBox9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.sfNumericTextBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.sfNumericTextBox9.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
 			this.sfNumericTextBox9.ForeColor = System.Drawing.SystemColors.WindowText;
 			this.sfNumericTextBox9.HideTrailingZeros = true;
-			this.sfNumericTextBox9.Location = new System.Drawing.Point(228, 372);
+			this.sfNumericTextBox9.Location = new System.Drawing.Point(228, 370);
 			this.sfNumericTextBox9.Name = "sfNumericTextBox9";
 			this.sfNumericTextBox9.Size = new System.Drawing.Size(100, 23);
-			this.sfNumericTextBox9.TabIndex = 55;
+			this.sfNumericTextBox9.TabIndex = 15;
 			this.sfNumericTextBox9.Text = "100";
 			this.sfNumericTextBox9.Value = 100D;
 			this.sfNumericTextBox9.TextChanged += new System.EventHandler(this.sfNumericTextBox9_TextChanged);
 			// 
 			// metroLabel16
 			// 
-			this.metroLabel16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.metroLabel16.Location = new System.Drawing.Point(14, 311);
+			this.metroLabel16.Location = new System.Drawing.Point(14, 309);
 			this.metroLabel16.Name = "metroLabel16";
 			this.metroLabel16.Size = new System.Drawing.Size(47, 23);
 			this.metroLabel16.TabIndex = 54;
@@ -239,23 +236,21 @@
 			// 
 			// sfNumericTextBox8
 			// 
-			this.sfNumericTextBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.sfNumericTextBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.sfNumericTextBox8.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
 			this.sfNumericTextBox8.ForeColor = System.Drawing.SystemColors.WindowText;
 			this.sfNumericTextBox8.HideTrailingZeros = true;
-			this.sfNumericTextBox8.Location = new System.Drawing.Point(67, 311);
+			this.sfNumericTextBox8.Location = new System.Drawing.Point(67, 309);
 			this.sfNumericTextBox8.Name = "sfNumericTextBox8";
 			this.sfNumericTextBox8.Size = new System.Drawing.Size(100, 23);
-			this.sfNumericTextBox8.TabIndex = 53;
+			this.sfNumericTextBox8.TabIndex = 8;
 			this.sfNumericTextBox8.Text = "150";
 			this.sfNumericTextBox8.Value = 150D;
 			this.sfNumericTextBox8.TextChanged += new System.EventHandler(this.sfNumericTextBox8_TextChanged);
 			// 
 			// metroLabel15
 			// 
-			this.metroLabel15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.metroLabel15.Location = new System.Drawing.Point(14, 341);
+			this.metroLabel15.Location = new System.Drawing.Point(14, 339);
 			this.metroLabel15.Name = "metroLabel15";
 			this.metroLabel15.Size = new System.Drawing.Size(47, 23);
 			this.metroLabel15.TabIndex = 52;
@@ -263,23 +258,21 @@
 			// 
 			// sfNumericTextBox7
 			// 
-			this.sfNumericTextBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.sfNumericTextBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.sfNumericTextBox7.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
 			this.sfNumericTextBox7.ForeColor = System.Drawing.SystemColors.WindowText;
 			this.sfNumericTextBox7.HideTrailingZeros = true;
-			this.sfNumericTextBox7.Location = new System.Drawing.Point(67, 341);
+			this.sfNumericTextBox7.Location = new System.Drawing.Point(67, 339);
 			this.sfNumericTextBox7.Name = "sfNumericTextBox7";
 			this.sfNumericTextBox7.Size = new System.Drawing.Size(100, 23);
-			this.sfNumericTextBox7.TabIndex = 51;
+			this.sfNumericTextBox7.TabIndex = 9;
 			this.sfNumericTextBox7.Text = "150";
 			this.sfNumericTextBox7.Value = 150D;
 			this.sfNumericTextBox7.TextChanged += new System.EventHandler(this.sfNumericTextBox7_TextChanged);
 			// 
 			// metroLabel14
 			// 
-			this.metroLabel14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.metroLabel14.Location = new System.Drawing.Point(14, 370);
+			this.metroLabel14.Location = new System.Drawing.Point(14, 368);
 			this.metroLabel14.Name = "metroLabel14";
 			this.metroLabel14.Size = new System.Drawing.Size(47, 23);
 			this.metroLabel14.TabIndex = 50;
@@ -287,23 +280,21 @@
 			// 
 			// sfNumericTextBox6
 			// 
-			this.sfNumericTextBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.sfNumericTextBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.sfNumericTextBox6.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
 			this.sfNumericTextBox6.ForeColor = System.Drawing.SystemColors.WindowText;
 			this.sfNumericTextBox6.HideTrailingZeros = true;
-			this.sfNumericTextBox6.Location = new System.Drawing.Point(67, 370);
+			this.sfNumericTextBox6.Location = new System.Drawing.Point(67, 368);
 			this.sfNumericTextBox6.Name = "sfNumericTextBox6";
 			this.sfNumericTextBox6.Size = new System.Drawing.Size(100, 23);
-			this.sfNumericTextBox6.TabIndex = 49;
+			this.sfNumericTextBox6.TabIndex = 10;
 			this.sfNumericTextBox6.Text = "100";
 			this.sfNumericTextBox6.Value = 100D;
 			this.sfNumericTextBox6.TextChanged += new System.EventHandler(this.sfNumericTextBox6_TextChanged);
 			// 
 			// metroLabel13
 			// 
-			this.metroLabel13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.metroLabel13.Location = new System.Drawing.Point(175, 253);
+			this.metroLabel13.Location = new System.Drawing.Point(175, 251);
 			this.metroLabel13.Name = "metroLabel13";
 			this.metroLabel13.Size = new System.Drawing.Size(47, 23);
 			this.metroLabel13.TabIndex = 48;
@@ -311,23 +302,21 @@
 			// 
 			// sfNumericTextBox5
 			// 
-			this.sfNumericTextBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.sfNumericTextBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.sfNumericTextBox5.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
 			this.sfNumericTextBox5.ForeColor = System.Drawing.SystemColors.WindowText;
 			this.sfNumericTextBox5.HideTrailingZeros = true;
-			this.sfNumericTextBox5.Location = new System.Drawing.Point(228, 253);
+			this.sfNumericTextBox5.Location = new System.Drawing.Point(228, 251);
 			this.sfNumericTextBox5.Name = "sfNumericTextBox5";
 			this.sfNumericTextBox5.Size = new System.Drawing.Size(100, 23);
-			this.sfNumericTextBox5.TabIndex = 47;
+			this.sfNumericTextBox5.TabIndex = 11;
 			this.sfNumericTextBox5.Text = "100";
 			this.sfNumericTextBox5.Value = 100D;
 			this.sfNumericTextBox5.TextChanged += new System.EventHandler(this.sfNumericTextBox5_TextChanged);
 			// 
 			// metroLabel12
 			// 
-			this.metroLabel12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.metroLabel12.Location = new System.Drawing.Point(175, 282);
+			this.metroLabel12.Location = new System.Drawing.Point(175, 280);
 			this.metroLabel12.Name = "metroLabel12";
 			this.metroLabel12.Size = new System.Drawing.Size(47, 23);
 			this.metroLabel12.TabIndex = 46;
@@ -335,23 +324,21 @@
 			// 
 			// sfNumericTextBox4
 			// 
-			this.sfNumericTextBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.sfNumericTextBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.sfNumericTextBox4.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
 			this.sfNumericTextBox4.ForeColor = System.Drawing.SystemColors.WindowText;
 			this.sfNumericTextBox4.HideTrailingZeros = true;
-			this.sfNumericTextBox4.Location = new System.Drawing.Point(228, 282);
+			this.sfNumericTextBox4.Location = new System.Drawing.Point(228, 280);
 			this.sfNumericTextBox4.Name = "sfNumericTextBox4";
 			this.sfNumericTextBox4.Size = new System.Drawing.Size(100, 23);
-			this.sfNumericTextBox4.TabIndex = 45;
+			this.sfNumericTextBox4.TabIndex = 12;
 			this.sfNumericTextBox4.Text = "100";
 			this.sfNumericTextBox4.Value = 100D;
 			this.sfNumericTextBox4.TextChanged += new System.EventHandler(this.sfNumericTextBox4_TextChanged);
 			// 
 			// metroLabel11
 			// 
-			this.metroLabel11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.metroLabel11.Location = new System.Drawing.Point(175, 311);
+			this.metroLabel11.Location = new System.Drawing.Point(175, 309);
 			this.metroLabel11.Name = "metroLabel11";
 			this.metroLabel11.Size = new System.Drawing.Size(47, 23);
 			this.metroLabel11.TabIndex = 44;
@@ -359,23 +346,21 @@
 			// 
 			// sfNumericTextBox3
 			// 
-			this.sfNumericTextBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.sfNumericTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.sfNumericTextBox3.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
 			this.sfNumericTextBox3.ForeColor = System.Drawing.SystemColors.WindowText;
 			this.sfNumericTextBox3.HideTrailingZeros = true;
-			this.sfNumericTextBox3.Location = new System.Drawing.Point(228, 311);
+			this.sfNumericTextBox3.Location = new System.Drawing.Point(228, 309);
 			this.sfNumericTextBox3.Name = "sfNumericTextBox3";
 			this.sfNumericTextBox3.Size = new System.Drawing.Size(100, 23);
-			this.sfNumericTextBox3.TabIndex = 43;
+			this.sfNumericTextBox3.TabIndex = 13;
 			this.sfNumericTextBox3.Text = "100";
 			this.sfNumericTextBox3.Value = 100D;
 			this.sfNumericTextBox3.TextChanged += new System.EventHandler(this.sfNumericTextBox3_TextChanged);
 			// 
 			// metroLabel10
 			// 
-			this.metroLabel10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.metroLabel10.Location = new System.Drawing.Point(175, 340);
+			this.metroLabel10.Location = new System.Drawing.Point(175, 338);
 			this.metroLabel10.Name = "metroLabel10";
 			this.metroLabel10.Size = new System.Drawing.Size(47, 23);
 			this.metroLabel10.TabIndex = 42;
@@ -383,23 +368,21 @@
 			// 
 			// sfNumericTextBox2
 			// 
-			this.sfNumericTextBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.sfNumericTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.sfNumericTextBox2.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
 			this.sfNumericTextBox2.ForeColor = System.Drawing.SystemColors.WindowText;
 			this.sfNumericTextBox2.HideTrailingZeros = true;
-			this.sfNumericTextBox2.Location = new System.Drawing.Point(228, 340);
+			this.sfNumericTextBox2.Location = new System.Drawing.Point(228, 338);
 			this.sfNumericTextBox2.Name = "sfNumericTextBox2";
 			this.sfNumericTextBox2.Size = new System.Drawing.Size(100, 23);
-			this.sfNumericTextBox2.TabIndex = 41;
+			this.sfNumericTextBox2.TabIndex = 14;
 			this.sfNumericTextBox2.Text = "100";
 			this.sfNumericTextBox2.Value = 100D;
 			this.sfNumericTextBox2.TextChanged += new System.EventHandler(this.sfNumericTextBox2_TextChanged);
 			// 
 			// metroLabel9
 			// 
-			this.metroLabel9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.metroLabel9.Location = new System.Drawing.Point(14, 282);
+			this.metroLabel9.Location = new System.Drawing.Point(14, 280);
 			this.metroLabel9.Name = "metroLabel9";
 			this.metroLabel9.Size = new System.Drawing.Size(47, 23);
 			this.metroLabel9.TabIndex = 40;
@@ -407,25 +390,23 @@
 			// 
 			// sfNumericTextBox1
 			// 
-			this.sfNumericTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.sfNumericTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.sfNumericTextBox1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
 			this.sfNumericTextBox1.ForeColor = System.Drawing.SystemColors.WindowText;
 			this.sfNumericTextBox1.HideTrailingZeros = true;
-			this.sfNumericTextBox1.Location = new System.Drawing.Point(67, 282);
+			this.sfNumericTextBox1.Location = new System.Drawing.Point(67, 280);
 			this.sfNumericTextBox1.Name = "sfNumericTextBox1";
 			this.sfNumericTextBox1.Size = new System.Drawing.Size(100, 23);
-			this.sfNumericTextBox1.TabIndex = 39;
+			this.sfNumericTextBox1.TabIndex = 7;
 			this.sfNumericTextBox1.Text = "150";
 			this.sfNumericTextBox1.Value = 150D;
 			this.sfNumericTextBox1.TextChanged += new System.EventHandler(this.sfNumericTextBox1_TextChanged);
 			// 
 			// metroLabel3
 			// 
-			this.metroLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.metroLabel3.FontSize = MetroFramework.MetroLabelSize.Tall;
 			this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-			this.metroLabel3.Location = new System.Drawing.Point(14, 252);
+			this.metroLabel3.Location = new System.Drawing.Point(14, 250);
 			this.metroLabel3.Name = "metroLabel3";
 			this.metroLabel3.Size = new System.Drawing.Size(58, 23);
 			this.metroLabel3.TabIndex = 38;
@@ -437,7 +418,7 @@
 			this.metroTile1.Name = "metroTile1";
 			this.metroTile1.Size = new System.Drawing.Size(28, 28);
 			this.metroTile1.Style = MetroFramework.MetroColorStyle.White;
-			this.metroTile1.TabIndex = 63;
+			this.metroTile1.TabIndex = 6;
 			this.metroTile1.Text = " ";
 			this.metroTile1.Theme = MetroFramework.MetroThemeStyle.Light;
 			this.metroTile1.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile1.TileImage")));
@@ -452,7 +433,7 @@
 			this.metroTextBox4.Name = "metroTextBox4";
 			this.metroTextBox4.Size = new System.Drawing.Size(190, 23);
 			this.metroTextBox4.Style = MetroFramework.MetroColorStyle.Orange;
-			this.metroTextBox4.TabIndex = 62;
+			this.metroTextBox4.TabIndex = 5;
 			this.metroTextBox4.Text = "Believers in Science Studio";
 			// 
 			// metroLabel8
@@ -470,7 +451,7 @@
 			this.metroTextBox3.Name = "metroTextBox3";
 			this.metroTextBox3.Size = new System.Drawing.Size(190, 23);
 			this.metroTextBox3.Style = MetroFramework.MetroColorStyle.Orange;
-			this.metroTextBox3.TabIndex = 60;
+			this.metroTextBox3.TabIndex = 4;
 			this.metroTextBox3.Text = "本班";
 			this.metroTextBox3.TextChanged += new System.EventHandler(this.metroTextBox3_TextChanged);
 			// 
@@ -489,7 +470,7 @@
 			this.metroTextBox2.Name = "metroTextBox2";
 			this.metroTextBox2.Size = new System.Drawing.Size(190, 23);
 			this.metroTextBox2.Style = MetroFramework.MetroColorStyle.Orange;
-			this.metroTextBox2.TabIndex = 58;
+			this.metroTextBox2.TabIndex = 3;
 			this.metroTextBox2.Text = "成绩报告";
 			this.metroTextBox2.TextChanged += new System.EventHandler(this.metroTextBox2_TextChanged);
 			// 
@@ -506,16 +487,16 @@
 			// 
 			this.continuebtn.AccessibleName = "Button";
 			this.continuebtn.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-			this.continuebtn.Location = new System.Drawing.Point(386, 350);
+			this.continuebtn.Location = new System.Drawing.Point(703, 412);
 			this.continuebtn.Name = "continuebtn";
 			this.continuebtn.Size = new System.Drawing.Size(107, 43);
-			this.continuebtn.TabIndex = 64;
+			this.continuebtn.TabIndex = 52;
 			this.continuebtn.Text = "下一步(&N)";
 			this.continuebtn.Click += new System.EventHandler(this.continuebtn_Click);
 			// 
 			// metroLabel18
 			// 
-			this.metroLabel18.Location = new System.Drawing.Point(454, 319);
+			this.metroLabel18.Location = new System.Drawing.Point(339, 371);
 			this.metroLabel18.Name = "metroLabel18";
 			this.metroLabel18.Size = new System.Drawing.Size(47, 23);
 			this.metroLabel18.TabIndex = 83;
@@ -529,19 +510,19 @@
 			this.sfNumericTextBox10.ForeColor = System.Drawing.SystemColors.WindowText;
 			this.sfNumericTextBox10.FormatMode = Syncfusion.WinForms.Input.Enums.FormatMode.Percent;
 			this.sfNumericTextBox10.HideTrailingZeros = true;
-			this.sfNumericTextBox10.Location = new System.Drawing.Point(507, 319);
+			this.sfNumericTextBox10.Location = new System.Drawing.Point(392, 371);
 			this.sfNumericTextBox10.MaxValue = 100D;
 			this.sfNumericTextBox10.MinValue = 0D;
 			this.sfNumericTextBox10.Name = "sfNumericTextBox10";
 			this.sfNumericTextBox10.Size = new System.Drawing.Size(100, 23);
-			this.sfNumericTextBox10.TabIndex = 82;
+			this.sfNumericTextBox10.TabIndex = 48;
 			this.sfNumericTextBox10.Text = "100.00%";
 			this.sfNumericTextBox10.Value = 100D;
 			this.sfNumericTextBox10.TextChanged += new System.EventHandler(this.sfNumericTextBox10_TextChanged);
 			// 
 			// metroLabel19
 			// 
-			this.metroLabel19.Location = new System.Drawing.Point(454, 112);
+			this.metroLabel19.Location = new System.Drawing.Point(339, 164);
 			this.metroLabel19.Name = "metroLabel19";
 			this.metroLabel19.Size = new System.Drawing.Size(47, 23);
 			this.metroLabel19.TabIndex = 81;
@@ -555,19 +536,19 @@
 			this.sfNumericTextBox11.ForeColor = System.Drawing.SystemColors.WindowText;
 			this.sfNumericTextBox11.FormatMode = Syncfusion.WinForms.Input.Enums.FormatMode.Percent;
 			this.sfNumericTextBox11.HideTrailingZeros = true;
-			this.sfNumericTextBox11.Location = new System.Drawing.Point(507, 112);
+			this.sfNumericTextBox11.Location = new System.Drawing.Point(392, 164);
 			this.sfNumericTextBox11.MaxValue = 100D;
 			this.sfNumericTextBox11.MinValue = 0D;
 			this.sfNumericTextBox11.Name = "sfNumericTextBox11";
 			this.sfNumericTextBox11.Size = new System.Drawing.Size(100, 23);
-			this.sfNumericTextBox11.TabIndex = 80;
+			this.sfNumericTextBox11.TabIndex = 20;
 			this.sfNumericTextBox11.Text = "100.00%";
 			this.sfNumericTextBox11.Value = 100D;
 			this.sfNumericTextBox11.TextChanged += new System.EventHandler(this.sfNumericTextBox11_TextChanged);
 			// 
 			// metroLabel20
 			// 
-			this.metroLabel20.Location = new System.Drawing.Point(454, 142);
+			this.metroLabel20.Location = new System.Drawing.Point(339, 194);
 			this.metroLabel20.Name = "metroLabel20";
 			this.metroLabel20.Size = new System.Drawing.Size(47, 23);
 			this.metroLabel20.TabIndex = 79;
@@ -581,19 +562,19 @@
 			this.sfNumericTextBox12.ForeColor = System.Drawing.SystemColors.WindowText;
 			this.sfNumericTextBox12.FormatMode = Syncfusion.WinForms.Input.Enums.FormatMode.Percent;
 			this.sfNumericTextBox12.HideTrailingZeros = true;
-			this.sfNumericTextBox12.Location = new System.Drawing.Point(507, 142);
+			this.sfNumericTextBox12.Location = new System.Drawing.Point(392, 194);
 			this.sfNumericTextBox12.MaxValue = 100D;
 			this.sfNumericTextBox12.MinValue = 0D;
 			this.sfNumericTextBox12.Name = "sfNumericTextBox12";
 			this.sfNumericTextBox12.Size = new System.Drawing.Size(100, 23);
-			this.sfNumericTextBox12.TabIndex = 78;
+			this.sfNumericTextBox12.TabIndex = 24;
 			this.sfNumericTextBox12.Text = "100.00%";
 			this.sfNumericTextBox12.Value = 100D;
 			this.sfNumericTextBox12.TextChanged += new System.EventHandler(this.sfNumericTextBox12_TextChanged);
 			// 
 			// metroLabel21
 			// 
-			this.metroLabel21.Location = new System.Drawing.Point(454, 171);
+			this.metroLabel21.Location = new System.Drawing.Point(339, 223);
 			this.metroLabel21.Name = "metroLabel21";
 			this.metroLabel21.Size = new System.Drawing.Size(47, 23);
 			this.metroLabel21.TabIndex = 77;
@@ -607,19 +588,19 @@
 			this.sfNumericTextBox13.ForeColor = System.Drawing.SystemColors.WindowText;
 			this.sfNumericTextBox13.FormatMode = Syncfusion.WinForms.Input.Enums.FormatMode.Percent;
 			this.sfNumericTextBox13.HideTrailingZeros = true;
-			this.sfNumericTextBox13.Location = new System.Drawing.Point(507, 171);
+			this.sfNumericTextBox13.Location = new System.Drawing.Point(392, 223);
 			this.sfNumericTextBox13.MaxValue = 100D;
 			this.sfNumericTextBox13.MinValue = 0D;
 			this.sfNumericTextBox13.Name = "sfNumericTextBox13";
 			this.sfNumericTextBox13.Size = new System.Drawing.Size(100, 23);
-			this.sfNumericTextBox13.TabIndex = 76;
+			this.sfNumericTextBox13.TabIndex = 28;
 			this.sfNumericTextBox13.Text = "100.00%";
 			this.sfNumericTextBox13.Value = 100D;
 			this.sfNumericTextBox13.TextChanged += new System.EventHandler(this.sfNumericTextBox13_TextChanged);
 			// 
 			// metroLabel22
 			// 
-			this.metroLabel22.Location = new System.Drawing.Point(454, 203);
+			this.metroLabel22.Location = new System.Drawing.Point(339, 255);
 			this.metroLabel22.Name = "metroLabel22";
 			this.metroLabel22.Size = new System.Drawing.Size(47, 23);
 			this.metroLabel22.TabIndex = 75;
@@ -633,19 +614,19 @@
 			this.sfNumericTextBox14.ForeColor = System.Drawing.SystemColors.WindowText;
 			this.sfNumericTextBox14.FormatMode = Syncfusion.WinForms.Input.Enums.FormatMode.Percent;
 			this.sfNumericTextBox14.HideTrailingZeros = true;
-			this.sfNumericTextBox14.Location = new System.Drawing.Point(507, 203);
+			this.sfNumericTextBox14.Location = new System.Drawing.Point(392, 255);
 			this.sfNumericTextBox14.MaxValue = 100D;
 			this.sfNumericTextBox14.MinValue = 0D;
 			this.sfNumericTextBox14.Name = "sfNumericTextBox14";
 			this.sfNumericTextBox14.Size = new System.Drawing.Size(100, 23);
-			this.sfNumericTextBox14.TabIndex = 74;
+			this.sfNumericTextBox14.TabIndex = 32;
 			this.sfNumericTextBox14.Text = "100.00%";
 			this.sfNumericTextBox14.Value = 100D;
 			this.sfNumericTextBox14.TextChanged += new System.EventHandler(this.sfNumericTextBox14_TextChanged);
 			// 
 			// metroLabel23
 			// 
-			this.metroLabel23.Location = new System.Drawing.Point(454, 232);
+			this.metroLabel23.Location = new System.Drawing.Point(339, 284);
 			this.metroLabel23.Name = "metroLabel23";
 			this.metroLabel23.Size = new System.Drawing.Size(47, 23);
 			this.metroLabel23.TabIndex = 73;
@@ -659,19 +640,19 @@
 			this.sfNumericTextBox15.ForeColor = System.Drawing.SystemColors.WindowText;
 			this.sfNumericTextBox15.FormatMode = Syncfusion.WinForms.Input.Enums.FormatMode.Percent;
 			this.sfNumericTextBox15.HideTrailingZeros = true;
-			this.sfNumericTextBox15.Location = new System.Drawing.Point(507, 232);
+			this.sfNumericTextBox15.Location = new System.Drawing.Point(392, 284);
 			this.sfNumericTextBox15.MaxValue = 100D;
 			this.sfNumericTextBox15.MinValue = 0D;
 			this.sfNumericTextBox15.Name = "sfNumericTextBox15";
 			this.sfNumericTextBox15.Size = new System.Drawing.Size(100, 23);
-			this.sfNumericTextBox15.TabIndex = 72;
+			this.sfNumericTextBox15.TabIndex = 36;
 			this.sfNumericTextBox15.Text = "100.00%";
 			this.sfNumericTextBox15.Value = 100D;
 			this.sfNumericTextBox15.TextChanged += new System.EventHandler(this.sfNumericTextBox15_TextChanged);
 			// 
 			// metroLabel24
 			// 
-			this.metroLabel24.Location = new System.Drawing.Point(454, 261);
+			this.metroLabel24.Location = new System.Drawing.Point(339, 313);
 			this.metroLabel24.Name = "metroLabel24";
 			this.metroLabel24.Size = new System.Drawing.Size(47, 23);
 			this.metroLabel24.TabIndex = 71;
@@ -685,19 +666,19 @@
 			this.sfNumericTextBox16.ForeColor = System.Drawing.SystemColors.WindowText;
 			this.sfNumericTextBox16.FormatMode = Syncfusion.WinForms.Input.Enums.FormatMode.Percent;
 			this.sfNumericTextBox16.HideTrailingZeros = true;
-			this.sfNumericTextBox16.Location = new System.Drawing.Point(507, 261);
+			this.sfNumericTextBox16.Location = new System.Drawing.Point(392, 313);
 			this.sfNumericTextBox16.MaxValue = 100D;
 			this.sfNumericTextBox16.MinValue = 0D;
 			this.sfNumericTextBox16.Name = "sfNumericTextBox16";
 			this.sfNumericTextBox16.Size = new System.Drawing.Size(100, 23);
-			this.sfNumericTextBox16.TabIndex = 70;
+			this.sfNumericTextBox16.TabIndex = 40;
 			this.sfNumericTextBox16.Text = "100.00%";
 			this.sfNumericTextBox16.Value = 100D;
 			this.sfNumericTextBox16.TextChanged += new System.EventHandler(this.sfNumericTextBox16_TextChanged);
 			// 
 			// metroLabel25
 			// 
-			this.metroLabel25.Location = new System.Drawing.Point(454, 290);
+			this.metroLabel25.Location = new System.Drawing.Point(339, 342);
 			this.metroLabel25.Name = "metroLabel25";
 			this.metroLabel25.Size = new System.Drawing.Size(47, 23);
 			this.metroLabel25.TabIndex = 69;
@@ -711,19 +692,19 @@
 			this.sfNumericTextBox17.ForeColor = System.Drawing.SystemColors.WindowText;
 			this.sfNumericTextBox17.FormatMode = Syncfusion.WinForms.Input.Enums.FormatMode.Percent;
 			this.sfNumericTextBox17.HideTrailingZeros = true;
-			this.sfNumericTextBox17.Location = new System.Drawing.Point(507, 290);
+			this.sfNumericTextBox17.Location = new System.Drawing.Point(392, 342);
 			this.sfNumericTextBox17.MaxValue = 100D;
 			this.sfNumericTextBox17.MinValue = 0D;
 			this.sfNumericTextBox17.Name = "sfNumericTextBox17";
 			this.sfNumericTextBox17.Size = new System.Drawing.Size(100, 23);
-			this.sfNumericTextBox17.TabIndex = 68;
+			this.sfNumericTextBox17.TabIndex = 44;
 			this.sfNumericTextBox17.Text = "100.00%";
 			this.sfNumericTextBox17.Value = 100D;
 			this.sfNumericTextBox17.TextChanged += new System.EventHandler(this.sfNumericTextBox17_TextChanged);
 			// 
 			// metroLabel26
 			// 
-			this.metroLabel26.Location = new System.Drawing.Point(454, 83);
+			this.metroLabel26.Location = new System.Drawing.Point(339, 135);
 			this.metroLabel26.Name = "metroLabel26";
 			this.metroLabel26.Size = new System.Drawing.Size(47, 23);
 			this.metroLabel26.TabIndex = 67;
@@ -737,12 +718,12 @@
 			this.sfNumericTextBox18.ForeColor = System.Drawing.SystemColors.WindowText;
 			this.sfNumericTextBox18.FormatMode = Syncfusion.WinForms.Input.Enums.FormatMode.Percent;
 			this.sfNumericTextBox18.HideTrailingZeros = true;
-			this.sfNumericTextBox18.Location = new System.Drawing.Point(507, 83);
+			this.sfNumericTextBox18.Location = new System.Drawing.Point(392, 135);
 			this.sfNumericTextBox18.MaxValue = 100D;
 			this.sfNumericTextBox18.MinValue = 0D;
 			this.sfNumericTextBox18.Name = "sfNumericTextBox18";
 			this.sfNumericTextBox18.Size = new System.Drawing.Size(100, 23);
-			this.sfNumericTextBox18.TabIndex = 66;
+			this.sfNumericTextBox18.TabIndex = 16;
 			this.sfNumericTextBox18.Text = "100.00%";
 			this.sfNumericTextBox18.Value = 100D;
 			this.sfNumericTextBox18.TextChanged += new System.EventHandler(this.sfNumericTextBox18_TextChanged);
@@ -751,7 +732,7 @@
 			// 
 			this.metroLabel27.FontSize = MetroFramework.MetroLabelSize.Tall;
 			this.metroLabel27.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-			this.metroLabel27.Location = new System.Drawing.Point(454, 11);
+			this.metroLabel27.Location = new System.Drawing.Point(392, 65);
 			this.metroLabel27.Name = "metroLabel27";
 			this.metroLabel27.Size = new System.Drawing.Size(95, 23);
 			this.metroLabel27.TabIndex = 65;
@@ -765,12 +746,12 @@
 			this.sfNumericTextBox19.ForeColor = System.Drawing.SystemColors.WindowText;
 			this.sfNumericTextBox19.FormatMode = Syncfusion.WinForms.Input.Enums.FormatMode.Percent;
 			this.sfNumericTextBox19.HideTrailingZeros = true;
-			this.sfNumericTextBox19.Location = new System.Drawing.Point(613, 319);
+			this.sfNumericTextBox19.Location = new System.Drawing.Point(498, 371);
 			this.sfNumericTextBox19.MaxValue = 100D;
 			this.sfNumericTextBox19.MinValue = 0D;
 			this.sfNumericTextBox19.Name = "sfNumericTextBox19";
 			this.sfNumericTextBox19.Size = new System.Drawing.Size(100, 23);
-			this.sfNumericTextBox19.TabIndex = 92;
+			this.sfNumericTextBox19.TabIndex = 49;
 			this.sfNumericTextBox19.Text = "100.00%";
 			this.sfNumericTextBox19.Value = 100D;
 			// 
@@ -781,12 +762,12 @@
 			this.sfNumericTextBox20.ForeColor = System.Drawing.SystemColors.WindowText;
 			this.sfNumericTextBox20.FormatMode = Syncfusion.WinForms.Input.Enums.FormatMode.Percent;
 			this.sfNumericTextBox20.HideTrailingZeros = true;
-			this.sfNumericTextBox20.Location = new System.Drawing.Point(613, 112);
+			this.sfNumericTextBox20.Location = new System.Drawing.Point(498, 164);
 			this.sfNumericTextBox20.MaxValue = 100D;
 			this.sfNumericTextBox20.MinValue = 0D;
 			this.sfNumericTextBox20.Name = "sfNumericTextBox20";
 			this.sfNumericTextBox20.Size = new System.Drawing.Size(100, 23);
-			this.sfNumericTextBox20.TabIndex = 91;
+			this.sfNumericTextBox20.TabIndex = 21;
 			this.sfNumericTextBox20.Text = "100.00%";
 			this.sfNumericTextBox20.Value = 100D;
 			// 
@@ -797,12 +778,12 @@
 			this.sfNumericTextBox21.ForeColor = System.Drawing.SystemColors.WindowText;
 			this.sfNumericTextBox21.FormatMode = Syncfusion.WinForms.Input.Enums.FormatMode.Percent;
 			this.sfNumericTextBox21.HideTrailingZeros = true;
-			this.sfNumericTextBox21.Location = new System.Drawing.Point(613, 142);
+			this.sfNumericTextBox21.Location = new System.Drawing.Point(498, 194);
 			this.sfNumericTextBox21.MaxValue = 100D;
 			this.sfNumericTextBox21.MinValue = 0D;
 			this.sfNumericTextBox21.Name = "sfNumericTextBox21";
 			this.sfNumericTextBox21.Size = new System.Drawing.Size(100, 23);
-			this.sfNumericTextBox21.TabIndex = 90;
+			this.sfNumericTextBox21.TabIndex = 25;
 			this.sfNumericTextBox21.Text = "100.00%";
 			this.sfNumericTextBox21.Value = 100D;
 			// 
@@ -813,12 +794,12 @@
 			this.sfNumericTextBox22.ForeColor = System.Drawing.SystemColors.WindowText;
 			this.sfNumericTextBox22.FormatMode = Syncfusion.WinForms.Input.Enums.FormatMode.Percent;
 			this.sfNumericTextBox22.HideTrailingZeros = true;
-			this.sfNumericTextBox22.Location = new System.Drawing.Point(613, 171);
+			this.sfNumericTextBox22.Location = new System.Drawing.Point(498, 223);
 			this.sfNumericTextBox22.MaxValue = 100D;
 			this.sfNumericTextBox22.MinValue = 0D;
 			this.sfNumericTextBox22.Name = "sfNumericTextBox22";
 			this.sfNumericTextBox22.Size = new System.Drawing.Size(100, 23);
-			this.sfNumericTextBox22.TabIndex = 89;
+			this.sfNumericTextBox22.TabIndex = 29;
 			this.sfNumericTextBox22.Text = "100.00%";
 			this.sfNumericTextBox22.Value = 100D;
 			// 
@@ -829,12 +810,12 @@
 			this.sfNumericTextBox23.ForeColor = System.Drawing.SystemColors.WindowText;
 			this.sfNumericTextBox23.FormatMode = Syncfusion.WinForms.Input.Enums.FormatMode.Percent;
 			this.sfNumericTextBox23.HideTrailingZeros = true;
-			this.sfNumericTextBox23.Location = new System.Drawing.Point(613, 203);
+			this.sfNumericTextBox23.Location = new System.Drawing.Point(498, 255);
 			this.sfNumericTextBox23.MaxValue = 100D;
 			this.sfNumericTextBox23.MinValue = 0D;
 			this.sfNumericTextBox23.Name = "sfNumericTextBox23";
 			this.sfNumericTextBox23.Size = new System.Drawing.Size(100, 23);
-			this.sfNumericTextBox23.TabIndex = 88;
+			this.sfNumericTextBox23.TabIndex = 33;
 			this.sfNumericTextBox23.Text = "100.00%";
 			this.sfNumericTextBox23.Value = 100D;
 			// 
@@ -845,12 +826,12 @@
 			this.sfNumericTextBox24.ForeColor = System.Drawing.SystemColors.WindowText;
 			this.sfNumericTextBox24.FormatMode = Syncfusion.WinForms.Input.Enums.FormatMode.Percent;
 			this.sfNumericTextBox24.HideTrailingZeros = true;
-			this.sfNumericTextBox24.Location = new System.Drawing.Point(613, 232);
+			this.sfNumericTextBox24.Location = new System.Drawing.Point(498, 284);
 			this.sfNumericTextBox24.MaxValue = 100D;
 			this.sfNumericTextBox24.MinValue = 0D;
 			this.sfNumericTextBox24.Name = "sfNumericTextBox24";
 			this.sfNumericTextBox24.Size = new System.Drawing.Size(100, 23);
-			this.sfNumericTextBox24.TabIndex = 87;
+			this.sfNumericTextBox24.TabIndex = 37;
 			this.sfNumericTextBox24.Text = "100.00%";
 			this.sfNumericTextBox24.Value = 100D;
 			// 
@@ -861,12 +842,12 @@
 			this.sfNumericTextBox25.ForeColor = System.Drawing.SystemColors.WindowText;
 			this.sfNumericTextBox25.FormatMode = Syncfusion.WinForms.Input.Enums.FormatMode.Percent;
 			this.sfNumericTextBox25.HideTrailingZeros = true;
-			this.sfNumericTextBox25.Location = new System.Drawing.Point(613, 261);
+			this.sfNumericTextBox25.Location = new System.Drawing.Point(498, 313);
 			this.sfNumericTextBox25.MaxValue = 100D;
 			this.sfNumericTextBox25.MinValue = 0D;
 			this.sfNumericTextBox25.Name = "sfNumericTextBox25";
 			this.sfNumericTextBox25.Size = new System.Drawing.Size(100, 23);
-			this.sfNumericTextBox25.TabIndex = 86;
+			this.sfNumericTextBox25.TabIndex = 41;
 			this.sfNumericTextBox25.Text = "100.00%";
 			this.sfNumericTextBox25.Value = 100D;
 			// 
@@ -877,12 +858,12 @@
 			this.sfNumericTextBox26.ForeColor = System.Drawing.SystemColors.WindowText;
 			this.sfNumericTextBox26.FormatMode = Syncfusion.WinForms.Input.Enums.FormatMode.Percent;
 			this.sfNumericTextBox26.HideTrailingZeros = true;
-			this.sfNumericTextBox26.Location = new System.Drawing.Point(613, 290);
+			this.sfNumericTextBox26.Location = new System.Drawing.Point(498, 342);
 			this.sfNumericTextBox26.MaxValue = 100D;
 			this.sfNumericTextBox26.MinValue = 0D;
 			this.sfNumericTextBox26.Name = "sfNumericTextBox26";
 			this.sfNumericTextBox26.Size = new System.Drawing.Size(100, 23);
-			this.sfNumericTextBox26.TabIndex = 85;
+			this.sfNumericTextBox26.TabIndex = 45;
 			this.sfNumericTextBox26.Text = "100.00%";
 			this.sfNumericTextBox26.Value = 100D;
 			// 
@@ -893,12 +874,12 @@
 			this.sfNumericTextBox27.ForeColor = System.Drawing.SystemColors.WindowText;
 			this.sfNumericTextBox27.FormatMode = Syncfusion.WinForms.Input.Enums.FormatMode.Percent;
 			this.sfNumericTextBox27.HideTrailingZeros = true;
-			this.sfNumericTextBox27.Location = new System.Drawing.Point(613, 83);
+			this.sfNumericTextBox27.Location = new System.Drawing.Point(498, 135);
 			this.sfNumericTextBox27.MaxValue = 100D;
 			this.sfNumericTextBox27.MinValue = 0D;
 			this.sfNumericTextBox27.Name = "sfNumericTextBox27";
 			this.sfNumericTextBox27.Size = new System.Drawing.Size(100, 23);
-			this.sfNumericTextBox27.TabIndex = 84;
+			this.sfNumericTextBox27.TabIndex = 17;
 			this.sfNumericTextBox27.Text = "100.00%";
 			this.sfNumericTextBox27.Value = 100D;
 			// 
@@ -909,12 +890,12 @@
 			this.sfNumericTextBox28.ForeColor = System.Drawing.SystemColors.WindowText;
 			this.sfNumericTextBox28.FormatMode = Syncfusion.WinForms.Input.Enums.FormatMode.Percent;
 			this.sfNumericTextBox28.HideTrailingZeros = true;
-			this.sfNumericTextBox28.Location = new System.Drawing.Point(719, 319);
+			this.sfNumericTextBox28.Location = new System.Drawing.Point(604, 371);
 			this.sfNumericTextBox28.MaxValue = 100D;
 			this.sfNumericTextBox28.MinValue = 0D;
 			this.sfNumericTextBox28.Name = "sfNumericTextBox28";
 			this.sfNumericTextBox28.Size = new System.Drawing.Size(100, 23);
-			this.sfNumericTextBox28.TabIndex = 101;
+			this.sfNumericTextBox28.TabIndex = 50;
 			this.sfNumericTextBox28.Text = "100.00%";
 			this.sfNumericTextBox28.Value = 100D;
 			// 
@@ -925,12 +906,12 @@
 			this.sfNumericTextBox29.ForeColor = System.Drawing.SystemColors.WindowText;
 			this.sfNumericTextBox29.FormatMode = Syncfusion.WinForms.Input.Enums.FormatMode.Percent;
 			this.sfNumericTextBox29.HideTrailingZeros = true;
-			this.sfNumericTextBox29.Location = new System.Drawing.Point(719, 112);
+			this.sfNumericTextBox29.Location = new System.Drawing.Point(604, 164);
 			this.sfNumericTextBox29.MaxValue = 100D;
 			this.sfNumericTextBox29.MinValue = 0D;
 			this.sfNumericTextBox29.Name = "sfNumericTextBox29";
 			this.sfNumericTextBox29.Size = new System.Drawing.Size(100, 23);
-			this.sfNumericTextBox29.TabIndex = 100;
+			this.sfNumericTextBox29.TabIndex = 22;
 			this.sfNumericTextBox29.Text = "100.00%";
 			this.sfNumericTextBox29.Value = 100D;
 			// 
@@ -941,12 +922,12 @@
 			this.sfNumericTextBox30.ForeColor = System.Drawing.SystemColors.WindowText;
 			this.sfNumericTextBox30.FormatMode = Syncfusion.WinForms.Input.Enums.FormatMode.Percent;
 			this.sfNumericTextBox30.HideTrailingZeros = true;
-			this.sfNumericTextBox30.Location = new System.Drawing.Point(719, 142);
+			this.sfNumericTextBox30.Location = new System.Drawing.Point(604, 194);
 			this.sfNumericTextBox30.MaxValue = 100D;
 			this.sfNumericTextBox30.MinValue = 0D;
 			this.sfNumericTextBox30.Name = "sfNumericTextBox30";
 			this.sfNumericTextBox30.Size = new System.Drawing.Size(100, 23);
-			this.sfNumericTextBox30.TabIndex = 99;
+			this.sfNumericTextBox30.TabIndex = 26;
 			this.sfNumericTextBox30.Text = "100.00%";
 			this.sfNumericTextBox30.Value = 100D;
 			// 
@@ -957,12 +938,12 @@
 			this.sfNumericTextBox31.ForeColor = System.Drawing.SystemColors.WindowText;
 			this.sfNumericTextBox31.FormatMode = Syncfusion.WinForms.Input.Enums.FormatMode.Percent;
 			this.sfNumericTextBox31.HideTrailingZeros = true;
-			this.sfNumericTextBox31.Location = new System.Drawing.Point(719, 171);
+			this.sfNumericTextBox31.Location = new System.Drawing.Point(604, 223);
 			this.sfNumericTextBox31.MaxValue = 100D;
 			this.sfNumericTextBox31.MinValue = 0D;
 			this.sfNumericTextBox31.Name = "sfNumericTextBox31";
 			this.sfNumericTextBox31.Size = new System.Drawing.Size(100, 23);
-			this.sfNumericTextBox31.TabIndex = 98;
+			this.sfNumericTextBox31.TabIndex = 30;
 			this.sfNumericTextBox31.Text = "100.00%";
 			this.sfNumericTextBox31.Value = 100D;
 			// 
@@ -973,12 +954,12 @@
 			this.sfNumericTextBox32.ForeColor = System.Drawing.SystemColors.WindowText;
 			this.sfNumericTextBox32.FormatMode = Syncfusion.WinForms.Input.Enums.FormatMode.Percent;
 			this.sfNumericTextBox32.HideTrailingZeros = true;
-			this.sfNumericTextBox32.Location = new System.Drawing.Point(719, 203);
+			this.sfNumericTextBox32.Location = new System.Drawing.Point(604, 255);
 			this.sfNumericTextBox32.MaxValue = 100D;
 			this.sfNumericTextBox32.MinValue = 0D;
 			this.sfNumericTextBox32.Name = "sfNumericTextBox32";
 			this.sfNumericTextBox32.Size = new System.Drawing.Size(100, 23);
-			this.sfNumericTextBox32.TabIndex = 97;
+			this.sfNumericTextBox32.TabIndex = 34;
 			this.sfNumericTextBox32.Text = "100.00%";
 			this.sfNumericTextBox32.Value = 100D;
 			// 
@@ -989,12 +970,12 @@
 			this.sfNumericTextBox33.ForeColor = System.Drawing.SystemColors.WindowText;
 			this.sfNumericTextBox33.FormatMode = Syncfusion.WinForms.Input.Enums.FormatMode.Percent;
 			this.sfNumericTextBox33.HideTrailingZeros = true;
-			this.sfNumericTextBox33.Location = new System.Drawing.Point(719, 232);
+			this.sfNumericTextBox33.Location = new System.Drawing.Point(604, 284);
 			this.sfNumericTextBox33.MaxValue = 100D;
 			this.sfNumericTextBox33.MinValue = 0D;
 			this.sfNumericTextBox33.Name = "sfNumericTextBox33";
 			this.sfNumericTextBox33.Size = new System.Drawing.Size(100, 23);
-			this.sfNumericTextBox33.TabIndex = 96;
+			this.sfNumericTextBox33.TabIndex = 38;
 			this.sfNumericTextBox33.Text = "100.00%";
 			this.sfNumericTextBox33.Value = 100D;
 			// 
@@ -1005,12 +986,12 @@
 			this.sfNumericTextBox34.ForeColor = System.Drawing.SystemColors.WindowText;
 			this.sfNumericTextBox34.FormatMode = Syncfusion.WinForms.Input.Enums.FormatMode.Percent;
 			this.sfNumericTextBox34.HideTrailingZeros = true;
-			this.sfNumericTextBox34.Location = new System.Drawing.Point(719, 261);
+			this.sfNumericTextBox34.Location = new System.Drawing.Point(604, 313);
 			this.sfNumericTextBox34.MaxValue = 100D;
 			this.sfNumericTextBox34.MinValue = 0D;
 			this.sfNumericTextBox34.Name = "sfNumericTextBox34";
 			this.sfNumericTextBox34.Size = new System.Drawing.Size(100, 23);
-			this.sfNumericTextBox34.TabIndex = 95;
+			this.sfNumericTextBox34.TabIndex = 42;
 			this.sfNumericTextBox34.Text = "100.00%";
 			this.sfNumericTextBox34.Value = 100D;
 			// 
@@ -1021,12 +1002,12 @@
 			this.sfNumericTextBox35.ForeColor = System.Drawing.SystemColors.WindowText;
 			this.sfNumericTextBox35.FormatMode = Syncfusion.WinForms.Input.Enums.FormatMode.Percent;
 			this.sfNumericTextBox35.HideTrailingZeros = true;
-			this.sfNumericTextBox35.Location = new System.Drawing.Point(719, 290);
+			this.sfNumericTextBox35.Location = new System.Drawing.Point(604, 342);
 			this.sfNumericTextBox35.MaxValue = 100D;
 			this.sfNumericTextBox35.MinValue = 0D;
 			this.sfNumericTextBox35.Name = "sfNumericTextBox35";
 			this.sfNumericTextBox35.Size = new System.Drawing.Size(100, 23);
-			this.sfNumericTextBox35.TabIndex = 94;
+			this.sfNumericTextBox35.TabIndex = 46;
 			this.sfNumericTextBox35.Text = "100.00%";
 			this.sfNumericTextBox35.Value = 100D;
 			// 
@@ -1037,12 +1018,12 @@
 			this.sfNumericTextBox36.ForeColor = System.Drawing.SystemColors.WindowText;
 			this.sfNumericTextBox36.FormatMode = Syncfusion.WinForms.Input.Enums.FormatMode.Percent;
 			this.sfNumericTextBox36.HideTrailingZeros = true;
-			this.sfNumericTextBox36.Location = new System.Drawing.Point(719, 83);
+			this.sfNumericTextBox36.Location = new System.Drawing.Point(604, 135);
 			this.sfNumericTextBox36.MaxValue = 100D;
 			this.sfNumericTextBox36.MinValue = 0D;
 			this.sfNumericTextBox36.Name = "sfNumericTextBox36";
 			this.sfNumericTextBox36.Size = new System.Drawing.Size(100, 23);
-			this.sfNumericTextBox36.TabIndex = 93;
+			this.sfNumericTextBox36.TabIndex = 18;
 			this.sfNumericTextBox36.Text = "100.00%";
 			this.sfNumericTextBox36.Value = 100D;
 			// 
@@ -1053,12 +1034,12 @@
 			this.sfNumericTextBox37.ForeColor = System.Drawing.SystemColors.WindowText;
 			this.sfNumericTextBox37.FormatMode = Syncfusion.WinForms.Input.Enums.FormatMode.Percent;
 			this.sfNumericTextBox37.HideTrailingZeros = true;
-			this.sfNumericTextBox37.Location = new System.Drawing.Point(825, 319);
+			this.sfNumericTextBox37.Location = new System.Drawing.Point(710, 371);
 			this.sfNumericTextBox37.MaxValue = 100D;
 			this.sfNumericTextBox37.MinValue = 0D;
 			this.sfNumericTextBox37.Name = "sfNumericTextBox37";
 			this.sfNumericTextBox37.Size = new System.Drawing.Size(100, 23);
-			this.sfNumericTextBox37.TabIndex = 110;
+			this.sfNumericTextBox37.TabIndex = 51;
 			this.sfNumericTextBox37.Text = "100.00%";
 			this.sfNumericTextBox37.Value = 100D;
 			// 
@@ -1069,12 +1050,12 @@
 			this.sfNumericTextBox38.ForeColor = System.Drawing.SystemColors.WindowText;
 			this.sfNumericTextBox38.FormatMode = Syncfusion.WinForms.Input.Enums.FormatMode.Percent;
 			this.sfNumericTextBox38.HideTrailingZeros = true;
-			this.sfNumericTextBox38.Location = new System.Drawing.Point(825, 112);
+			this.sfNumericTextBox38.Location = new System.Drawing.Point(710, 164);
 			this.sfNumericTextBox38.MaxValue = 100D;
 			this.sfNumericTextBox38.MinValue = 0D;
 			this.sfNumericTextBox38.Name = "sfNumericTextBox38";
 			this.sfNumericTextBox38.Size = new System.Drawing.Size(100, 23);
-			this.sfNumericTextBox38.TabIndex = 109;
+			this.sfNumericTextBox38.TabIndex = 23;
 			this.sfNumericTextBox38.Text = "100.00%";
 			this.sfNumericTextBox38.Value = 100D;
 			// 
@@ -1085,12 +1066,12 @@
 			this.sfNumericTextBox39.ForeColor = System.Drawing.SystemColors.WindowText;
 			this.sfNumericTextBox39.FormatMode = Syncfusion.WinForms.Input.Enums.FormatMode.Percent;
 			this.sfNumericTextBox39.HideTrailingZeros = true;
-			this.sfNumericTextBox39.Location = new System.Drawing.Point(825, 142);
+			this.sfNumericTextBox39.Location = new System.Drawing.Point(710, 194);
 			this.sfNumericTextBox39.MaxValue = 100D;
 			this.sfNumericTextBox39.MinValue = 0D;
 			this.sfNumericTextBox39.Name = "sfNumericTextBox39";
 			this.sfNumericTextBox39.Size = new System.Drawing.Size(100, 23);
-			this.sfNumericTextBox39.TabIndex = 108;
+			this.sfNumericTextBox39.TabIndex = 27;
 			this.sfNumericTextBox39.Text = "100.00%";
 			this.sfNumericTextBox39.Value = 100D;
 			// 
@@ -1101,12 +1082,12 @@
 			this.sfNumericTextBox40.ForeColor = System.Drawing.SystemColors.WindowText;
 			this.sfNumericTextBox40.FormatMode = Syncfusion.WinForms.Input.Enums.FormatMode.Percent;
 			this.sfNumericTextBox40.HideTrailingZeros = true;
-			this.sfNumericTextBox40.Location = new System.Drawing.Point(825, 171);
+			this.sfNumericTextBox40.Location = new System.Drawing.Point(710, 223);
 			this.sfNumericTextBox40.MaxValue = 100D;
 			this.sfNumericTextBox40.MinValue = 0D;
 			this.sfNumericTextBox40.Name = "sfNumericTextBox40";
 			this.sfNumericTextBox40.Size = new System.Drawing.Size(100, 23);
-			this.sfNumericTextBox40.TabIndex = 107;
+			this.sfNumericTextBox40.TabIndex = 31;
 			this.sfNumericTextBox40.Text = "100.00%";
 			this.sfNumericTextBox40.Value = 100D;
 			// 
@@ -1117,12 +1098,12 @@
 			this.sfNumericTextBox41.ForeColor = System.Drawing.SystemColors.WindowText;
 			this.sfNumericTextBox41.FormatMode = Syncfusion.WinForms.Input.Enums.FormatMode.Percent;
 			this.sfNumericTextBox41.HideTrailingZeros = true;
-			this.sfNumericTextBox41.Location = new System.Drawing.Point(825, 203);
+			this.sfNumericTextBox41.Location = new System.Drawing.Point(710, 255);
 			this.sfNumericTextBox41.MaxValue = 100D;
 			this.sfNumericTextBox41.MinValue = 0D;
 			this.sfNumericTextBox41.Name = "sfNumericTextBox41";
 			this.sfNumericTextBox41.Size = new System.Drawing.Size(100, 23);
-			this.sfNumericTextBox41.TabIndex = 106;
+			this.sfNumericTextBox41.TabIndex = 35;
 			this.sfNumericTextBox41.Text = "100.00%";
 			this.sfNumericTextBox41.Value = 100D;
 			// 
@@ -1133,12 +1114,12 @@
 			this.sfNumericTextBox42.ForeColor = System.Drawing.SystemColors.WindowText;
 			this.sfNumericTextBox42.FormatMode = Syncfusion.WinForms.Input.Enums.FormatMode.Percent;
 			this.sfNumericTextBox42.HideTrailingZeros = true;
-			this.sfNumericTextBox42.Location = new System.Drawing.Point(825, 232);
+			this.sfNumericTextBox42.Location = new System.Drawing.Point(710, 284);
 			this.sfNumericTextBox42.MaxValue = 100D;
 			this.sfNumericTextBox42.MinValue = 0D;
 			this.sfNumericTextBox42.Name = "sfNumericTextBox42";
 			this.sfNumericTextBox42.Size = new System.Drawing.Size(100, 23);
-			this.sfNumericTextBox42.TabIndex = 105;
+			this.sfNumericTextBox42.TabIndex = 39;
 			this.sfNumericTextBox42.Text = "100.00%";
 			this.sfNumericTextBox42.Value = 100D;
 			// 
@@ -1149,12 +1130,12 @@
 			this.sfNumericTextBox43.ForeColor = System.Drawing.SystemColors.WindowText;
 			this.sfNumericTextBox43.FormatMode = Syncfusion.WinForms.Input.Enums.FormatMode.Percent;
 			this.sfNumericTextBox43.HideTrailingZeros = true;
-			this.sfNumericTextBox43.Location = new System.Drawing.Point(825, 261);
+			this.sfNumericTextBox43.Location = new System.Drawing.Point(710, 313);
 			this.sfNumericTextBox43.MaxValue = 100D;
 			this.sfNumericTextBox43.MinValue = 0D;
 			this.sfNumericTextBox43.Name = "sfNumericTextBox43";
 			this.sfNumericTextBox43.Size = new System.Drawing.Size(100, 23);
-			this.sfNumericTextBox43.TabIndex = 104;
+			this.sfNumericTextBox43.TabIndex = 43;
 			this.sfNumericTextBox43.Text = "100.00%";
 			this.sfNumericTextBox43.Value = 100D;
 			// 
@@ -1165,12 +1146,12 @@
 			this.sfNumericTextBox44.ForeColor = System.Drawing.SystemColors.WindowText;
 			this.sfNumericTextBox44.FormatMode = Syncfusion.WinForms.Input.Enums.FormatMode.Percent;
 			this.sfNumericTextBox44.HideTrailingZeros = true;
-			this.sfNumericTextBox44.Location = new System.Drawing.Point(825, 290);
+			this.sfNumericTextBox44.Location = new System.Drawing.Point(710, 342);
 			this.sfNumericTextBox44.MaxValue = 100D;
 			this.sfNumericTextBox44.MinValue = 0D;
 			this.sfNumericTextBox44.Name = "sfNumericTextBox44";
 			this.sfNumericTextBox44.Size = new System.Drawing.Size(100, 23);
-			this.sfNumericTextBox44.TabIndex = 103;
+			this.sfNumericTextBox44.TabIndex = 47;
 			this.sfNumericTextBox44.Text = "100.00%";
 			this.sfNumericTextBox44.Value = 100D;
 			// 
@@ -1181,19 +1162,18 @@
 			this.sfNumericTextBox45.ForeColor = System.Drawing.SystemColors.WindowText;
 			this.sfNumericTextBox45.FormatMode = Syncfusion.WinForms.Input.Enums.FormatMode.Percent;
 			this.sfNumericTextBox45.HideTrailingZeros = true;
-			this.sfNumericTextBox45.Location = new System.Drawing.Point(825, 83);
+			this.sfNumericTextBox45.Location = new System.Drawing.Point(710, 135);
 			this.sfNumericTextBox45.MaxValue = 100D;
 			this.sfNumericTextBox45.MinValue = 0D;
 			this.sfNumericTextBox45.Name = "sfNumericTextBox45";
 			this.sfNumericTextBox45.Size = new System.Drawing.Size(100, 23);
-			this.sfNumericTextBox45.TabIndex = 102;
+			this.sfNumericTextBox45.TabIndex = 19;
 			this.sfNumericTextBox45.Text = "100.00%";
 			this.sfNumericTextBox45.Value = 100D;
 			// 
 			// metroLabel28
 			// 
-			this.metroLabel28.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.metroLabel28.Location = new System.Drawing.Point(507, 57);
+			this.metroLabel28.Location = new System.Drawing.Point(392, 108);
 			this.metroLabel28.Name = "metroLabel28";
 			this.metroLabel28.Size = new System.Drawing.Size(47, 23);
 			this.metroLabel28.TabIndex = 111;
@@ -1201,8 +1181,7 @@
 			// 
 			// metroLabel30
 			// 
-			this.metroLabel30.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.metroLabel30.Location = new System.Drawing.Point(825, 55);
+			this.metroLabel30.Location = new System.Drawing.Point(710, 106);
 			this.metroLabel30.Name = "metroLabel30";
 			this.metroLabel30.Size = new System.Drawing.Size(47, 23);
 			this.metroLabel30.TabIndex = 113;
@@ -1210,8 +1189,7 @@
 			// 
 			// metroLabel31
 			// 
-			this.metroLabel31.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.metroLabel31.Location = new System.Drawing.Point(719, 55);
+			this.metroLabel31.Location = new System.Drawing.Point(604, 106);
 			this.metroLabel31.Name = "metroLabel31";
 			this.metroLabel31.Size = new System.Drawing.Size(47, 23);
 			this.metroLabel31.TabIndex = 114;
@@ -1219,8 +1197,7 @@
 			// 
 			// metroLabel32
 			// 
-			this.metroLabel32.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.metroLabel32.Location = new System.Drawing.Point(613, 55);
+			this.metroLabel32.Location = new System.Drawing.Point(498, 106);
 			this.metroLabel32.Name = "metroLabel32";
 			this.metroLabel32.Size = new System.Drawing.Size(47, 23);
 			this.metroLabel32.TabIndex = 115;
@@ -1229,8 +1206,8 @@
 			// FormatWindow
 			// 
 			this.AcceptButton = this.continuebtn;
-			this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-			this.ClientSize = new System.Drawing.Size(979, 528);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+			this.ClientSize = new System.Drawing.Size(835, 463);
 			this.Controls.Add(this.metroLabel32);
 			this.Controls.Add(this.metroLabel31);
 			this.Controls.Add(this.metroLabel30);
@@ -1416,7 +1393,7 @@
 		private System.Windows.Forms.SaveFileDialog saveFileDialog;
 		private MetroFramework.Controls.MetroTextBox metroTextBox1;
 		private MetroFramework.Controls.MetroLabel metroLabel1;
-		private Syncfusion.WinForms.Controls.SfButton dotdotdot;
+		private Windows10Btn1 dotdotdot;
 		private MetroFramework.Controls.MetroLabel metroLabel2;
 		private MetroFramework.Controls.MetroLabel metroLabel5;
 		private MetroFramework.Controls.MetroLabel metroLabel6;
@@ -1494,6 +1471,7 @@
 		private Syncfusion.WinForms.Input.SfNumericTextBox sfNumericTextBox43;
 		private Syncfusion.WinForms.Input.SfNumericTextBox sfNumericTextBox44;
 		private Syncfusion.WinForms.Input.SfNumericTextBox sfNumericTextBox45;
+		
 		private MetroFramework.Controls.MetroLabel metroLabel28;
 		private MetroFramework.Controls.MetroLabel metroLabel30;
 		private MetroFramework.Controls.MetroLabel metroLabel31;
