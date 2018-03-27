@@ -15,6 +15,8 @@ namespace BiSS.Projects.RPGen.Op
 {
 	public static  class Analyzer
 	{
+
+		
 		public static int[] CountStuNumPerLevelPerSubject(this IList<ScoreModel> li,NfSubjects sub,float fullScore,Dictionary<Level,float> spr)
 		{
 			int[] ret=new int[]{Int32.MinValue, -1,-1,-1,-1};
@@ -133,6 +135,23 @@ namespace BiSS.Projects.RPGen.Op
 		private static float get_seprated(float full,float spr)
 		{
 			return full * spr;
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="li"></param>
+		/// <param name="b">左端闭区间</param>
+		/// <param name="e">右端开区间,默认为序列尾</param>
+		/// <returns></returns>
+		public static object[] ToObjectArray<T>(this T[] li,int b=0,int e=Int32.MaxValue)
+		{
+			if (e == Int32.MaxValue)
+				e = li.Length;
+			IList<T> lis=new List<T>();
+			for (int i = b; i < e; i++)
+				lis.Add(li[i]);
+			return lis.Cast<object>().ToArray();
 		}
 		public static (object[],object[]) ReArrangeData(IList<(NfSubjects,float)> li)
 		{
@@ -456,7 +475,7 @@ namespace BiSS.Projects.RPGen.Op
 		/// <summary>
 		/// 获得高程的众数
 		/// </summary>
-		/// <param name="elevationList">传入list<int>数据</param>
+		/// <param name="elevationList">传入list<!--int--!>数据</param>
 		/// <returns></returns>
 		private static int? GetElevationMode(List<int> elevationList)
 		{

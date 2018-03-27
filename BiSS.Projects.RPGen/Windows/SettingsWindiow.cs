@@ -209,5 +209,20 @@ namespace BiSS.Projects.RPGen.Windows
 				$"A:{xxx[Level.A.Id()]}\r\n" + $"B:{xxx[Level.B.Id()]}\r\n" + $"C:{xxx[Level.C.Id()]}\r\n" + $"D:{xxx[Level.D.Id()]}\r\n"
 			);
 		}
+
+		private void windows10Btn24_Click(object sender, EventArgs e)
+		{
+
+			var li = new[] {5,8,234,345,345,345};
+			var lio0 = li.ToObjectArray();
+			var lio1 = li.ToObjectArray(2);
+			var lio2 = li.ToObjectArray(2, 5);
+			var lio3 = li.ToObjectArray(e: 3);
+			MessageBox.Show($"0:{lio0.FormatCol()}\r\n"+
+			                $"1:{lio1.FormatCol()}\r\n" +
+			                $"2:{lio2.FormatCol()}\r\n" +
+			                $"3:{lio3.FormatCol()}\r\n"
+							);
+		}
 	}
 }

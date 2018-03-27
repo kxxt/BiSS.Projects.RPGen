@@ -58,7 +58,7 @@ namespace BiSS.Projects.RPGen.Windows
 
 		private void modernButton2_Click(object sender, System.EventArgs e)
 		{
-			new DialogWindows10With1Btn().Show();
+			new FormatWindow().Show();
 			//Log($"Test#1 Started @{DateTime.Now.ToString("h:mm:ss tt zz")}.");
 			////MessageBox.Show(Application.StartupPath + @"\Web\loading.html");
 			////new IntroductionWindow().Show();

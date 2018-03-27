@@ -95,6 +95,79 @@ namespace BiSS.Projects.RPGen
 		private static string title="成绩报告";
 		private static string className="本班";
 		private static string author = "Believers in Science Studio";
+		private static Dictionary<NfSubjects, Dictionary<Level, float>> seprators=new Dictionary<NfSubjects, Dictionary<Level, float>>()
+		{
+			[NfSubjects.Zh] = new Dictionary<Level, float>()
+			{
+				[Level.A] = 0.9f,
+				[Level.B] = 0.8f,
+				[Level.C] = 0.6f,
+				[Level.D] = 0.0f
+			},
+			[NfSubjects.M] = new Dictionary<Level, float>()
+			{
+				[Level.A] = 0.9f,
+				[Level.B] = 0.8f,
+				[Level.C] = 0.6f,
+				[Level.D] = 0.0f
+			},
+			[NfSubjects.En] = new Dictionary<Level, float>()
+			{
+				[Level.A] = 0.9f,
+				[Level.B] = 0.8f,
+				[Level.C] = 0.6f,
+				[Level.D] = 0.0f
+			},
+			[NfSubjects.P] = new Dictionary<Level, float>()
+			{
+				[Level.A] = 0.9f,
+				[Level.B] = 0.8f,
+				[Level.C] = 0.6f,
+				[Level.D] = 0.0f
+			},
+			[NfSubjects.C] = new Dictionary<Level, float>()
+			{
+				[Level.A] = 0.9f,
+				[Level.B] = 0.8f,
+				[Level.C] = 0.6f,
+				[Level.D] = 0.0f
+			},
+			[NfSubjects.Po] = new Dictionary<Level, float>()
+			{
+				[Level.A] = 0.9f,
+				[Level.B] = 0.8f,
+				[Level.C] = 0.6f,
+				[Level.D] = 0.0f
+			},
+			[NfSubjects.H] = new Dictionary<Level, float>()
+			{
+				[Level.A] = 0.9f,
+				[Level.B] = 0.8f,
+				[Level.C] = 0.6f,
+				[Level.D] = 0.0f
+			},
+			[NfSubjects.G] = new Dictionary<Level, float>()
+			{
+				[Level.A] = 0.9f,
+				[Level.B] = 0.8f,
+				[Level.C] = 0.6f,
+				[Level.D] = 0.0f
+			},
+			[NfSubjects.B] = new Dictionary<Level, float>()
+			{
+				[Level.A] = 0.9f,
+				[Level.B] = 0.8f,
+				[Level.C] = 0.6f,
+				[Level.D] = 0.0f
+			},
+			[NfSubjects.All] = new Dictionary<Level, float>()
+			{
+				[Level.A] = 0.9f,
+				[Level.B] = 0.8f,
+				[Level.C] = 0.6f,
+				[Level.D] = 0.0f
+			},
+		};
 
 		public static bool DebugEnabled
 		{
@@ -226,6 +299,29 @@ namespace BiSS.Projects.RPGen
 			//seriemid.EnteredDirectlyValues = ymid.ToArray();
 			//seriemid.Name = "中位分";
 			//seriemid.EnteredDirectlyCategoryLabels = xmid.ToArray();
+			IChartShape pie1 = ws.Shapes.AddChart();
+			int[][] nperl = new int[10][];
+			string testmsg = "";
+			for(NfSubjects sub=NfSubjects.Zh;sub<=NfSubjects.All;sub++)
+			{
+				if(sub!=NfSubjects.All)
+					nperl[(int)sub]= list.CountStuNumPerLevelPerSubject(sub, Program.FullScore[sub], Program.Seprators[sub]);
+				else
+					nperl[(int)sub] = list.CountStuNumPerLevelPerSubject(sub, Program.AllFullScore, Program.Seprators[sub]);
+				string tmp___ = "";
+				for (var index = 1; index < nperl[(int) sub].Length; index++)
+				{
+					
+					int xXXx = nperl[(int) sub][index];
+					tmp___ += $"{xXXx.ToString()} , ";
+				}
+
+				testmsg += $"{sub}\t{tmp___}\r\n";
+			}
+			MessageBox.Show(testmsg);
+			pie1.Name = "等级分布示意图";
+			pie1.ChartTitle = "等级分布示意图";
+			//todoChartGen.GenPieChart(pie1,null,nperl[(int)NfSubjects.Zh].ToObjectArray(), "等级分布示意图");
 			/////////////////////////////////////////////////
 			xls.Save(pathWithoutLine+"\\"+mname+(v2007?".xlsx":".xls"));
 			wb.Close();
@@ -239,6 +335,30 @@ namespace BiSS.Projects.RPGen
 			       FullScore[NfSubjects.H] + FullScore[NfSubjects.G] + FullScore[NfSubjects.B];
 		}
 
+		public static string FormatCol<T>(this IEnumerable<T> li,string spr=" , ",Func<T,string> cast=null)
+		{
+			if (li == null)
+				return "";
+			string ret="";
+			var array = li as T[] ?? li.ToArray();
+			if (cast == null)
+			{
+				
+				for(int i=0;i<array.Length;i++)
+				{
+					ret += $"{array[i]}{((i==array.Length-1)?"":spr)}";
+				}
+			}
+			else
+			{
+				for (int i = 0; i < array.Length; i++)
+				{
+					ret += $"{cast(array[i])}{((i == array.Length-1) ? "" : spr)}";
+				}
+			}
+
+			return ret;
+		}
 		public static void UpdateDataCache()
 		{
 			suicache.Item2 = true;
@@ -279,6 +399,7 @@ namespace BiSS.Projects.RPGen
 		public static string Title { get => title; set => title = value; }
 		public static string ClassName { get => className; set => className = value; }
 		public static string Author { get => author; set => author = value; }
+		public static Dictionary<NfSubjects, Dictionary<Level, float>> Seprators { get => seprators; set => seprators = value; }
 
 		public static ExcelWindow ExcelWindow;
 		private static string log = "!Application Log!\r\n";

@@ -120,29 +120,4 @@
   <metadata name="saveFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="metroTile1.TileImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAABEZJREFUaEPtmMlrFEEUxoOKB0+uB2N0ZjQEERQV15N4EtSD4Ir6F3hQQXC76EGj
-        F5EYu3sS11xEY6LGQCBEcxFRUQQT9wSNJsElizPdM0mchfK9sUanp18v1dMzucwHPxLorldf1VRXvXol
-        RRVVlAeqZxN9cnhNQFaP+2WtMSBpb4Bhv6TGkNT/svraL2kNAUk95r8YXl1ygk3grcdPC6SRuQFZOwvG
-        ++EvEwEG1AsDOlNeFS3j4Qqnihp1Jpiohdn9nW1MFIwBA5ExJg+fX0Gnu2FJDGUbyRUYxIBP1nbxbrzX
-        ono2GTq5RHXuMcq6E2wS79Ybza5hU+DjayE6ywswUc3YJ+8+N+HMF9L8PyStCXc3bsO9CrRszFC4DXcK
-        KNoeImhB8SvaDm5HTOVV6iwIMJgd0IoFisb23h9hdZ0x9uJ7gnUPJ9nnUJK9+pFgDe/jbH/bKFtYS7c1
-        Aw7Gn6XV4RnclnPBGgxSAc1YeiXC7n2Is141acnjvjhbfyNKxjADzopqbsuZ8IQVOaTKgxpr/RQjDVO8
-        /JZgSy5HyFgUcGqPlSnROdyevaARpAd0MIqDsDSyTfbA0mn6GGe3Yel8GEoYnlc+HiNjmQFLqZLbsxEk
-        WbBt9lFBzGju0s8+rvtN9SP/nq+ui7C3g/pBtPfEdTHsgF/hq6ME0BcMr6UCWPF6QG+uriNmeCf48rfu
-        na5fScM7tiihVdymuTAlJhtbkGkMOfvEuDzOPdMP4ONwwvCOHfNl9Si3aS7Yfe5QjXOl7bN+h8KPnnrP
-        CvgObnOb5sKLB9U4F460Gz/yA/DhU+9aATtjJ7dpLrw9UY3dgofXl7DefEt3jJXDoUe9b8Mgt2kuLy4p
-        afa1jrKvGcaRp/1xtuyq8zMgE/TGbZrLqwFshm20J2vm8RRec92decTRALxaQtlnA+ZGy13OfAaOllAn
-        0VCIxZAmZM/+lsb/B5tbYIPp4DbNlSqLEI1F2HhrRGceZ596TxRH2yjWbajGIuy4G9UN4NY78T2fAlbH
-        EW7TXH8LVHSAcUeKruQ2LQQJExadyADjCMz+F8fVPLgHn6GCOAUPqZOPxthDyDgxnd5wU+wCQwGeTnN7
-        9sJyXy7nweGs1AGvlItqc9hCJXV0bnW0lNtzJmioGAI55OZb4+0s834gCkym2JUShRdpaCx0qU9z/rk+
-        dcbb2YprLtMHuNTPk0PTuC0xwbrbSQW1A0/cdPqMt7NDD8Qzz/+oW7kddxKtTmSCA6mooZ85QlKruA33
-        wkIrDKKJ7CCfeFVaRGGhFQuuZEf5AMx7VtxNK/VL5LAzOUe94NnMU4JOtsOvMWDsODdwtwlcVLfxbvKr
-        skuh6bg3Y8WMMiMEHFI4677zv6by8IUTlvtg5ioxTyHNWYBtoO2pecHIbB5uHIXVPCW0Cus2mLPjxQM+
-        xCFMR5DU/7L6KvUMUuJUVuk0MSuqqKIsVFLyB5e7EkFUhBbVAAAAAElFTkSuQmCC
-</value>
-  </data>
 </root>

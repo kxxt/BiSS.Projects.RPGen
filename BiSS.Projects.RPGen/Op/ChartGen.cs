@@ -28,5 +28,13 @@ namespace BiSS.Projects.RPGen.Op
 			
 		}
 
+		public static void GenPieChart(IChartShape ct, object[] x, object[] y, string name)
+		{
+			var s = ct.Series.Add(name,ExcelChartType.Pie);
+			s.EnteredDirectlyValues = y;
+			s.EnteredDirectlyCategoryLabels = x;
+
+		}
+
 	}
 }

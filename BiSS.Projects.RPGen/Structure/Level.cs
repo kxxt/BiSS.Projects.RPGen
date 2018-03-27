@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BiSS.Projects.RPGen.Structure
 {
-	
+	[Flags]
 	public enum Level
 	{
 		A=1,B=2,C=3,D=4
