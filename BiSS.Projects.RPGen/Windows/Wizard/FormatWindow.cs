@@ -46,18 +46,18 @@ namespace BiSS.Projects.RPGen.Windows.Wizard
 					//tbs[i, j].Location = new System.Drawing.Point(710, 342);
 					tbs[i, j].MaxValue = 100D;
 					tbs[i, j].MinValue = 0D;
-					tbs[i, j].Value = Program.Seprators[(NfSubjects) j][(Level) i];
+					tbs[i, j].Value = Program.Seprators[(NfSubjects)j][(Level)i];
 					tbs[i, j].Size = new Size(100, 23);
 					var icpy = i;
 					var jcpy = j;
 					tbs[i, j].LostFocusValidation = ValidationResetOption.MaxValue;
 					tbs[i, j].ValidationMode = ValidationMode.LostFocus;
-					
+
 					tbs[i, j].ValueChanged += (__sender, __args) =>
 					{
-						Program.Seprators[(NfSubjects) jcpy][(Level) icpy] = tbs[icpy, jcpy].Value.HasValue ? (float)(tbs[icpy, jcpy].Value.Value/100f) : 0f;
+						Program.Seprators[(NfSubjects)jcpy][(Level)icpy] = tbs[icpy, jcpy].Value.HasValue ? (float)(tbs[icpy, jcpy].Value.Value / 100f) : 0f;
 						//Log($"j:{jcpy},j:{jcpy}\r\ni:{icpy},i:{icpy}");
-						MessageBox.Show($"{tbs[icpy,jcpy].Value}\r\n{Program.Seprators[(NfSubjects)jcpy][(Level)icpy]}");
+						MessageBox.Show($"{tbs[icpy, jcpy].Value}\r\n{Program.Seprators[(NfSubjects)jcpy][(Level)icpy]}");
 
 					};
 					Controls.Add(tbs[i, j]);
@@ -116,47 +116,47 @@ namespace BiSS.Projects.RPGen.Windows.Wizard
 
 		private void sfNumericTextBox1_TextChanged(object sender, EventArgs e)
 		{
-			Program.FullScore[NfSubjects.Zh] = (float) (sfNumericTextBox1.Value ?? 150f);
+			Program.FullScore[NfSubjects.Zh] = (float)(sfNumericTextBox1.Value ?? 150f);
 		}
 
 		private void sfNumericTextBox8_TextChanged(object sender, EventArgs e)
 		{
-			Program.FullScore[NfSubjects.M] = (float) (sfNumericTextBox8.Value ?? 150f);
+			Program.FullScore[NfSubjects.M] = (float)(sfNumericTextBox8.Value ?? 150f);
 		}
 
 		private void sfNumericTextBox7_TextChanged(object sender, EventArgs e)
 		{
-			Program.FullScore[NfSubjects.En] = (float) (sfNumericTextBox7.Value ?? 150f);
+			Program.FullScore[NfSubjects.En] = (float)(sfNumericTextBox7.Value ?? 150f);
 		}
 
 		private void sfNumericTextBox6_TextChanged(object sender, EventArgs e)
 		{
-			Program.FullScore[NfSubjects.P] = (float) (sfNumericTextBox6.Value ?? 150f);
+			Program.FullScore[NfSubjects.P] = (float)(sfNumericTextBox6.Value ?? 150f);
 		}
 
 		private void sfNumericTextBox5_TextChanged(object sender, EventArgs e)
 		{
-			Program.FullScore[NfSubjects.C] = (float) (sfNumericTextBox5.Value ?? 150f);
+			Program.FullScore[NfSubjects.C] = (float)(sfNumericTextBox5.Value ?? 150f);
 		}
 
 		private void sfNumericTextBox4_TextChanged(object sender, EventArgs e)
 		{
-			Program.FullScore[NfSubjects.Po] = (float) (sfNumericTextBox4.Value ?? 150f);
+			Program.FullScore[NfSubjects.Po] = (float)(sfNumericTextBox4.Value ?? 150f);
 		}
 
 		private void sfNumericTextBox3_TextChanged(object sender, EventArgs e)
 		{
-			Program.FullScore[NfSubjects.H] = (float) (sfNumericTextBox3.Value ?? 150f);
+			Program.FullScore[NfSubjects.H] = (float)(sfNumericTextBox3.Value ?? 150f);
 		}
 
 		private void sfNumericTextBox2_TextChanged(object sender, EventArgs e)
 		{
-			Program.FullScore[NfSubjects.G] = (float) (sfNumericTextBox2.Value ?? 150f);
+			Program.FullScore[NfSubjects.G] = (float)(sfNumericTextBox2.Value ?? 150f);
 		}
 
 		private void sfNumericTextBox9_TextChanged(object sender, EventArgs e)
 		{
-			Program.FullScore[NfSubjects.B] = (float) (sfNumericTextBox9.Value ?? 150f);
+			Program.FullScore[NfSubjects.B] = (float)(sfNumericTextBox9.Value ?? 150f);
 		}
 
 		private void metroTextBox2_TextChanged(object sender, EventArgs e)
@@ -176,14 +176,14 @@ namespace BiSS.Projects.RPGen.Windows.Wizard
 				  $"\\成绩报告.{(metroToggle2.Checked ? "xlsx" : "pptx")}"
 				: metroTextBox1.Text;
 			var fi = new FileInfo(_path);
-			MessageBox.Show(fi.FullName);
+			//MessageBox.Show(fi.FullName);
 			if (!fi.Directory.Exists)
 			{
 				MessageBox.Show("路径不存在.\r\n请返回修改.", "错误");
 				return;
 			}
 
-			dynamic x=null;
+			dynamic x = null;
 			try
 			{
 				x = Program.Data.X;
@@ -193,9 +193,11 @@ namespace BiSS.Projects.RPGen.Windows.Wizard
 				if (DebugEnabled)
 					return;
 			}
-			
-			MessageBox.Show($"{fi.Name.Replace("." + fi.Extension, "")}\r\n{fi.Extension}");
+
+			//MessageBox.Show($"{fi.Name.Replace("." + fi.Extension, "")}\r\n{fi.Extension}");
 			Program.SaveExcel(x, fi.DirectoryName, fi.Name.Replace(fi.Extension, ""), fi.Extension == ".xlsx");
+			Path = _path;
+			this.Hide();
 		}
 
 		private void FormatWindow_Load(object sender, EventArgs e)
@@ -208,7 +210,7 @@ namespace BiSS.Projects.RPGen.Windows.Wizard
 
 		private void metroLabel20_Click(object sender, EventArgs e)
 		{
-		}	
+		}
 
 		private void metroLabel21_Click(object sender, EventArgs e)
 		{
@@ -242,6 +244,6 @@ namespace BiSS.Projects.RPGen.Windows.Wizard
 		{
 		}
 
-		
+
 	}
 }

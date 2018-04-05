@@ -65,5 +65,23 @@ namespace BiSS.Projects.RPGen.Structure
 					return "Undefined";
 			}
 		}
+
+		private static string[] cache=null;
+		public static string[] GetOrders()
+		{
+			if (cache != null)
+				return cache;
+			else
+			{
+				List<string> list=new List<string>();
+				for (NfSubjects s=NfSubjects.Zh;s<=NfSubjects.All;s++)
+				{
+					list.Add(s.Name());
+				}
+
+				cache = list.ToArray();
+				return cache;
+			}
+		}
 	}
 }

@@ -24,9 +24,9 @@ namespace BiSS.Projects.RPGen.Windows
 			this.Style.PressedBackColor = Color.FromArgb(153, 153, 153);
 			this.Style.FocusedBackColor = Color.FromArgb(204,204,204);
 			this.Style.FocusedBorder.Width = 3f;
-			this.Style.FocusedBorder.Color = Color.FromArgb(0,0,0);
+			this.Style.FocusedBorder.Color = Color.FromArgb(122, 122, 122);
 			//this.Style.FocusedBorder.LineJoin = LineJoin.Round;
-			
+
 			this.Style.ForeColor = Color.Black;
 			this.Style.FocusedForeColor = Color.Black;
 			this.Style.HoverForeColor = Color.Black;

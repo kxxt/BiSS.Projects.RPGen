@@ -45,6 +45,35 @@ namespace BiSS.Projects.RPGen.Structure
 					return Int32.MinValue;
 			}
 		}
+
+		private static string[] cache = null;
+		private static string[] cache_ = null;
+
+		public static string[] GetOrders_ExtraIncluded_()
+		{
+			if (cache_ != null)
+				return cache_;
+			var ret = GetOrders().ToList();
+			ret.Add("≤D");
+			cache_ = ret.ToArray();
+			return cache_;
+		}
+		public static string[] GetOrders()
+		{
+			if (cache != null)
+				return cache;
+			else
+			{
+				List<string> list = new List<string>();
+				for (Level s = Level.A; s <= Level.D; s++)
+				{
+					list.Add(s.Name());
+				}
+
+				cache = list.ToArray();
+				return cache;
+			}
+		}
 	}
 	public  class DLevel
 	{

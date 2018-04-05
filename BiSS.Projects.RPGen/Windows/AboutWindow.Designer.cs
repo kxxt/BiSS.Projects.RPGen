@@ -38,6 +38,8 @@ namespace BiSS.Projects.RPGen.Windows
 			this.metroButton2 = new MetroFramework.Controls.MetroButton();
 			this.metroButton3 = new MetroFramework.Controls.MetroButton();
 			this.metroButton4 = new MetroFramework.Controls.MetroButton();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -113,11 +115,21 @@ namespace BiSS.Projects.RPGen.Windows
 			this.metroButton4.Theme = MetroFramework.MetroThemeStyle.Light;
 			this.metroButton4.Click += new System.EventHandler(this.metroButton4_Click);
 			// 
+			// pictureBox1
+			// 
+			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+			this.pictureBox1.Location = new System.Drawing.Point(441, 34);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(100, 138);
+			this.pictureBox1.TabIndex = 7;
+			this.pictureBox1.TabStop = false;
+			// 
 			// AboutWindow
 			// 
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
 			this.ClientSize = new System.Drawing.Size(567, 355);
 			this.ControlBox = false;
+			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.metroButton4);
 			this.Controls.Add(this.metroButton3);
 			this.Controls.Add(this.metroButton2);
@@ -136,6 +148,7 @@ namespace BiSS.Projects.RPGen.Windows
 			this.Style = MetroFramework.MetroColorStyle.Purple;
 			this.Text = "关于 Believers in Science Studio";
 			this.TopMost = true;
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -149,5 +162,6 @@ namespace BiSS.Projects.RPGen.Windows
 		private MetroButton metroButton2;
 		private MetroButton metroButton3;
 		private MetroButton metroButton4;
+		private System.Windows.Forms.PictureBox pictureBox1;
 	}
 }

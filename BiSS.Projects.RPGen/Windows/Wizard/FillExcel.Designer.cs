@@ -33,12 +33,12 @@
 			// 
 			// BottomPanel
 			// 
-			this.BottomPanel.Location = new System.Drawing.Point(0, 220);
-			this.BottomPanel.Size = new System.Drawing.Size(771, 123);
+			this.BottomPanel.Location = new System.Drawing.Point(0, 219);
+			this.BottomPanel.Size = new System.Drawing.Size(861, 123);
 			// 
 			// Btn
 			// 
-			this.Btn.Location = new System.Drawing.Point(607, 18);
+			this.Btn.Location = new System.Drawing.Point(625, 21);
 			this.Btn.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
 			this.Btn.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(93)))), ((int)(((byte)(166)))));
 			this.Btn.Style.FocusedForeColor = System.Drawing.Color.White;
@@ -49,7 +49,7 @@
 			this.Btn.Style.PressedForeColor = System.Drawing.Color.White;
 			this.Btn.Click += new System.EventHandler(this.Btn_Click);
 			// 
-			// subtitle
+			// subTitle
 			// 
 			this.subTitle.Size = new System.Drawing.Size(581, 63);
 			this.subTitle.Text = "应用程序将启动 Excel , 请填写此表格 , 您可以把原成绩表中的数据复制到此表中.\r\n注意:请勿修改列标题及列的顺序 ! \r\n请在填写完成后保存文件并关闭 " +
@@ -64,7 +64,7 @@
 			// 
 			this.AcceptButton = null;
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-			this.ClientSize = new System.Drawing.Size(768, 303);
+			this.ClientSize = new System.Drawing.Size(781, 302);
 			this.Name = "FillExcel";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "填写Excel";

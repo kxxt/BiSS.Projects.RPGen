@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormatWindow));
 			this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
 			this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
 			this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
@@ -580,7 +581,7 @@
 			// FormatWindow
 			// 
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-			this.ClientSize = new System.Drawing.Size(874, 493);
+			this.ClientSize = new System.Drawing.Size(887, 492);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.metroLabel32);
 			this.Controls.Add(this.metroLabel31);
@@ -629,6 +630,7 @@
 			this.Controls.Add(this.dotdotdot);
 			this.Controls.Add(this.metroLabel1);
 			this.Controls.Add(this.metroTextBox1);
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "FormatWindow";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "选择导出路径及格式并设置数据";
