@@ -112,12 +112,34 @@ namespace BiSS.Projects.RPGen.Windows.Wizard
 					_ =>
 					{
 						var w=new FormatWindow();
-						w.FormClosed += (__, ___) => { path = w.Path;this.label1.Enabled = true; };
+						w.FormClosed += (__, ___) => { this.label1.Enabled = true; };
 						w.ShowDialog();
-						w.Close();
+						//w.Close();
 						return true;
 					}),
-				new WelcomeWindowMessage("保存成功!","感谢您使用本程序.",$"您的成绩报告已导出到{path}\r\n您现在可以查看或根据自己的需要修改它."),
+				new WelcomeWindowMessage("保存成功!","感谢您使用本程序.", pp =>
+				{
+					var panel = pp as FlowLayoutPanel;
+					var labelx= new LinkLabel()
+					{
+						LinkBehavior = LinkBehavior.AlwaysUnderline,
+						Text =$"您的成绩报告已导出到{path}\r\n您现在可以查看或根据自己的需要修改它.",
+						AutoSize = true,
+						Dock = System.Windows.Forms.DockStyle.Left,
+						Font = new System.Drawing.Font("微软雅黑 Light", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134))),
+						TextAlign = System.Drawing.ContentAlignment.MiddleLeft,
+						LinkArea=new LinkArea(10,path.Length),
+						ActiveLinkColor = Color.DarkCyan,
+						VisitedLinkColor = Color.BlueViolet,
+						LinkColor = Color.Aqua
+
+					};
+					labelx.TabStop = false;
+					labelx.LinkClicked += (__, ___) => { Process.Start(path);};
+					panel.Controls.Clear();
+					panel.Controls.Add(labelx);
+					return false;
+				}),//$"您的成绩报告已导出到{path}\r\n您现在可以查看或根据自己的需要修改它."),
 
 				new WelcomeWindowMessage("END","END","ENDED"),
 			};
@@ -138,6 +160,7 @@ namespace BiSS.Projects.RPGen.Windows.Wizard
 		int cnt = 0;
 		private void NextJob()
 		{
+			path = Program.OutputPath;
 			if (cnt < msgs.Count)
 			{
 				//MessageBox.Show($"{cnt}");

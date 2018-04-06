@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Dynamic;
 using System.IO;
@@ -46,7 +47,7 @@ namespace BiSS.Projects.RPGen.Windows.Wizard
 					//tbs[i, j].Location = new System.Drawing.Point(710, 342);
 					tbs[i, j].MaxValue = 100D;
 					tbs[i, j].MinValue = 0D;
-					tbs[i, j].Value = Program.Seprators[(NfSubjects)j][(Level)i];
+					tbs[i, j].Value = Program.Seprators[(NfSubjects)j][(Level)i] * 100;
 					tbs[i, j].Size = new Size(100, 23);
 					var icpy = i;
 					var jcpy = j;
@@ -68,6 +69,10 @@ namespace BiSS.Projects.RPGen.Windows.Wizard
 				cur.Y += 23 + padding.Height;
 			}
 
+			sfNumericTextBox10.Value = 100 * Program.Seprators[NfSubjects.Zh][Level.A];
+			sfNumericTextBox11.Value = 100 * Program.Seprators[NfSubjects.Zh][Level.B];
+			sfNumericTextBox12.Value = 100 * Program.Seprators[NfSubjects.Zh][Level.C];
+			sfNumericTextBox13.Value = 100 * Program.Seprators[NfSubjects.Zh][Level.D];
 			continuebtn.TabIndex = 256;
 			//MessageBox.Show($"{metroLabel28.Location}\r\n{tbs[1, 1].Location}");
 			//MessageBox.Show($"{tbs[1,1].Value}\r\n{Program.Seprators[0][Level.A]}");
@@ -169,15 +174,48 @@ namespace BiSS.Projects.RPGen.Windows.Wizard
 			Program.ClassName = metroTextBox3.Text;
 		}
 
+		private (bool right, IList<NfSubjects> errSubjects) CheckData()
+		{
+			(bool, IList<NfSubjects>) ret = (true, new List<NfSubjects>());
+			for (NfSubjects x = NfSubjects.Zh; x < NfSubjects.All; x++)
+			{
+				if (!(tbs[4, (int)x].Value <= tbs[3, (int)x].Value &&
+					  tbs[3, (int)x].Value <= tbs[2, (int)x].Value &&
+					  tbs[2, (int)x].Value <= tbs[1, (int)x].Value))
+				{
+					ret.Item1 = false;
+					ret.Item2.Add(x);
+				}
+			}
+
+			return ret;
+		}
+
 		private void continuebtn_Click(object sender, EventArgs e)
 		{
-			var _path = string.IsNullOrWhiteSpace(metroTextBox1.Text)
+			var ret = CheckData();
+			if (!ret.right)
+			{
+				var w = new DialogWindows10
+				{
+					Text = "数据错误!",
+					title = { Text = "数据错误!" },
+					subTitle =
+					{
+						Text = "输入的数据应满足 A > B > C > D .\r\n" +
+							   $"{ret.errSubjects.FormatCol(" , ", pp => pp.Name())}学科不满足以上条件 , 请修改 ."
+					}
+				};
+				w.ShowDialog();
+				return;
+			}
+			string _path = string.IsNullOrWhiteSpace(metroTextBox1.Text)
 				? Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) +
 				  $"\\成绩报告.{(metroToggle2.Checked ? "xlsx" : "pptx")}"
 				: metroTextBox1.Text;
 			var fi = new FileInfo(_path);
-			//MessageBox.Show(fi.FullName);
-			if (!fi.Directory.Exists)
+			//MessageBox.Show(_path);
+			if (fi.Directory == null || !fi.Directory.Exists)
 			{
 				MessageBox.Show("路径不存在.\r\n请返回修改.", "错误");
 				return;
@@ -196,8 +234,9 @@ namespace BiSS.Projects.RPGen.Windows.Wizard
 
 			//MessageBox.Show($"{fi.Name.Replace("." + fi.Extension, "")}\r\n{fi.Extension}");
 			Program.SaveExcel(x, fi.DirectoryName, fi.Name.Replace(fi.Extension, ""), fi.Extension == ".xlsx");
-			Path = _path;
-			this.Hide();
+			OutputPath = _path;
+
+			this.Close();
 		}
 
 		private void FormatWindow_Load(object sender, EventArgs e)
@@ -244,6 +283,44 @@ namespace BiSS.Projects.RPGen.Windows.Wizard
 		{
 		}
 
+		private void sfNumericTextBox13_TextChanged(object sender, EventArgs e)
+		{
 
+		}
+
+		private void windows10Btn21_Click(object sender, EventArgs e)
+		{
+			if (sfNumericTextBox13.Value <= sfNumericTextBox12.Value &&
+				sfNumericTextBox12.Value <= sfNumericTextBox11.Value &&
+				sfNumericTextBox11.Value <= sfNumericTextBox10.Value)
+			{
+				for (int i = 0; i <= 8; i++)
+				{
+					tbs[4, i].Value = sfNumericTextBox13.Value;
+				}
+				for (int i = 0; i <= 8; i++)
+				{
+					tbs[3, i].Value = sfNumericTextBox12.Value;
+				}
+				for (int i = 0; i <= 8; i++)
+				{
+					tbs[2, i].Value = sfNumericTextBox11.Value;
+				}
+				for (int i = 0; i <= 8; i++)
+				{
+					tbs[1, i].Value = sfNumericTextBox10.Value;
+				}
+			}
+			else
+			{
+				var w = new DialogWindows10
+				{
+					Text = "数据错误!",
+					title = { Text = "数据错误!" },
+					subTitle = { Text = "输入的数据应满足 A > B > C > D ." }
+				};
+				w.ShowDialog();
+			}
+		}
 	}
 }

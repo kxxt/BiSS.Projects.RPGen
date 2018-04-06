@@ -240,6 +240,12 @@
     <Compile Include="Windows\Windows10Btn1.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Windows\Wizard\AppStartWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\Wizard\AppStartWindow.Designer.cs">
+      <DependentUpon>AppStartWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Wizard\DialogWindows10.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -328,6 +334,9 @@
     <EmbeddedResource Include="Windows\WarningWindow.resx">
       <DependentUpon>WarningWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Wizard\AppStartWindow.resx">
+      <DependentUpon>AppStartWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Windows\Wizard\DialogWindows10.resx">
       <DependentUpon>DialogWindows10.cs</DependentUpon>
     </EmbeddedResource>
@@ -362,8 +371,6 @@
     </EmbeddedResource>
     <None Include="Data\README.MD" />
     <None Include="Data\readme.rtf" />
-    <None Include="freespire.office.2.15.0.nupkg" />
-    <None Include="freespire.presentation.2.1.0.nupkg" />
     <None Include="packages.config" />
     <Content Include="Data\DIRECT_TEMPLATE.PPTX">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

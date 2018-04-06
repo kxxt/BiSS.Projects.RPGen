@@ -63,6 +63,7 @@ namespace BiSS.Projects.RPGen
 			//}));
 			LogWindow.Visible = false;
 			frm = new MainForm();
+			window = new AppStartWindow();
 			//#region TEST
 			//			Workbook t=new Workbook();
 			//			t.Version=ExcelVersion.Version2013;
@@ -77,7 +78,7 @@ namespace BiSS.Projects.RPGen
 			//#endregion
 			Log("App Started,displaying the SplashWindow.");
 			Application.Run(new SplashWindow());
-			Application.Run(frm);
+			Application.Run(window);
 
 			return 0;
 		}
@@ -343,8 +344,8 @@ namespace BiSS.Projects.RPGen
 			LayoutCalc_ChartsRegularLayout_ layout = new LayoutCalc_ChartsRegularLayout_(
 				new PointF((XlsSizeUnit)((CMUnit)10), (XlsSizeUnit)((CMUnit)10)),
 				new SizeF((XlsSizeUnit)((CMUnit)0.5), (XlsSizeUnit)((CMUnit)0.8)),
-				new SizeF((XlsSizeUnit)widthTST, (XlsSizeUnit)heighTST),
-				3, 10
+				new SizeF((XlsSizeUnit)widthTST, (XlsSizeUnit)heighTST), 3 - 1, 10
+
 				);
 			for (NfSubjects sub = NfSubjects.Zh; sub <= NfSubjects.All; sub++)
 			{
@@ -633,13 +634,16 @@ namespace BiSS.Projects.RPGen
 		public static string Author { get => author; set => author = value; }
 		public static Dictionary<NfSubjects, Dictionary<Level, float>> Seprators { get => seprators; set => seprators = value; }
 		public static bool IsShowReadme { get => showReadme; }
+		public static string OutputPath { get => outputPath; set => outputPath = value; }
 
 		public static ExcelWindow ExcelWindow;
 		private static string log = "!Application Log!\r\n";
 		private static LogWindow LogWindow;
 		private static MainForm frm;
+		private static AppStartWindow window;
 		private static string pptfile = "";
 		private static string xlsFile = null;
+		private static string outputPath = "";
 	}
 
 	public class DebugEnabledChangedEventArgs : EventArgs
