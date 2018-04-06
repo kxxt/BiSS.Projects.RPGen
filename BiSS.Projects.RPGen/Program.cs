@@ -6,14 +6,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BiSS.Projects.RPGen.Windows;
-
-
-
 using System.Reflection;
 using System.Runtime.Remoting.Messaging;
 using BiSS.Projects.RPGen.Structure;
 using System.Dynamic;
 using System.Runtime.CompilerServices;
+using System.Security;
 using System.Threading;
 using BiSS.Projects.RPGen.ExcelLayout;
 using BiSS.Projects.RPGen.Op;
@@ -22,12 +20,13 @@ using BiSS.Projects.RPGen.Windows.Wizard;
 using Newtonsoft.Json;
 using Syncfusion.Data.Extensions;
 using Syncfusion.XlsIO;
-using Syncfusion.Presentation;
+
 
 namespace BiSS.Projects.RPGen
 {
 	internal static class Program
 	{
+		internal static readonly String PassWord = "CjBgScQX*Dxcsdfwr";
 		/// <summary>
 		/// 应用程序的主入口点。
 		/// </summary>
@@ -103,7 +102,7 @@ namespace BiSS.Projects.RPGen
 		private static ExpandoObject data = new ExpandoObject();
 		private static string title = "成绩报告";
 		private static string className = "本班";
-		private static string author = "Believers in Science Studio";
+		private static string author = "成绩报告生成器";
 		private static Dictionary<NfSubjects, Dictionary<Level, float>> seprators = new Dictionary<NfSubjects, Dictionary<Level, float>>()
 		{
 			[NfSubjects.Zh] = new Dictionary<Level, float>()
@@ -221,9 +220,30 @@ namespace BiSS.Projects.RPGen
 			{ NfSubjects.B, 100 }
 
 		};
-
+		public static float CmToXlsSize(double CM)
+		{
+			return (XlsSizeUnit)((CMUnit)CM);
+		}
+		public static float CmToXlsSize(float CM)
+		{
+			return (XlsSizeUnit)((CMUnit)CM);
+		}
 		public static void SaveExcel(IList<ScoreModel> list, string pathWithoutLine, string mname, bool v2007 = true)
 		{
+			//VARS{{
+			PointF StartPoint = new PointF(0, (XlsSizeUnit)((CMUnit)6.88));
+			SizeF RegularChartSize = new SizeF((XlsSizeUnit)((CMUnit)37.17), (XlsSizeUnit)((CMUnit)13.6));
+			SizeF HeaderSize = new SizeF(CmToXlsSize(37.17), CmToXlsSize(6.88));
+			SizeF PieChartSize = new SizeF(CmToXlsSize(12), CmToXlsSize(10));
+			SizeF PieChartPadding = new SizeF(CmToXlsSize(0.6), CmToXlsSize(0.7));
+
+			LayoutCalc_ChartsRegularLayout_ Layout = new LayoutCalc_ChartsRegularLayout_(
+				StartPoint,
+				PieChartPadding,
+				PieChartSize,
+				2, 10
+				);
+			//}}VARS
 			IList<(NfSubjects, float)> aveList = Analyzer.Average(list);
 			//BindingList<(NfSubjects, float)> aveBindingList = Analyzer.Average(li);//todo;
 			IList<(NfSubjects, float)> sumList = Analyzer.Sum(list);
@@ -244,13 +264,39 @@ namespace BiSS.Projects.RPGen
 			IApplication xls = ee.Excel;
 
 			xls.DefaultVersion = Syncfusion.XlsIO.ExcelVersion.Excel2016;
-			IWorkbook wb = xls.Workbooks.Create();
-			wb.Version = v2007 ? ExcelVersion.Excel2016 : ExcelVersion.Excel97to2003;
+
+			IWorkbook wb = xls.Workbooks.Open("Data\\object1");
+			wb.ActiveSheetIndex = 0;
 			IWorksheet ws = wb.ActiveSheet;
-			IChartShape chart = ws.Charts.Add();
-			/////////////////////////////////////////////////////
-			//IChartSerie serie = chart.Series.Add(Syncfusion.XlsIO.ExcelChartType.Column_Clustered);
-			//chart.ChartType = Syncfusion.XlsIO.ExcelChartType.Column_Clustered;
+			foreach (IShape shape in ws.Shapes)
+			{
+				if (shape is ITextBox)
+				{
+					//MessageBox.Show("Yes!");
+					var x = shape as ITextBox;
+					x.Text = x.Text.Replace("$CLASS_NAME$", Program.ClassName);
+				}
+				else if (shape is ITextFrame)
+				{
+					//MessageBox.Show("Yes!");
+					var x = shape as ITextFrame;
+					x.TextRange.Text = x.TextRange.Text.Replace("$CLASS_NAME$", Program.ClassName);
+				}
+				else if (shape is ITextRange)
+				{
+					//MessageBox.Show("Yes!");
+					var x = shape as ITextRange;
+					x.Text = x.Text.Replace("$CLASS_NAME$", Program.ClassName);
+				}
+				//if(shape is ITe)
+			}
+
+
+			wb.ActiveSheetIndex = 1;
+			wb.Version = v2007 ? ExcelVersion.Excel2016 : ExcelVersion.Excel97to2003;
+			ws = wb.ActiveSheet;
+			IChartShape regchart = ws.Charts.Add();
+
 			IList<string> xave = new List<string>();
 			IList<object> yave = new List<object>();
 			int allavei = Int32.MaxValue, allmidi = Int32.MaxValue;
@@ -262,14 +308,8 @@ namespace BiSS.Projects.RPGen
 				xave.Add(ave.Item1.Name());
 				yave.Add(ave.Item2);
 			}
+			ChartGen.GenChart(regchart, xave.ToArray(), yave.ToArray(), "平均分", ExcelChartType.Column_Clustered);
 
-			//serie.EnteredDirectlyValues = yave.ToArray();
-			//serie.Name = "平均分";
-			//serie.EnteredDirectlyCategoryLabels = xave.ToArray();
-			ChartGen.GenChart(chart, xave.ToArray(), yave.ToArray(), "平均分", ExcelChartType.Column_Clustered);
-			////////////////////////////////////////////////
-			//IChartSerie seriemid = chart.Series.Add(Syncfusion.XlsIO.ExcelChartType.Column_Clustered);
-			//chart.ChartType = Syncfusion.XlsIO.ExcelChartType.Column_Clustered;
 			IList<string> xmid = new List<string>();
 			IList<object> ymid = new List<object>();
 			for (var index = 0; index < midList.Count; index++)
@@ -280,35 +320,37 @@ namespace BiSS.Projects.RPGen
 				xmid.Add(mid.Item1.Name());
 				ymid.Add(mid.Item2);
 			}
-			ChartGen.GenChart(chart, xmid.ToArray(), ymid.ToArray(), "中位分", ExcelChartType.Column_Clustered);
+			ChartGen.GenChart(regchart, xmid.ToArray(), ymid.ToArray(), "中位分", ExcelChartType.Column_Clustered);
+			regchart.XPos = StartPoint.X;
+			regchart.YPos = StartPoint.Y;
+			regchart.SetSize(RegularChartSize);
+			regchart.ChartTitle = "分数常规分析";
+			regchart.SetAllStyles();
+			regchart.ChartArea.Border.LineWeight = 0;
+			//regchart.Legend.TextArea.FontName
+
 			//{{{{{{{{{{{{{{
+			wb.ActiveSheetIndex = 2;
+			ws = wb.ActiveSheet;
 			xave.RemoveAt(allavei);
 			yave.RemoveAt(allavei);
 			xmid.RemoveAt(allmidi);
 			ymid.RemoveAt(allmidi);
-			IChartShape leida = ws.Shapes.AddChart();
-
-			ChartGen.GenChart(leida, xave.ToArray(), yave.ToArray(), "平均分", ExcelChartType.Radar);
-			ChartGen.GenChart(leida, xmid.ToArray(), ymid.ToArray(), "中位分", ExcelChartType.Radar);
-			leida.Name = "学科成绩分布1";
-			leida.ChartTitle = "学科成绩分布1";
-			//}}}}}}}}}}}}}}
-			//{{{{{{{{{{{{{{
 			var xyave = Analyzer.ReArrangeData(aveList);
 			var xymid = Analyzer.ReArrangeData(midList);
-			IChartShape leida2 = ws.Shapes.AddChart();
+			IChartShape razor = ws.Shapes.AddChart();
 
-			ChartGen.GenChart(leida2, xyave.Item1, xyave.Item2, "平均分", ExcelChartType.Radar);
-			ChartGen.GenChart(leida2, xymid.Item1, xymid.Item2, "中位分", ExcelChartType.Radar);
-			leida2.Name = "学科成绩分布2";
-			leida2.ChartTitle = "学科成绩分布2";
+			ChartGen.GenChart(razor, xyave.Item1, xyave.Item2, "平均分", ExcelChartType.Radar);
+			ChartGen.GenChart(razor, xymid.Item1, xymid.Item2, "中位分", ExcelChartType.Radar);
+			razor.Name = "学科成绩分布";
+			razor.ChartTitle = "学科成绩分布";
+			razor.SetSize(RegularChartSize);
+			razor.SetPos(StartPoint);
+			razor.SetAllStyles();
+			razor.ChartArea.Border.LineWeight = 0;
 			//}}}}}}}}}}}}}}
-			var ordered = list.OrderBy(pp => pp.Sum);
-			ChartGen.GenChart(ws.Shapes.AddChart(), ordered.Select(sm => (object)(sm.Name)).ToArray(), ordered.Select(sm => (object)(sm.Sum ?? 0)).ToArray(), "总分", ExcelChartType.Column_Clustered);
-			//seriemid.EnteredDirectlyValues = ymid.ToArray();
-			//seriemid.Name = "中位分";
-			//seriemid.EnteredDirectlyCategoryLabels = xmid.ToArray();
-			//IChartShape pie1 = ws.Shapes.AddChart();
+			wb.ActiveSheetIndex = 3;
+			ws = wb.ActiveSheet;
 			int[][] nperl = new int[10][];
 			string testmsg = "";
 			for (NfSubjects sub = NfSubjects.Zh; sub <= NfSubjects.All; sub++)
@@ -328,26 +370,9 @@ namespace BiSS.Projects.RPGen
 				testmsg += $"{sub}\t{tmp___}\r\n";
 			}
 
-			//var cpy = new float[nperl[(int)NfSubjects.Zh].Length-1];
+
 			int cnt_of_all = list.Count;
-			//for (var index = 0; index < cpy.Length; index++)
-			//{
-			//	cpy[index] = (float)nperl[(int)NfSubjects.Zh][index+1] / cnt_of_all;
-			//}
-
-			//MessageBox.Show(testmsg+"\r\n"+ $"{cpy.FormatCol()}\r\nCount:{cnt_of_all}");
-			//pie1.Name = "等级分布示意图";
-			//pie1.ChartTitle = "等级分布示意图";
-			//ChartGen.GenPieChart(pie1,LevelEx.GetOrders_ExtraIncluded_().ToObjectArray(),cpy.ToObjectArray(), "等级分布示意图");
-			CMUnit widthTST = 13f;
-			CMUnit heighTST = 10f;
-			LayoutCalc_ChartsRegularLayout_ layout = new LayoutCalc_ChartsRegularLayout_(
-				new PointF((XlsSizeUnit)((CMUnit)10), (XlsSizeUnit)((CMUnit)10)),
-				new SizeF((XlsSizeUnit)((CMUnit)0.5), (XlsSizeUnit)((CMUnit)0.8)),
-				new SizeF((XlsSizeUnit)widthTST, (XlsSizeUnit)heighTST), 3 - 1, 10
-
-				);
-			for (NfSubjects sub = NfSubjects.Zh; sub <= NfSubjects.All; sub++)
+			for (NfSubjects sub = NfSubjects.Zh; sub < NfSubjects.All; sub++)
 			{
 				var cpy_sub = new float[nperl[(int)sub].Length - 1];
 				for (var index = 0; index < cpy_sub.Length; index++)
@@ -358,156 +383,37 @@ namespace BiSS.Projects.RPGen
 				if (sub == NfSubjects.All)
 					pie.Name = $"总成绩等级分布示意图";
 				else
-					pie.Name = $"{sub.Name()}学科等级分布示意图";
+					pie.Name = $"{sub.Name()}学科等级分布图";
 				pie.ChartTitle = pie.Name;
-				var nextp = layout.Next;
+				var nextp = Layout.Next;
 				pie.XPos = nextp.point.X;
 				pie.YPos = nextp.point.Y;
 				((IChart)pie).Width = nextp.size.Width;
 				((IChart)pie).Height = nextp.size.Height;
 
 				ChartGen.GenPieChart(pie, LevelEx.GetOrders_ExtraIncluded_().ToObjectArray(), cpy_sub.ToObjectArray(), pie.Name);
+				pie.SetAllStyles();
 			}
+
+			wb.ActiveSheetIndex = 0;
 			/////////////////////////////////////////////////
-			xls.Save(pathWithoutLine + "\\" + mname + (v2007 ? ".xlsx" : ".xls"));
+			try
+			{
+				xls.Save(pathWithoutLine + "\\" + mname + (v2007 ? ".xlsx" : ".xls"));
+			}
+			catch
+			{
+				var ret = MessageBox.Show("文件操作错误 , 保存失败 !", "应用程序错误", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+				if (ret == DialogResult.Retry)
+				{
+					SaveExcel(list, pathWithoutLine, mname, v2007);
+				}
+			}
+
+
 			wb.Close();
 			ee.Dispose();
 		}
-		//public static void SavePPT(IList<ScoreModel> list, string pathWithoutLine, string mname, bool v2007 = true)
-		//{
-		//	IList<(NfSubjects, float)> aveList = Analyzer.Average(list);
-		//	//BindingList<(NfSubjects, float)> aveBindingList = Analyzer.Average(li);//todo;
-		//	IList<(NfSubjects, float)> sumList = Analyzer.Sum(list);
-		//	IList<(NfSubjects, float[])> modeList = Analyzer.Mode(list);
-		//	IList<(NfSubjects, double)> midList = Analyzer.Mid(list);
-		//	Log("Average:\r\n" + string.Join(",", aveList));
-		//	Log("Sum:\r\n" + string.Join(",", sumList));
-		//	Log("Mode:");
-		//	foreach (var mode in modeList)
-		//	{
-		//		Log($"{mode.Item1.ToString()}:{string.Join(",", mode.Item2)}");
-		//	}
-		//	//Log("Mode:\r\n" + string.Join(",",modeList));
-		//	Log("Mid:\r\n" + string.Join(",", midList));
-
-		//	IPresentation ip = Presentation.Create();
-
-		//	//IApplication xls = ip.;
-		//	ISlide slide = ip.Slides[0];
-
-		////	IWorkbook wb = xls.Workbooks.Create();
-		//	//wb.Version = v2007 ? ExcelVersion.Excel2016 : ExcelVersion.Excel97to2003;
-		//	//IWorksheet ws = wb.ActiveSheet;
-		//	IPresentationChart chart = slide.Charts.AddChart(0,0,200,200);
-		//	chart.SetChartData();
-		//	/////////////////////////////////////////////////////
-		//	//IChartSerie serie = chart.Series.Add(Syncfusion.XlsIO.ExcelChartType.Column_Clustered);
-		//	//chart.ChartType = Syncfusion.XlsIO.ExcelChartType.Column_Clustered;
-		//	IList<string> xave = new List<string>();
-		//	IList<object> yave = new List<object>();
-		//	int allavei = Int32.MaxValue, allmidi = Int32.MaxValue;
-		//	for (var index = 0; index < aveList.Count; index++)
-		//	{
-		//		if (aveList[index].Item1 == NfSubjects.All)
-		//			allavei = index;
-		//		var ave = aveList[index];
-		//		xave.Add(ave.Item1.Name());
-		//		yave.Add(ave.Item2);
-		//	}
-
-		//	//serie.EnteredDirectlyValues = yave.ToArray();
-		//	//serie.Name = "平均分";
-		//	//serie.EnteredDirectlyCategoryLabels = xave.ToArray();
-		//	ChartGen.GenChart(chart, xave.ToArray(), yave.ToArray(), "平均分", ExcelChartType.Column_Clustered);
-		//	////////////////////////////////////////////////
-		//	//IChartSerie seriemid = chart.Series.Add(Syncfusion.XlsIO.ExcelChartType.Column_Clustered);
-		//	//chart.ChartType = Syncfusion.XlsIO.ExcelChartType.Column_Clustered;
-		//	IList<string> xmid = new List<string>();
-		//	IList<object> ymid = new List<object>();
-		//	for (var index = 0; index < midList.Count; index++)
-		//	{
-		//		if (midList[index].Item1 == NfSubjects.All)
-		//			allmidi = index;
-		//		var mid = midList[index];
-		//		xmid.Add(mid.Item1.Name());
-		//		ymid.Add(mid.Item2);
-		//	}
-		//	ChartGen.GenChart(chart, xmid.ToArray(), ymid.ToArray(), "中位分", ExcelChartType.Column_Clustered);
-		//	//{{{{{{{{{{{{{{
-		//	xave.RemoveAt(allavei);
-		//	yave.RemoveAt(allavei);
-		//	xmid.RemoveAt(allmidi);
-		//	ymid.RemoveAt(allmidi);
-		//	IChartShape leida = ws.Shapes.AddChart();
-
-		//	ChartGen.GenChart(leida, xave.ToArray(), yave.ToArray(), "平均分", ExcelChartType.Radar);
-		//	ChartGen.GenChart(leida, xmid.ToArray(), ymid.ToArray(), "中位分", ExcelChartType.Radar);
-		//	leida.Name = "学科成绩分布1";
-		//	leida.ChartTitle = "学科成绩分布1";
-		//	//}}}}}}}}}}}}}}
-		//	//{{{{{{{{{{{{{{
-		//	var xyave = Analyzer.ReArrangeData(aveList);
-		//	var xymid = Analyzer.ReArrangeData(midList);
-		//	IChartShape leida2 = ws.Shapes.AddChart();
-
-		//	ChartGen.GenChart(leida2, xyave.Item1, xyave.Item2, "平均分", ExcelChartType.Radar);
-		//	ChartGen.GenChart(leida2, xymid.Item1, xymid.Item2, "中位分", ExcelChartType.Radar);
-		//	leida2.Name = "学科成绩分布2";
-		//	leida2.ChartTitle = "学科成绩分布2";
-		//	//}}}}}}}}}}}}}}
-		//	var ordered = list.OrderBy(pp => pp.Sum);
-		//	ChartGen.GenChart(ws.Shapes.AddChart(), ordered.Select(sm => (object)(sm.Name)).ToArray(), ordered.Select(sm => (object)(sm.Sum ?? 0)).ToArray(), "总分", ExcelChartType.Column_Clustered);
-		//	//seriemid.EnteredDirectlyValues = ymid.ToArray();
-		//	//seriemid.Name = "中位分";
-		//	//seriemid.EnteredDirectlyCategoryLabels = xmid.ToArray();
-		//	//IChartShape pie1 = ws.Shapes.AddChart();
-		//	int[][] nperl = new int[10][];
-		//	string testmsg = "";
-		//	for (NfSubjects sub = NfSubjects.Zh; sub <= NfSubjects.All; sub++)
-		//	{
-		//		if (sub != NfSubjects.All)
-		//			nperl[(int)sub] = list.CountStuNumPerLevelPerSubject(sub, Program.FullScore[sub], Program.Seprators[sub]);
-		//		else
-		//			nperl[(int)sub] = list.CountStuNumPerLevelPerSubject(sub, Program.AllFullScore, Program.Seprators[sub]);
-		//		string tmp___ = "";
-		//		for (var index = 1; index < nperl[(int)sub].Length; index++)
-		//		{
-
-		//			int xXXx = nperl[(int)sub][index];
-		//			tmp___ += $"{xXXx.ToString()} , ";
-		//		}
-
-		//		testmsg += $"{sub}\t{tmp___}\r\n";
-		//	}
-
-		//	//var cpy = new float[nperl[(int)NfSubjects.Zh].Length-1];
-		//	int cnt_of_all = list.Count;
-		//	//for (var index = 0; index < cpy.Length; index++)
-		//	//{
-		//	//	cpy[index] = (float)nperl[(int)NfSubjects.Zh][index+1] / cnt_of_all;
-		//	//}
-
-		//	//MessageBox.Show(testmsg+"\r\n"+ $"{cpy.FormatCol()}\r\nCount:{cnt_of_all}");
-		//	//pie1.Name = "等级分布示意图";
-		//	//pie1.ChartTitle = "等级分布示意图";
-		//	//ChartGen.GenPieChart(pie1,LevelEx.GetOrders_ExtraIncluded_().ToObjectArray(),cpy.ToObjectArray(), "等级分布示意图");
-		//	for (NfSubjects sub = NfSubjects.Zh; sub <= NfSubjects.All; sub++)
-		//	{
-		//		var cpy_sub = new float[nperl[(int)sub].Length - 1];
-		//		for (var index = 0; index < cpy_sub.Length; index++)
-		//		{
-		//			cpy_sub[index] = (float)nperl[(int)sub][index + 1] / cnt_of_all;
-		//		}
-		//		IChartShape pie = ws.Shapes.AddChart();
-		//		pie.Name = $"{sub.Name()}学科等级分布示意图";
-		//		pie.ChartTitle = pie.Name;
-		//		ChartGen.GenPieChart(pie, LevelEx.GetOrders_ExtraIncluded_().ToObjectArray(), cpy_sub.ToObjectArray(), pie.Name);
-		//	}
-		//	/////////////////////////////////////////////////
-		//	xls.Save(pathWithoutLine + "\\" + mname + (v2007 ? ".xlsx" : ".xls"));
-		//	wb.Close();
-		//	ip.Dispose();
-		//}
 		public static float AllFullScore
 		{
 			get => FullScore[NfSubjects.Zh] + FullScore[NfSubjects.Zh] + FullScore[NfSubjects.Zh] + FullScore[NfSubjects.M] +

@@ -19,7 +19,7 @@ namespace BiSS.Projects.RPGen.Windows.Wizard
 
 		private void metroTile2_Click(object sender, EventArgs e)
 		{
-			new SettingsWindiow().ShowDialog();
+			new Wizard.SettingWindow().ShowDialog();
 		}
 
 		private void metroTile1_Click(object sender, EventArgs e)
@@ -59,6 +59,11 @@ namespace BiSS.Projects.RPGen.Windows.Wizard
 
 
 			#endregion
+		}
+
+		private void AppStartWindow_Shown(object sender, EventArgs e)
+		{
+			this.Activate();
 		}
 	}
 }

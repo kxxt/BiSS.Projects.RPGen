@@ -25,8 +25,8 @@ namespace BiSS.Projects.RPGen.Windows
 			DoubleBuffered = true;
 			spreadsheet1.DoubleBuffered(true);
 			this.Text = title;
-			
-			
+
+
 		}
 
 		public IList<ScoreModel> Export()
@@ -39,7 +39,7 @@ namespace BiSS.Projects.RPGen.Windows
 			List<ScoreModel> li = null;
 			try
 			{
-				li=new List<ScoreModel>();
+				li = new List<ScoreModel>();
 				for (int j = 0; j < l.Rows.Count; j++)
 				{
 
@@ -153,36 +153,36 @@ namespace BiSS.Projects.RPGen.Windows
 			catch (Exception e)
 			{
 				Error = true;
-				DialogWindows10 dlg=new DialogWindows10();
+				DialogWindows10 dlg = new DialogWindows10();
 				dlg.title.Text = "错误";
 				dlg.subTitle.Text = "表格中有错误数据,可能是数字中混入了字母,请检查并改正.";
 				dlg.ShowDialog();
 				li = null;
 			}
-			
+
 			return li;
 		}
 
 		private bool? error = null;
 		private string fileName = "";
 
-		public string FileName { get => this.fileName;  }
+		public string FileName { get => this.fileName; }
 		public bool? Error { get => this.error; set => this.error = value; }
 
 		private void ExcelWindow_FormClosing(object sender, FormClosingEventArgs e)
 		{
 			this.spreadsheet1.SaveAs(FileName);
-			
-			if ((sender as ExcelWindow).Export()==null)
+
+			if ((sender as ExcelWindow).Export() == null)
 				e.Cancel = true;
-			
+
 		}
 
 		private void sfButton1_Click(object sender, EventArgs e)
 		{
 			Random rd = new Random();
-			if(FileName=="")
-				fileName = $"Temp\\{rd.Next()}.xlsx";
+			if (FileName == "")
+				fileName = $"Data\\Temp\\{rd.Next()}.xlsx";
 			this.spreadsheet1.SaveAs(FileName);
 		}
 	}

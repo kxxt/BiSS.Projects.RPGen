@@ -123,7 +123,7 @@ namespace BiSS.Projects.RPGen.Windows.Wizard
 					var labelx= new LinkLabel()
 					{
 						LinkBehavior = LinkBehavior.AlwaysUnderline,
-						Text =$"您的成绩报告已导出到{path}\r\n您现在可以查看或根据自己的需要修改它.",
+						Text =$"您的成绩报告已导出到{path}\r\n您现在可以查看或根据自己的需要修改它.\r\n\t\t[ 按 Enter 键 打开成绩报告 ]",
 						AutoSize = true,
 						Dock = System.Windows.Forms.DockStyle.Left,
 						Font = new System.Drawing.Font("微软雅黑 Light", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134))),
@@ -131,7 +131,7 @@ namespace BiSS.Projects.RPGen.Windows.Wizard
 						LinkArea=new LinkArea(10,path.Length),
 						ActiveLinkColor = Color.DarkCyan,
 						VisitedLinkColor = Color.BlueViolet,
-						LinkColor = Color.Aqua
+						LinkColor = Color.DarkTurquoise
 
 					};
 					labelx.TabStop = false;
@@ -215,7 +215,7 @@ namespace BiSS.Projects.RPGen.Windows.Wizard
 			//MessageBox.Show($"Temp\\{Program.XlsFile}");
 			try
 			{
-				File.Copy(@"Data\Test\c5.xlsx", Application.StartupPath + $"\\Temp\\{Program.XlsFile}", true);
+				File.Copy(@"Data\object3", Application.StartupPath + $"\\Temp\\{Program.XlsFile}", true);
 			}
 			catch (Exception)
 			{

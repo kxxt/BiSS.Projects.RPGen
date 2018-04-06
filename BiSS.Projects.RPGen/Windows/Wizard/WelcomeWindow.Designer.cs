@@ -66,7 +66,7 @@
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 73F));
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-			this.tableLayoutPanel1.Size = new System.Drawing.Size(883, 436);
+			this.tableLayoutPanel1.Size = new System.Drawing.Size(935, 436);
 			this.tableLayoutPanel1.TabIndex = 5;
 			// 
 			// label2
@@ -77,7 +77,7 @@
 			this.label2.ForeColor = System.Drawing.Color.Black;
 			this.label2.Location = new System.Drawing.Point(3, 0);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(877, 43);
+			this.label2.Size = new System.Drawing.Size(929, 43);
 			this.label2.TabIndex = 1;
 			this.label2.Text = "Title";
 			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -91,7 +91,7 @@
 			this.label1.ForeColor = System.Drawing.Color.DeepSkyBlue;
 			this.label1.Location = new System.Drawing.Point(3, 391);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(877, 45);
+			this.label1.Size = new System.Drawing.Size(929, 45);
 			this.label1.TabIndex = 0;
 			this.label1.Text = "[  按任意键或点此继续  ]";
 			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -105,7 +105,7 @@
 			this.label3.ForeColor = System.Drawing.Color.DarkOrange;
 			this.label3.Location = new System.Drawing.Point(3, 43);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(877, 30);
+			this.label3.Size = new System.Drawing.Size(929, 30);
 			this.label3.TabIndex = 0;
 			this.label3.Text = "SubTitle";
 			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -115,14 +115,14 @@
 			this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 76);
 			this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-			this.flowLayoutPanel1.Size = new System.Drawing.Size(877, 312);
+			this.flowLayoutPanel1.Size = new System.Drawing.Size(929, 312);
 			this.flowLayoutPanel1.TabIndex = 2;
 			// 
 			// WelcomeWindow
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(887, 440);
+			this.ClientSize = new System.Drawing.Size(939, 440);
 			this.Controls.Add(this.tableLayoutPanel1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

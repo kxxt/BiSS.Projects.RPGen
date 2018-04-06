@@ -4,13 +4,13 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Syncfusion.Windows.Forms.Chart;
+
 
 namespace BiSS.Projects.RPGen.Structure
 {
-	public class LDChartDataSource:IChartSeriesModel
+	public class LDChartDataSource//:IChartSeriesModel
 	{
-		public LDChartDataSource(IList<(NfSubjects,float)> list)
+		public LDChartDataSource(IList<(NfSubjects, float)> list)
 		{
 			Zh = list.First(a => a.Item1 == NfSubjects.Zh).Item2;
 			M = list.First(a => a.Item1 == NfSubjects.M).Item2;

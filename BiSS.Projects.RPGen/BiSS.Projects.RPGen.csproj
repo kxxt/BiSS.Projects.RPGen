@@ -8,10 +8,11 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>BiSS.Projects.RPGen</RootNamespace>
     <AssemblyName>BiSS.Projects.RPGen</AssemblyName>
-    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -51,6 +52,12 @@
   <PropertyGroup>
     <ApplicationIcon>RPGenIcon-Colored.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>成绩报告生成器.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroFramework.RunTime.1.2.0.3\lib\net40-Client\MetroFramework.dll</HintPath>
@@ -62,34 +69,21 @@
     <Reference Include="MetroFramework.Fonts, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroFramework.Fonts.1.2.0.3\lib\net40\MetroFramework.Fonts.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Vsa, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="RsWork.Functions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
-    <Reference Include="Syncfusion.Chart.Base, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
-    <Reference Include="Syncfusion.Chart.Windows, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="RsWork.Functions">
+      <HintPath>..\References\RsWork.Functions.dll</HintPath>
+    </Reference>
     <Reference Include="Syncfusion.Compression.Base, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
     <Reference Include="Syncfusion.Core.WinForms, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
     <Reference Include="Syncfusion.Data.WinForms, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
-    <Reference Include="Syncfusion.Diagram.Base, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
-    <Reference Include="Syncfusion.Diagram.Windows, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
-    <Reference Include="Syncfusion.Grid.Base, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
-    <Reference Include="Syncfusion.Grid.Windows, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
-    <Reference Include="Syncfusion.HTMLUI.Base, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
-    <Reference Include="Syncfusion.HTMLUI.Windows, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
-    <Reference Include="Syncfusion.Maps.Windows, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
     <Reference Include="Syncfusion.OfficeChart.Base, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
-    <Reference Include="Syncfusion.PivotAnalysis.Base, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
-    <Reference Include="Syncfusion.PivotAnalysis.Windows, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
-    <Reference Include="Syncfusion.PivotChart.Windows, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
     <Reference Include="Syncfusion.Presentation.Base, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
-    <Reference Include="Syncfusion.Scripting.Base, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
     <Reference Include="Syncfusion.SfInput.WinForms, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
     <Reference Include="Syncfusion.Shared.Base, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
-    <Reference Include="Syncfusion.Shared.Windows, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
     <Reference Include="Syncfusion.Spreadsheet.Windows, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
     <Reference Include="Syncfusion.Tools.Windows, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
     <Reference Include="Syncfusion.XlsIO.Base, Version=16.1460.0.24, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
@@ -100,10 +94,8 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
     <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.ValueTuple.4.4.0\lib\net47\System.ValueTuple.dll</HintPath>
+      <HintPath>..\packages\System.ValueTuple.4.4.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -115,16 +107,20 @@
     <Reference Include="System.Xml" />
     <Reference Include="UIAutomationProvider" />
     <Reference Include="WindowsBase" />
-    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config\Config.cs" />
+    <Content Include="Data\Temp\.data">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Compile Include="Config\Crypto.cs" />
     <Compile Include="Debug\NameGen.cs" />
     <Compile Include="Debug\SampleClass.cs" />
     <Compile Include="ExcelLayout\ChartLayout.cs" />
     <Compile Include="ExcelLayout\LayoutCalc.cs" />
     <Compile Include="Op\Analyzer.cs" />
     <Compile Include="Op\ChartGen.cs" />
+    <Compile Include="Op\ChartHelper.cs" />
     <Compile Include="Op\DisplayChartGen.cs" />
     <Compile Include="Op\ExcelOperator2.cs" />
     <Compile Include="Op\Math.cs" />
@@ -141,12 +137,6 @@
     <Compile Include="Structure\ScoreTable.cs" />
     <Compile Include="Structure\Subjects.cs" />
     <Compile Include="Structure\XlsSizeUnit.cs" />
-    <Compile Include="Windows\AboutWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Windows\AboutWindow.Designer.cs">
-      <DependentUpon>AboutWindow.cs</DependentUpon>
-    </Compile>
     <Compile Include="Windows\BusyWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,12 +150,6 @@
       <DependentUpon>BusyWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Windows\DataGridViewHelper.cs" />
-    <Compile Include="Windows\DataVisualization.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Windows\DataVisualization.Designer.cs">
-      <DependentUpon>DataVisualization.cs</DependentUpon>
-    </Compile>
     <Compile Include="Windows\ExcelWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,18 +168,6 @@
     <Compile Include="Windows\GridWindow.Designer.cs">
       <DependentUpon>GridWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Windows\IntroductionWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Windows\IntroductionWindow.Designer.cs">
-      <DependentUpon>IntroductionWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\IOFormatWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Windows\IOFormatWindow.Designer.cs">
-      <DependentUpon>IOFormatWindow.cs</DependentUpon>
-    </Compile>
     <Compile Include="Windows\LogWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,17 +182,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Windows\SettingsWindiow.cs">
+    <Compile Include="Windows\DebugWindiow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Windows\SettingsWindiow.Designer.cs">
-      <DependentUpon>SettingsWindiow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\SparklineWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Windows\SparklineWindow.Designer.cs">
-      <DependentUpon>SparklineWindow.cs</DependentUpon>
+    <Compile Include="Windows\DebugWindiow.Designer.cs">
+      <DependentUpon>DebugWindiow.cs</DependentUpon>
     </Compile>
     <Compile Include="Windows\SplashWindow.cs">
       <SubType>Form</SubType>
@@ -270,6 +236,12 @@
     <Compile Include="Windows\Wizard\FormatWindow.Designer.cs">
       <DependentUpon>FormatWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Windows\Wizard\SettingWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\Wizard\SettingWindow.Designer.cs">
+      <DependentUpon>SettingWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Wizard\WebWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -292,14 +264,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Windows\AboutWindow.resx">
-      <DependentUpon>AboutWindow.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Windows\Busy\BusyWindow.resx">
       <DependentUpon>BusyWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Windows\DataVisualization.resx">
-      <DependentUpon>DataVisualization.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\ExcelWindow.resx">
       <DependentUpon>ExcelWindow.cs</DependentUpon>
@@ -310,23 +276,14 @@
     <EmbeddedResource Include="Windows\GridWindow.resx">
       <DependentUpon>GridWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Windows\IntroductionWindow.resx">
-      <DependentUpon>IntroductionWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Windows\IOFormatWindow.resx">
-      <DependentUpon>IOFormatWindow.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Windows\LogWindow.resx">
       <DependentUpon>LogWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Windows\SettingsWindiow.resx">
-      <DependentUpon>SettingsWindiow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Windows\SparklineWindow.resx">
-      <DependentUpon>SparklineWindow.cs</DependentUpon>
+    <EmbeddedResource Include="Windows\DebugWindiow.resx">
+      <DependentUpon>DebugWindiow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\SplashWindow.resx">
       <DependentUpon>SplashWindow.cs</DependentUpon>
@@ -353,15 +310,15 @@
     <Content Include="Data\ShowReadme">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Data\tmp.xlsx">
+    <None Include="Data\object3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Data\TEMPLATE.XLSX">
+    </None>
+    <None Include="Data\object2">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Data\Test\c5.xlsx">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    </None>
+    <EmbeddedResource Include="Windows\Wizard\SettingWindow.resx">
+      <DependentUpon>SettingWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Windows\Wizard\WebWindow.resx">
       <DependentUpon>WebWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -369,36 +326,12 @@
       <DependentUpon>WelcomeWindow.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <None Include="Data\object1">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Data\README.MD" />
     <None Include="Data\readme.rtf" />
     <None Include="packages.config" />
-    <Content Include="Data\DIRECT_TEMPLATE.PPTX">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Data\GRAPH_PAGE_1.PPTX">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Data\GRAPH_PAGE_2.PPTX">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Data\GRAPH_PAGE_3.PPTX">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Data\GRID_PAGE_1.PPTX">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Data\LIST_PAGE.PPTX">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Data\THEME.THMX">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Data\TITLE_TEMPLATE_1.PPTX">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Data\TITLE_TEMPLATE_2.PPTX">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <None Include="Properties\DataSources\BiSS.Projects.RPGen.Structure.DisplayObject.datasource" />
     <None Include="Properties\DataSources\BiSS.Projects.RPGen.Structure.LDChartDataSource.datasource" />
     <None Include="Properties\DataSources\BiSS.Projects.RPGen.Structure.ScoreTable.datasource" />
@@ -413,6 +346,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="成绩报告生成器.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -422,10 +356,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MetroFramework.txt" />
-    <None Include="Resources\XX.ico" />
-    <None Include="Resources\XXXTest.bmp" />
-    <None Include="Resources\icons8-input-528.png" />
-    <None Include="Resources\icons8-windows-client-528.png" />
     <None Include="Resources\RPGenIcon-Colored.png" />
     <None Include="Resources\RPGenIcon-Colored-Welcome.png" />
     <Content Include="RPGenIcon-Colored.ico" />

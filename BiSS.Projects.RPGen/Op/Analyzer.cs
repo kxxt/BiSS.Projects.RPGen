@@ -8,33 +8,33 @@ using BiSS.Projects.RPGen.Structure;
 using RsWork.Functions.Log;
 using Syncfusion.CompoundFile.XlsIO.Net;
 using Syncfusion.Data.Extensions;
-using Syncfusion.Windows.Forms.Chart;
+
 using Syncfusion.XlsIO.Implementation.PivotAnalysis;
 
 namespace BiSS.Projects.RPGen.Op
 {
-	public static  class Analyzer
+	public static class Analyzer
 	{
 
-		
-		public static int[] CountStuNumPerLevelPerSubject(this IList<ScoreModel> li,NfSubjects sub,float fullScore,Dictionary<Level,float> spr)
+
+		public static int[] CountStuNumPerLevelPerSubject(this IList<ScoreModel> li, NfSubjects sub, float fullScore, Dictionary<Level, float> spr)
 		{
-			int[] ret=new int[]{Int32.MinValue, -1,-1,-1,-1};
-			var s = li.Select(sm => sm[sub]??0);
-			var sprs = GetSepratorPerSubject(fullScore,spr);
+			int[] ret = new int[] { Int32.MinValue, -1, -1, -1, -1 };
+			var s = li.Select(sm => sm[sub] ?? 0);
+			var sprs = GetSepratorPerSubject(fullScore, spr);
 			sprs[0] = fullScore;
 			var stmpList = s.ToList();//reduce mutiplie enumerate
 			for (Level lv = Level.A; lv <= Level.D; lv++)
 			{
-				
-				ret[lv.Id()] = stmpList.CountItemInRange(sprs[lv],sprs[lv-1]);
+
+				ret[lv.Id()] = stmpList.CountItemInRange(sprs[lv], sprs[lv - 1]);
 			}
 
 			return ret;
 		}
 
 		[Passed]
-		public static int CountItemInRange<T1,T2>(this IEnumerable<T1> l, T2 low, T2 high,Func<T1,T2> selector) where T2 : IComparable<T2>
+		public static int CountItemInRange<T1, T2>(this IEnumerable<T1> l, T2 low, T2 high, Func<T1, T2> selector) where T2 : IComparable<T2>
 		{
 			int cnt = 0;
 			foreach (var t in l)
@@ -47,7 +47,7 @@ namespace BiSS.Projects.RPGen.Op
 			return cnt;
 		}
 		[Passed]
-		public static int CountItemInRange<T>(this IEnumerable<T> l, T low, T high) where T :IComparable<T> 
+		public static int CountItemInRange<T>(this IEnumerable<T> l, T low, T high) where T : IComparable<T>
 		{
 			int cnt = 0;
 			foreach (var t in l)
@@ -75,13 +75,13 @@ namespace BiSS.Projects.RPGen.Op
 			return ret;
 		}
 		[Passed()]
-		public static Dictionary<Level, float> GetSepratorPerSubject(float fullScore,Dictionary<Level, float> spr)
+		public static Dictionary<Level, float> GetSepratorPerSubject(float fullScore, Dictionary<Level, float> spr)
 		{
 			if (spr[Level.A] > spr[Level.B] &&
-			    spr[Level.B] > spr[Level.C] &&
-			    spr[Level.C] > spr[Level.D])
+				spr[Level.B] > spr[Level.C] &&
+				spr[Level.C] > spr[Level.D])
 			{
-				var ret=new Dictionary<Level,float>();
+				var ret = new Dictionary<Level, float>();
 				foreach (var s in spr)
 				{
 					if (!(0 <= s.Value && s.Value < 1))
@@ -100,25 +100,25 @@ namespace BiSS.Projects.RPGen.Op
 			}
 		}
 		[Passed()]
-		public static Dictionary<NfSubjects,Dictionary<Level,float>> GetSeparator(Dictionary<NfSubjects,float> fs, Dictionary<Level, float> spr)
+		public static Dictionary<NfSubjects, Dictionary<Level, float>> GetSeparator(Dictionary<NfSubjects, float> fs, Dictionary<Level, float> spr)
 		{
 			if (spr[Level.A] > spr[Level.B] &&
-			    spr[Level.B] > spr[Level.C] &&
-			    spr[Level.C] > spr[Level.D])
+				spr[Level.B] > spr[Level.C] &&
+				spr[Level.C] > spr[Level.D])
 			{
 				foreach (float s in spr.Values)
 				{
-					if(!(0<=s&&s<1))
-						throw new ArgumentOutOfRangeException(nameof(spr),"Each member of {spr} should be in Range [0,1)!");
-						
+					if (!(0 <= s && s < 1))
+						throw new ArgumentOutOfRangeException(nameof(spr), "Each member of {spr} should be in Range [0,1)!");
+
 				}
 				var ret = new Dictionary<NfSubjects, Dictionary<Level, float>>();
 				for (NfSubjects sub = NfSubjects.Zh; sub <= NfSubjects.All; sub++)
 				{
 					for (Level lv = Level.A; lv <= Level.D; lv++)
 					{
-						if(!ret.ContainsKey(sub))
-							ret[sub]=new Dictionary<Level, float>();
+						if (!ret.ContainsKey(sub))
+							ret[sub] = new Dictionary<Level, float>();
 						ret[sub][lv] = get_seprated(fs[sub], spr[lv]);
 					}
 				}
@@ -129,10 +129,10 @@ namespace BiSS.Projects.RPGen.Op
 			{
 				throw new ArgumentException("Seprators should be input ordered!A=>D,Highest=>Lowest");
 			}
-			
+
 		}
 		[Passed()]
-		private static float get_seprated(float full,float spr)
+		private static float get_seprated(float full, float spr)
 		{
 			return full * spr;
 		}
@@ -144,26 +144,26 @@ namespace BiSS.Projects.RPGen.Op
 		/// <param name="b">左端闭区间</param>
 		/// <param name="e">右端开区间,默认为序列尾</param>
 		/// <returns></returns>
-		public static object[] ToObjectArray<T>(this T[] li,int b=0,int e=Int32.MaxValue)
+		public static object[] ToObjectArray<T>(this T[] li, int b = 0, int e = Int32.MaxValue)
 		{
 			if (e == Int32.MaxValue)
 				e = li.Length;
-			IList<T> lis=new List<T>();
+			IList<T> lis = new List<T>();
 			for (int i = b; i < e; i++)
 				lis.Add(li[i]);
 			return lis.Cast<object>().ToArray();
 		}
-		public static (object[],object[]) ReArrangeData(IList<(NfSubjects,float)> li)
+		public static (object[], object[]) ReArrangeData(IList<(NfSubjects, float)> li)
 		{
-			IList<(NfSubjects, float)> lic=new List<(NfSubjects, float)>();
-			li.ForEach(ii=>lic.Add(ii));
+			IList<(NfSubjects, float)> lic = new List<(NfSubjects, float)>();
+			li.ForEach(ii => lic.Add(ii));
 			IList<object> xv = new List<object>();
 			IList<object> yv = new List<object>();
 			for (int i = 0; i < lic.Count; i++)
 			{
 				if (lic[i].Item1 != NfSubjects.All)
 				{
-					lic[i] =( lic[i].Item1,lic[i].Item2* (Program.ScoreUnionIndicator / Program.FullScore[lic[i].Item1]));
+					lic[i] = (lic[i].Item1, lic[i].Item2 * (Program.ScoreUnionIndicator / Program.FullScore[lic[i].Item1]));
 					xv.Add(lic[i].Item1.Name());
 					yv.Add(lic[i].Item2);
 				}
@@ -187,10 +187,10 @@ namespace BiSS.Projects.RPGen.Op
 			}
 			return (xv.ToArray(), yv.ToArray());
 		}
-		public static IList<(NfSubjects,float)> Average(IList<ScoreModel> li)
+		public static IList<(NfSubjects, float)> Average(IList<ScoreModel> li)
 		{
-			var ret=new List<(NfSubjects, float)>();
-			ret.Add((NfSubjects.Zh,li.Average(sm=>sm.Zh??0)));
+			var ret = new List<(NfSubjects, float)>();
+			ret.Add((NfSubjects.Zh, li.Average(sm => sm.Zh ?? 0)));
 			ret.Add((NfSubjects.M, li.Average(sm => sm.M ?? 0)));
 			ret.Add((NfSubjects.En, li.Average(sm => sm.En ?? 0)));
 			ret.Add((NfSubjects.P, li.Average(sm => sm.P ?? 0)));
@@ -199,7 +199,7 @@ namespace BiSS.Projects.RPGen.Op
 			ret.Add((NfSubjects.H, li.Average(sm => sm.H ?? 0)));
 			ret.Add((NfSubjects.G, li.Average(sm => sm.G ?? 0)));
 			ret.Add((NfSubjects.B, li.Average(sm => sm.B ?? 0)));
-			ret.Add((NfSubjects.All,li.Average(sm=>sm.Sum??0)));
+			ret.Add((NfSubjects.All, li.Average(sm => sm.Sum ?? 0)));
 			return ret;
 		}
 		public static IList<(NfSubjects, float)> Sum(IList<ScoreModel> li)
@@ -235,7 +235,7 @@ namespace BiSS.Projects.RPGen.Op
 		public static IList<(NfSubjects, float[])> Mode(IList<ScoreModel> li)
 		{
 			var ret = new List<(NfSubjects, float[])>();
-			ret.Add((NfSubjects.Zh, ModeOf(li.Select(sm=>sm.Zh??0).ToArray())));
+			ret.Add((NfSubjects.Zh, ModeOf(li.Select(sm => sm.Zh ?? 0).ToArray())));
 			ret.Add((NfSubjects.M, ModeOf(li.Select(sm => sm.Zh ?? 0).ToArray())));
 			ret.Add((NfSubjects.En, ModeOf(li.Select(sm => sm.Zh ?? 0).ToArray())));
 			ret.Add((NfSubjects.P, ModeOf(li.Select(sm => sm.Zh ?? 0).ToArray())));
@@ -428,8 +428,8 @@ namespace BiSS.Projects.RPGen.Op
 				for (int j = i; j < statsArray.Length; j++)
 				{
 					if (statsArray[i].Count < statsArray[j].Count ||
-					    (statsArray[i].Count == statsArray[j].Count &&
-					     statsArray[i].Number > statsArray[j].Number))
+						(statsArray[i].Count == statsArray[j].Count &&
+						 statsArray[i].Number > statsArray[j].Number))
 					{
 
 						temp = statsArray[i].Number;
@@ -446,7 +446,7 @@ namespace BiSS.Projects.RPGen.Op
 			//7.统计众数数量
 			int count = 1;
 			if (statsArray.Length > threshold &&
-			    statsArray[threshold].Count == statsArray[0].Count)
+				statsArray[threshold].Count == statsArray[0].Count)
 			{
 				//众数多余阈值数量，则认为没有众数
 				return new float[] { };
@@ -500,7 +500,7 @@ namespace BiSS.Projects.RPGen.Op
 				int max = 0;
 				int position = 0;
 				int[] modeArray = new int[elevationList.Count];//众数数组
-				//遍历hash表
+															   //遍历hash表
 				foreach (KeyValuePair<int, int> myKey in dictionary)
 				{
 					if (myKey.Value > max)
