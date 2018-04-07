@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,19 +48,25 @@ namespace BiSS.Projects.RPGen.Windows.Wizard
 
 		private void metroTile5_Click(object sender, EventArgs e)
 		{
+			try
+			{
+				Process.Start("Data\\example.mp4");
+			}
+			catch (FileNotFoundException)
+			{
+				MessageBox.Show("辅助视频文件未找到 .\r\n播放失败 !", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			catch
+			{
+				MessageBox.Show("辅助视频播放失败 .\r\n播放失败 !", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+
 
 		}
 
 		private void FlashTimer_Tick(object sender, EventArgs e)
 		{
-			#region TileFlash
 
-			this.metroTile3.BackColor = (this.metroTile3.BackColor == Color.FromArgb(235, 73, 16)
-				? Color.FromArgb(234, 0, 94)
-				: Color.FromArgb(235, 73, 16));
-
-
-			#endregion
 		}
 
 		private void AppStartWindow_Shown(object sender, EventArgs e)

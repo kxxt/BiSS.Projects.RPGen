@@ -34,9 +34,6 @@
 			this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
 			this.dotdotdot = new BiSS.Projects.RPGen.Windows.Windows10Btn1();
 			this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-			this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
-			this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
-			this.metroToggle2 = new MetroFramework.Controls.MetroToggle();
 			this.metroLabel17 = new MetroFramework.Controls.MetroLabel();
 			this.sfNumericTextBox9 = new Syncfusion.WinForms.Input.SfNumericTextBox();
 			this.metroLabel16 = new MetroFramework.Controls.MetroLabel();
@@ -60,8 +57,6 @@
 			this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
 			this.metroTextBox3 = new MetroFramework.Controls.MetroTextBox();
 			this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
-			this.metroTextBox2 = new MetroFramework.Controls.MetroTextBox();
-			this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
 			this.continuebtn = new BiSS.Projects.RPGen.Windows.Windows10Btn2();
 			this.metroLabel18 = new MetroFramework.Controls.MetroLabel();
 			this.metroLabel19 = new MetroFramework.Controls.MetroLabel();
@@ -138,41 +133,6 @@
 			this.metroLabel2.Size = new System.Drawing.Size(224, 19);
 			this.metroLabel2.TabIndex = 0;
 			this.metroLabel2.Text = "(留空将保存在桌面 , 支持相对路径)";
-			// 
-			// metroLabel5
-			// 
-			this.metroLabel5.AutoSize = true;
-			this.metroLabel5.FontSize = MetroFramework.MetroLabelSize.Tall;
-			this.metroLabel5.Location = new System.Drawing.Point(235, 144);
-			this.metroLabel5.Name = "metroLabel5";
-			this.metroLabel5.Size = new System.Drawing.Size(50, 25);
-			this.metroLabel5.TabIndex = 15;
-			this.metroLabel5.Text = "Excel";
-			// 
-			// metroLabel6
-			// 
-			this.metroLabel6.AutoSize = true;
-			this.metroLabel6.FontSize = MetroFramework.MetroLabelSize.Tall;
-			this.metroLabel6.Location = new System.Drawing.Point(12, 144);
-			this.metroLabel6.Name = "metroLabel6";
-			this.metroLabel6.Size = new System.Drawing.Size(41, 25);
-			this.metroLabel6.TabIndex = 16;
-			this.metroLabel6.Text = "PPT";
-			// 
-			// metroToggle2
-			// 
-			this.metroToggle2.AutoSize = true;
-			this.metroToggle2.Checked = true;
-			this.metroToggle2.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.metroToggle2.DisplayStatus = false;
-			this.metroToggle2.Location = new System.Drawing.Point(95, 144);
-			this.metroToggle2.Name = "metroToggle2";
-			this.metroToggle2.Size = new System.Drawing.Size(50, 25);
-			this.metroToggle2.Style = MetroFramework.MetroColorStyle.Orange;
-			this.metroToggle2.TabIndex = 2;
-			this.metroToggle2.Text = "On";
-			this.metroToggle2.UseVisualStyleBackColor = true;
-			this.metroToggle2.CheckedChanged += new System.EventHandler(this.metroToggle2_CheckedChanged);
 			// 
 			// metroLabel17
 			// 
@@ -384,17 +344,18 @@
 			// 
 			// metroTextBox4
 			// 
-			this.metroTextBox4.Location = new System.Drawing.Point(95, 233);
+			this.metroTextBox4.Location = new System.Drawing.Point(97, 179);
 			this.metroTextBox4.Name = "metroTextBox4";
 			this.metroTextBox4.Size = new System.Drawing.Size(190, 23);
 			this.metroTextBox4.Style = MetroFramework.MetroColorStyle.Orange;
 			this.metroTextBox4.TabIndex = 5;
 			this.metroTextBox4.Text = "成绩报告生成器";
+			this.metroTextBox4.TextChanged += new System.EventHandler(this.metroTextBox4_TextChanged);
 			// 
 			// metroLabel8
 			// 
 			this.metroLabel8.AutoSize = true;
-			this.metroLabel8.Location = new System.Drawing.Point(12, 233);
+			this.metroLabel8.Location = new System.Drawing.Point(14, 179);
 			this.metroLabel8.Name = "metroLabel8";
 			this.metroLabel8.Size = new System.Drawing.Size(37, 19);
 			this.metroLabel8.TabIndex = 61;
@@ -402,7 +363,7 @@
 			// 
 			// metroTextBox3
 			// 
-			this.metroTextBox3.Location = new System.Drawing.Point(95, 203);
+			this.metroTextBox3.Location = new System.Drawing.Point(97, 150);
 			this.metroTextBox3.Name = "metroTextBox3";
 			this.metroTextBox3.Size = new System.Drawing.Size(190, 23);
 			this.metroTextBox3.Style = MetroFramework.MetroColorStyle.Orange;
@@ -413,30 +374,11 @@
 			// metroLabel7
 			// 
 			this.metroLabel7.AutoSize = true;
-			this.metroLabel7.Location = new System.Drawing.Point(12, 203);
+			this.metroLabel7.Location = new System.Drawing.Point(14, 150);
 			this.metroLabel7.Name = "metroLabel7";
 			this.metroLabel7.Size = new System.Drawing.Size(65, 19);
 			this.metroLabel7.TabIndex = 59;
 			this.metroLabel7.Text = "班级名称";
-			// 
-			// metroTextBox2
-			// 
-			this.metroTextBox2.Location = new System.Drawing.Point(95, 172);
-			this.metroTextBox2.Name = "metroTextBox2";
-			this.metroTextBox2.Size = new System.Drawing.Size(190, 23);
-			this.metroTextBox2.Style = MetroFramework.MetroColorStyle.Orange;
-			this.metroTextBox2.TabIndex = 3;
-			this.metroTextBox2.Text = "成绩报告";
-			this.metroTextBox2.TextChanged += new System.EventHandler(this.metroTextBox2_TextChanged);
-			// 
-			// metroLabel4
-			// 
-			this.metroLabel4.AutoSize = true;
-			this.metroLabel4.Location = new System.Drawing.Point(12, 172);
-			this.metroLabel4.Name = "metroLabel4";
-			this.metroLabel4.Size = new System.Drawing.Size(37, 19);
-			this.metroLabel4.TabIndex = 57;
-			this.metroLabel4.Text = "标题";
 			// 
 			// continuebtn
 			// 
@@ -668,7 +610,7 @@
 			// FormatWindow
 			// 
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-			this.ClientSize = new System.Drawing.Size(824, 491);
+			this.ClientSize = new System.Drawing.Size(863, 488);
 			this.Controls.Add(this.windows10Btn21);
 			this.Controls.Add(this.sfNumericTextBox10);
 			this.Controls.Add(this.sfNumericTextBox11);
@@ -694,8 +636,6 @@
 			this.Controls.Add(this.metroLabel8);
 			this.Controls.Add(this.metroTextBox3);
 			this.Controls.Add(this.metroLabel7);
-			this.Controls.Add(this.metroTextBox2);
-			this.Controls.Add(this.metroLabel4);
 			this.Controls.Add(this.metroLabel17);
 			this.Controls.Add(this.sfNumericTextBox9);
 			this.Controls.Add(this.metroLabel16);
@@ -715,9 +655,6 @@
 			this.Controls.Add(this.metroLabel9);
 			this.Controls.Add(this.sfNumericTextBox1);
 			this.Controls.Add(this.metroLabel3);
-			this.Controls.Add(this.metroLabel5);
-			this.Controls.Add(this.metroLabel6);
-			this.Controls.Add(this.metroToggle2);
 			this.Controls.Add(this.metroLabel2);
 			this.Controls.Add(this.dotdotdot);
 			this.Controls.Add(this.metroLabel1);
@@ -725,15 +662,14 @@
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "FormatWindow";
 			this.Text = "";
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormatWindow_FormClosing);
+			this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormatWindow_FormClosed);
 			this.Load += new System.EventHandler(this.FormatWindow_Load);
 			this.Shown += new System.EventHandler(this.FormatWindow_Shown);
 			this.Controls.SetChildIndex(this.metroTextBox1, 0);
 			this.Controls.SetChildIndex(this.metroLabel1, 0);
 			this.Controls.SetChildIndex(this.dotdotdot, 0);
 			this.Controls.SetChildIndex(this.metroLabel2, 0);
-			this.Controls.SetChildIndex(this.metroToggle2, 0);
-			this.Controls.SetChildIndex(this.metroLabel6, 0);
-			this.Controls.SetChildIndex(this.metroLabel5, 0);
 			this.Controls.SetChildIndex(this.metroLabel3, 0);
 			this.Controls.SetChildIndex(this.sfNumericTextBox1, 0);
 			this.Controls.SetChildIndex(this.metroLabel9, 0);
@@ -753,8 +689,6 @@
 			this.Controls.SetChildIndex(this.metroLabel16, 0);
 			this.Controls.SetChildIndex(this.sfNumericTextBox9, 0);
 			this.Controls.SetChildIndex(this.metroLabel17, 0);
-			this.Controls.SetChildIndex(this.metroLabel4, 0);
-			this.Controls.SetChildIndex(this.metroTextBox2, 0);
 			this.Controls.SetChildIndex(this.metroLabel7, 0);
 			this.Controls.SetChildIndex(this.metroTextBox3, 0);
 			this.Controls.SetChildIndex(this.metroLabel8, 0);
@@ -794,9 +728,6 @@
 		private MetroFramework.Controls.MetroLabel metroLabel1;
 		private Windows10Btn1 dotdotdot;
 		private MetroFramework.Controls.MetroLabel metroLabel2;
-		private MetroFramework.Controls.MetroLabel metroLabel5;
-		private MetroFramework.Controls.MetroLabel metroLabel6;
-		private MetroFramework.Controls.MetroToggle metroToggle2;
 		private MetroFramework.Controls.MetroLabel metroLabel17;
 		private Syncfusion.WinForms.Input.SfNumericTextBox sfNumericTextBox9;
 		private MetroFramework.Controls.MetroLabel metroLabel16;
@@ -820,8 +751,6 @@
 		private MetroFramework.Controls.MetroLabel metroLabel8;
 		private MetroFramework.Controls.MetroTextBox metroTextBox3;
 		private MetroFramework.Controls.MetroLabel metroLabel7;
-		private MetroFramework.Controls.MetroTextBox metroTextBox2;
-		private MetroFramework.Controls.MetroLabel metroLabel4;
 		private BiSS.Projects.RPGen.Windows.Windows10Btn2 continuebtn;
 		private MetroFramework.Controls.MetroLabel metroLabel18;
 		private MetroFramework.Controls.MetroLabel metroLabel19;

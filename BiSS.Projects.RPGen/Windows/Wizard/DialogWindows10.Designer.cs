@@ -31,6 +31,7 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DialogWindows10));
 			this.subTitle = new System.Windows.Forms.Label();
 			this.title = new System.Windows.Forms.Label();
+			this.modernButton1 = new RsWork.UI.Controls.ModernButton();
 			this.SuspendLayout();
 			// 
 			// subTitle
@@ -54,11 +55,38 @@
 			this.title.TabIndex = 3;
 			this.title.Text = "Text";
 			// 
+			// modernButton1
+			// 
+			this.modernButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+			| System.Windows.Forms.AnchorStyles.Left)
+			| System.Windows.Forms.AnchorStyles.Right)));
+			this.modernButton1.BackColor = System.Drawing.Color.Transparent;
+			this.modernButton1.BorderColor = System.Drawing.Color.White;
+			this.modernButton1.DisabledBorderColor = System.Drawing.Color.DarkGray;
+			this.modernButton1.DisabledForeColor = System.Drawing.Color.DarkGray;
+			this.modernButton1.FlatAppearance.BorderColor = System.Drawing.Color.White;
+			this.modernButton1.FlatAppearance.BorderSize = 2;
+			this.modernButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.modernButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			this.modernButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.modernButton1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.modernButton1.ForeColor = System.Drawing.Color.White;
+			this.modernButton1.Location = new System.Drawing.Point(165, 84);
+			this.modernButton1.Name = "modernButton1";
+			this.modernButton1.Size = new System.Drawing.Size(150, 150);
+			this.modernButton1.TabIndex = 5;
+			this.modernButton1.Text = "modernButton1";
+			this.modernButton1.UseVisualStyleBackColor = false;
+			this.modernButton1.Visible = false;
+			this.modernButton1.Click += new System.EventHandler(this.modernButton1_Click);
+			// 
 			// DialogWindows10
 			// 
+			this.AcceptButton = this.modernButton1;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-			this.ClientSize = new System.Drawing.Size(642, 204);
+			this.ClientSize = new System.Drawing.Size(669, 251);
+			this.Controls.Add(this.modernButton1);
 			this.Controls.Add(this.subTitle);
 			this.Controls.Add(this.title);
 			this.DoubleBuffered = true;
@@ -79,5 +107,6 @@
 
 		public System.Windows.Forms.Label subTitle;
 		public System.Windows.Forms.Label title;
+		private RsWork.UI.Controls.ModernButton modernButton1;
 	}
 }

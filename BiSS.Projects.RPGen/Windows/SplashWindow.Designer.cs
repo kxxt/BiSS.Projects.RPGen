@@ -33,8 +33,6 @@ namespace BiSS.Projects.RPGen.Windows
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SplashWindow));
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
-			this.label1 = new System.Windows.Forms.Label();
-			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.button1 = new System.Windows.Forms.Button();
 			this.timer = new System.Windows.Forms.Timer(this.components);
 			this.bgw = new System.ComponentModel.BackgroundWorker();
@@ -68,33 +66,6 @@ namespace BiSS.Projects.RPGen.Windows
 			this.pictureBox1.TabIndex = 3;
 			this.pictureBox1.TabStop = false;
 			this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.WindowMove);
-			// 
-			// label1
-			// 
-			this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(12, 349);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(88, 26);
-			this.label1.TabIndex = 4;
-			this.label1.Text = "加载状态";
-			this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.WindowMove);
-			// 
-			// textBox1
-			// 
-			this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(181)))), ((int)(((byte)(226)))));
-			this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.textBox1.Font = new System.Drawing.Font("微软雅黑 Light", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-			this.textBox1.ForeColor = System.Drawing.Color.White;
-			this.textBox1.Location = new System.Drawing.Point(106, 353);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.ReadOnly = true;
-			this.textBox1.ShortcutsEnabled = false;
-			this.textBox1.Size = new System.Drawing.Size(220, 19);
-			this.textBox1.TabIndex = 5;
-			this.textBox1.Text = "{$Loading Status Not Inited$}";
-			this.textBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.WindowMove);
 			// 
 			// button1
 			// 
@@ -131,18 +102,14 @@ namespace BiSS.Projects.RPGen.Windows
 			// 
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(181)))), ((int)(((byte)(226)))));
-			this.ClientSize = new System.Drawing.Size(732, 397);
+			this.ClientSize = new System.Drawing.Size(732, 375);
 			this.Controls.Add(this.metroProgressSpinner1);
 			this.Controls.Add(this.button1);
-			this.Controls.Add(this.textBox1);
-			this.Controls.Add(this.label1);
 			this.Controls.Add(this.pictureBox1);
 			this.Name = "SplashWindow";
 			this.Controls.SetChildIndex(this.title, 0);
 			this.Controls.SetChildIndex(this.Context, 0);
 			this.Controls.SetChildIndex(this.pictureBox1, 0);
-			this.Controls.SetChildIndex(this.label1, 0);
-			this.Controls.SetChildIndex(this.textBox1, 0);
 			this.Controls.SetChildIndex(this.button1, 0);
 			this.Controls.SetChildIndex(this.metroProgressSpinner1, 0);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -153,8 +120,6 @@ namespace BiSS.Projects.RPGen.Windows
 
 		#endregion
 		private System.Windows.Forms.PictureBox pictureBox1;
-		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.TextBox textBox1;
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Timer timer;
 		private System.ComponentModel.BackgroundWorker bgw;

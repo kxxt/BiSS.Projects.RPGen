@@ -150,11 +150,11 @@ namespace BiSS.Projects.RPGen.Windows
 			var ew =
 				 new ExcelWindow("填写成绩单 (Hint:可以从原始成绩单中复制)");
 			Random rd = new Random();
-			var name = $"Temp\\{rd.Next()}.xlsx";
+			var name = $"Data\\Temp\\{rd.Next()}.xlsx";
 			try
 			{
 
-				Directory.CreateDirectory("Temp");
+				Directory.CreateDirectory("Data\\Temp");
 				File.Copy("Data\\tmp.xlsx", name);
 			}
 			catch (Exception ce)
@@ -434,7 +434,7 @@ namespace BiSS.Projects.RPGen.Windows
 
 		private void modernButton4_Click(object sender, EventArgs e)
 		{
-			new FillExcel().ShowDialog();
+			//new FillExcel().ShowDialog();
 		}
 
 		private void modernButton5_Click(object sender, EventArgs e)

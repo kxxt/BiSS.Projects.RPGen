@@ -73,7 +73,7 @@
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-			this.tableLayoutPanel1.Size = new System.Drawing.Size(643, 396);
+			this.tableLayoutPanel1.Size = new System.Drawing.Size(695, 391);
 			this.tableLayoutPanel1.TabIndex = 5;
 			// 
 			// metroTile5
@@ -81,9 +81,9 @@
 			this.metroTile5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(0)))), ((int)(((byte)(79)))));
 			this.metroTile5.CustomBackground = true;
 			this.metroTile5.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.metroTile5.Location = new System.Drawing.Point(483, 3);
+			this.metroTile5.Location = new System.Drawing.Point(522, 3);
 			this.metroTile5.Name = "metroTile5";
-			this.metroTile5.Size = new System.Drawing.Size(157, 126);
+			this.metroTile5.Size = new System.Drawing.Size(170, 124);
 			this.metroTile5.Style = MetroFramework.MetroColorStyle.Yellow;
 			this.metroTile5.TabIndex = 4;
 			this.metroTile5.Text = "使用帮助";
@@ -97,10 +97,10 @@
 			// metroTile4
 			// 
 			this.metroTile4.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.metroTile4.Location = new System.Drawing.Point(483, 135);
+			this.metroTile4.Location = new System.Drawing.Point(522, 133);
 			this.metroTile4.Name = "metroTile4";
 			this.tableLayoutPanel1.SetRowSpan(this.metroTile4, 2);
-			this.metroTile4.Size = new System.Drawing.Size(157, 258);
+			this.metroTile4.Size = new System.Drawing.Size(170, 255);
 			this.metroTile4.Style = MetroFramework.MetroColorStyle.Pink;
 			this.metroTile4.TabIndex = 3;
 			this.metroTile4.Text = "检测更新";
@@ -115,9 +115,9 @@
 			// 
 			this.tableLayoutPanel1.SetColumnSpan(this.metroTile3, 3);
 			this.metroTile3.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.metroTile3.Location = new System.Drawing.Point(3, 267);
+			this.metroTile3.Location = new System.Drawing.Point(3, 263);
 			this.metroTile3.Name = "metroTile3";
-			this.metroTile3.Size = new System.Drawing.Size(474, 126);
+			this.metroTile3.Size = new System.Drawing.Size(513, 125);
 			this.metroTile3.Style = MetroFramework.MetroColorStyle.Purple;
 			this.metroTile3.TabIndex = 2;
 			this.metroTile3.Text = "用户许可协议及关于信息";
@@ -131,10 +131,10 @@
 			// metroTile2
 			// 
 			this.metroTile2.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.metroTile2.Location = new System.Drawing.Point(323, 3);
+			this.metroTile2.Location = new System.Drawing.Point(349, 3);
 			this.metroTile2.Name = "metroTile2";
 			this.tableLayoutPanel1.SetRowSpan(this.metroTile2, 2);
-			this.metroTile2.Size = new System.Drawing.Size(154, 258);
+			this.metroTile2.Size = new System.Drawing.Size(167, 254);
 			this.metroTile2.Style = MetroFramework.MetroColorStyle.Teal;
 			this.metroTile2.TabIndex = 1;
 			this.metroTile2.Text = "程序设置";
@@ -152,7 +152,7 @@
 			this.metroTile1.Location = new System.Drawing.Point(3, 3);
 			this.metroTile1.Name = "metroTile1";
 			this.tableLayoutPanel1.SetRowSpan(this.metroTile1, 2);
-			this.metroTile1.Size = new System.Drawing.Size(314, 258);
+			this.metroTile1.Size = new System.Drawing.Size(340, 254);
 			this.metroTile1.TabIndex = 0;
 			this.metroTile1.Text = "进入向导";
 			this.metroTile1.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile1.TileImage")));
@@ -167,14 +167,13 @@
 			this.FlashTimer.Enabled = true;
 			this.FlashTimer.Interval = 300;
 			this.FlashTimer.Tag = "1";
-			this.FlashTimer.Tick += new System.EventHandler(this.FlashTimer_Tick);
 			// 
 			// AppStartWindow
 			// 
 			this.AcceptButton = this.metroTile1;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-			this.ClientSize = new System.Drawing.Size(647, 400);
+			this.ClientSize = new System.Drawing.Size(699, 395);
 			this.Controls.Add(this.tableLayoutPanel1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

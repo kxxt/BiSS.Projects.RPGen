@@ -64,7 +64,7 @@
 			this.spreadsheet1.SelectedTabIndex = 0;
 			this.spreadsheet1.SelectedTabItem = null;
 			this.spreadsheet1.ShowBusyIndicator = true;
-			this.spreadsheet1.Size = new System.Drawing.Size(985, 508);
+			this.spreadsheet1.Size = new System.Drawing.Size(998, 508);
 			this.spreadsheet1.TabIndex = 0;
 			this.spreadsheet1.TabItemContextMenu = null;
 			this.spreadsheet1.Text = "spreadsheet1";
@@ -84,8 +84,8 @@
 			// splitContainer1.Panel2
 			// 
 			this.splitContainer1.Panel2.Controls.Add(this.spreadsheet1);
-			this.splitContainer1.Size = new System.Drawing.Size(985, 558);
-			this.splitContainer1.SplitterDistance = 46;
+			this.splitContainer1.Size = new System.Drawing.Size(998, 557);
+			this.splitContainer1.SplitterDistance = 45;
 			this.splitContainer1.TabIndex = 1;
 			// 
 			// sfButton1
@@ -96,7 +96,7 @@
 			this.sfButton1.ForeColor = System.Drawing.Color.Red;
 			this.sfButton1.Location = new System.Drawing.Point(0, 0);
 			this.sfButton1.Name = "sfButton1";
-			this.sfButton1.Size = new System.Drawing.Size(985, 48);
+			this.sfButton1.Size = new System.Drawing.Size(998, 48);
 			this.sfButton1.Style.ForeColor = System.Drawing.Color.Red;
 			this.sfButton1.TabIndex = 0;
 			this.sfButton1.Text = "填写完成后点此保存";
@@ -106,7 +106,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(989, 562);
+			this.ClientSize = new System.Drawing.Size(1002, 561);
 			this.Controls.Add(this.splitContainer1);
 			this.Name = "ExcelWindow";
 			this.Text = "ExcelWindow";

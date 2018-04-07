@@ -17,5 +17,10 @@ namespace BiSS.Projects.RPGen.Windows.Wizard
 		{
 			InitializeComponent();
 		}
+
+		private void modernButton1_Click(object sender, EventArgs e)
+		{
+			this.Close();
+		}
 	}
 }

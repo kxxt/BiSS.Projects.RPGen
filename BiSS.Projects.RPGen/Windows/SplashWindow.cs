@@ -6,6 +6,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Security.AccessControl;
 using System.Security.Cryptography;
@@ -44,11 +45,12 @@ namespace BiSS.Projects.RPGen.Windows
 		private void DoWork()
 		{
 			//todo:
-			Thread.Sleep(1000);
+			Thread.Sleep(2000);
 		}
 
 		private void bgw_DoWork(object sender, DoWorkEventArgs e)
 		{
+			Work();
 			DoWork();
 		}
 
@@ -65,9 +67,27 @@ namespace BiSS.Projects.RPGen.Windows
 			SendMessage(this.Handle, WM_SYSCOMMAND, SC_MOVE + HTCAPTION, 0);
 		}
 
-		private void Work()
+		public void Work()
 		{
+			IList<(bool x, string y)> li = new List<(bool, string)>();
+			li.Add((Ckf("Data\\object1"), "Data\\object1"));
+			li.Add((Ckf("Data\\object2"), "Data\\object2"));
+			li.Add((Ckf("Data\\object3"), "Data\\object3"));
+			li.Add((Ckf("Data\\Temp\\.data"), "Data\\Temp\\.data"));
+			foreach (var b in li)
+			{
+				if (!b.x)
+				{
+					this.TopMost = false;
+					MessageBox.Show($"应用程序找不到必要文件 :{b.y}\r\n可能是应用程序损坏 .\r\n请重新安装应用程序 .", "损坏 / 丢失 必要文件!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					Application.Exit();
+				}
+			}
+		}
 
+		private static bool Ckf(string f)
+		{
+			return File.Exists(f);
 		}
 		/// <summary>
 		/// 计算文件的MD5校验

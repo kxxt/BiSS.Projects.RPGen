@@ -61,7 +61,7 @@ namespace BiSS.Projects.RPGen
 			//		args.Cancel = true;
 			//}));
 			LogWindow.Visible = false;
-			frm = new MainForm();
+			//frm = new MainForm();
 			window = new AppStartWindow();
 			//#region TEST
 			//			Workbook t=new Workbook();
@@ -77,6 +77,7 @@ namespace BiSS.Projects.RPGen
 			//#endregion
 			Log("App Started,displaying the SplashWindow.");
 			Application.Run(new SplashWindow());
+
 			Application.Run(window);
 
 			return 0;
@@ -93,7 +94,7 @@ namespace BiSS.Projects.RPGen
 			Log("ShowLogWindow.");
 			LogWindow.Visible = true;
 		}
-		private static bool debugEnabled = true;//todo
+		private static bool debugEnabled = false;//todo
 		private static bool showCellInfo = true;
 		private static bool raceMode = false;
 		private static EventHandler<DebugEnabledChangedEventArgs> debugEnabledChanged;
@@ -396,6 +397,12 @@ namespace BiSS.Projects.RPGen
 			}
 
 			wb.ActiveSheetIndex = 0;
+			wb.BuiltInDocumentProperties.Author = Author;
+			wb.BuiltInDocumentProperties.Title = $"\"{ClassName}\"班成绩报告";
+			wb.BuiltInDocumentProperties.Manager = "成绩报告生成器";
+			wb.BuiltInDocumentProperties.Company = "成绩报告生成器";
+			wb.BuiltInDocumentProperties.ApplicationName = "成绩报告生成器";
+			wb.BuiltInDocumentProperties.Subject = "成绩报告";
 			/////////////////////////////////////////////////
 			try
 			{
@@ -410,6 +417,14 @@ namespace BiSS.Projects.RPGen
 				}
 			}
 
+			try
+			{
+				File.Delete("Data\\Temp\\" + XlsFile);
+			}
+			catch
+			{
+				;
+			}
 
 			wb.Close();
 			ee.Dispose();
@@ -535,7 +550,7 @@ namespace BiSS.Projects.RPGen
 		}
 
 		public static dynamic Data { get => data; set => data = value; }
-		public static string Title { get => title; set => title = value; }
+		//public static string Title { get => title; set => title = value; }
 		public static string ClassName { get => className; set => className = value; }
 		public static string Author { get => author; set => author = value; }
 		public static Dictionary<NfSubjects, Dictionary<Level, float>> Seprators { get => seprators; set => seprators = value; }

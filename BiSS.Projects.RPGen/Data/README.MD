@@ -1,16 +1,19 @@
 ﻿# "成绩报告生成器"程序自述文件
+
 ## 总述
 本程序仅用作参赛程序 , 禁止用于其他用途.
 
 (C) Copyright 2018
+
 ## 程序功能
-针对输入的学生成绩单 , 输出成绩分析数据表.
+针对输入的学生成绩单 , 输出成绩分析数据表 , 使教师对班级成绩的数据有一个直观的认识.
+
 ## 操作流程
 1. 启动应用程序.
-2. 跟随向导进行操作,填写学生成绩表格.
-3. 设置输出格式及数据指标.
-4. 输出成绩报告.
-5. 查看并修饰成绩报告.
+2. 跟随向导进行操作,填写学生成绩表格等.
+3. 输出成绩报告.
+4. 查看并修改成绩报告.
+
 ## 第三方组件声明(Third Party Notice)
 
 ### 1. MetroFramework
@@ -895,3 +898,7 @@ All products available in Essential Studio and our Data platform for big data, d
 > The Community License can be used in open source projects, but we require that you first contact us to register.
 > Are governments and governmental organizations eligible for Community License?
 > Any government-related organization (i.e., funded by tax dollars) is not eligible for Community License. Governmental agencies that are not taxpayer funded can use the community license after signing a master license agreement. Contact us to initiate the request.
+
+### 4. 程序中使用的图标
+
+   感谢[WWW.ICONS8.COM](http://www.icons8.com)免费提供的无版权图标.

@@ -11,11 +11,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BiSS.Projects.RPGen.ExcelLayout;
 using BiSS.Projects.RPGen.Properties;
+using Microsoft.Vbe.Interop;
 using Newtonsoft.Json;
 using Syncfusion.Windows.Forms.Grid;
 using Syncfusion.Windows.Forms.Tools;
 using static BiSS.Projects.RPGen.Program;
 using static BiSS.Projects.RPGen.Config.Config;
+using Application = System.Windows.Forms.Application;
 
 namespace BiSS.Projects.RPGen.Windows.Wizard
 {
@@ -44,7 +46,7 @@ namespace BiSS.Projects.RPGen.Windows.Wizard
 		public WelcomeWindow()
 		{
 			InitializeComponent();
-
+			counter++;
 			//_title = new Label()
 			//{
 			//	Text = "欢迎使用成绩报告生成器",
@@ -104,26 +106,51 @@ namespace BiSS.Projects.RPGen.Windows.Wizard
 				new WelcomeWindowMessage("填写 Excel 成绩表格","在接下来的过程中,你将填写一份固定格式的Excel 成绩表单", "应用程序将启动 Excel , 请填写此表格 , 您可以把原成绩表中的数据复制到此表中.\r\n注意:请勿修改列标题及列的顺序 ! \r\n请在填写完成后保存文件并关闭 Excel 窗口,返回到本程序中继续操作.\r\n按任意键或下方按钮启动 Excel 来填写表单."),
 				new WelcomeWindowMessage("填写 Excel 成绩表格","请到 Excel 窗口填写成绩表格.如果您看到这个界面并已填写完表格 , 请关闭 Excel.",_ =>
 				{
+					if (DebugEnabled)
+						MessageBox.Show("INTO ACTION:\r\n[INVOKE]");
 					//Task.WaitAny(new Task(FillExcel));
-					FillExcel();
+					bool succeeded=FillExcel();
+					if (!succeeded)
+					{
+						label1.Enabled = true;
+						RollBack();
+						return false;
+					}
 					return true;
 				}),
 				new WelcomeWindowMessage("选择导出路径及格式并设置数据","请根据您的需要选择导出路径和导出格式,并对数据进行设置.\r\n注意:评级分界不接受100%以上及0%以下数字",
 					_ =>
 					{
+
 						var w=new FormatWindow();
-						w.FormClosed += (__, ___) => { this.label1.Enabled = true; };
+
+						bool ClosedByUser = true;
+						w.FormClosed += (__, ___) => { this.label1.Enabled = true;
+							ClosedByUser = w.ClosedByUser;
+						};
 						w.ShowDialog();
+						if(ClosedByUser)
+						{
+							DialogResult r=MessageBox.Show("您是否要退出向导 ?","提示",MessageBoxButtons.YesNo,MessageBoxIcon.Information);
+							//MessageBox.Show("用户取消了操作 .","提示",MessageBoxButtons.OK,MessageBoxIcon.Information);
+							if(r==DialogResult.Yes)
+								this.Close();
+							else
+							{
+								w.ShowDialog();
+							}
+						}
+							
 						//w.Close();
 						return true;
 					}),
-				new WelcomeWindowMessage("保存成功!","感谢您使用本程序.", pp =>
+				new WelcomeWindowMessage("保存成功 !","感谢您使用本程序 .", pp =>
 				{
 					var panel = pp as FlowLayoutPanel;
 					var labelx= new LinkLabel()
 					{
 						LinkBehavior = LinkBehavior.AlwaysUnderline,
-						Text =$"您的成绩报告已导出到{path}\r\n您现在可以查看或根据自己的需要修改它.\r\n\t\t[ 按 Enter 键 打开成绩报告 ]",
+						Text =$"您的成绩报告已导出到{path}\r\n您现在可以查看或根据自己的需要修改它.\r\n\t\t点击上方链接打开成绩报告\r\n点击 [ 点此继续 ] 或上方关闭按钮结束向导 .",
 						AutoSize = true,
 						Dock = System.Windows.Forms.DockStyle.Left,
 						Font = new System.Drawing.Font("微软雅黑 Light", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134))),
@@ -141,7 +168,11 @@ namespace BiSS.Projects.RPGen.Windows.Wizard
 					return false;
 				}),//$"您的成绩报告已导出到{path}\r\n您现在可以查看或根据自己的需要修改它."),
 
-				new WelcomeWindowMessage("END","END","ENDED"),
+				new WelcomeWindowMessage("结束","向导结束", pp =>
+				{
+					this.Close();
+					return false;
+				}),
 			};
 			//var xx = (msgs[0].Context as PictureBox);
 			//xx.SizeMode = PictureBoxSizeMode.Zoom;
@@ -150,7 +181,8 @@ namespace BiSS.Projects.RPGen.Windows.Wizard
 
 		private void WelcomeWindow_KeyDown(object sender, KeyEventArgs e)
 		{
-			NextJob();
+			if (label1.Enabled)
+				NextJob();
 		}
 
 		private void WelcomeWindow_Load(object sender, EventArgs e)
@@ -160,6 +192,11 @@ namespace BiSS.Projects.RPGen.Windows.Wizard
 		int cnt = 0;
 		private void NextJob()
 		{
+			if (DebugEnabled)
+			{
+
+				//MessageBox.Show($"CNT:{cnt}\r\nrollBack:{rollBack}");
+			}
 			path = Program.OutputPath;
 			if (cnt < msgs.Count)
 			{
@@ -171,13 +208,17 @@ namespace BiSS.Projects.RPGen.Windows.Wizard
 				this.flowLayoutPanel1.Controls.Add(msgs[cnt].Context);
 				if (msgs[cnt].Context.Visible == false && (msgs[cnt].Context.Tag as String) == "ACTION")
 				{
+					//if (DebugEnabled)
+					//MessageBox.Show("[Invoke]");
 					bool r = msgs[cnt].Action(this.flowLayoutPanel1);
+					this.Activate();
 					if (r)
 					{
 						cnt++;
 						NextJob();
 						return;
 					}
+
 
 				}
 
@@ -190,9 +231,18 @@ namespace BiSS.Projects.RPGen.Windows.Wizard
 			}
 		}
 
+		private bool rollBack = false;
+		private void RollBack()
+		{
+			rollBack = true;
+			cnt = 2;
+			NextJob();
+			rollBack = false;
+		}
 		private void PrevJob()
 		{
 			cnt--;
+			NextJob();
 		}
 		private IList<WelcomeWindowMessage> msgs = new List<WelcomeWindowMessage>();
 
@@ -204,8 +254,13 @@ namespace BiSS.Projects.RPGen.Windows.Wizard
 			NextJob();
 		}
 
-		private void FillExcel()
+		private int dbg_cnt = 0;
+		private static int counter = 0;
+		private static int prevcounter = 0;
+		private bool FillExcel()
 		{
+			Begin:
+
 			label1.Enabled = false;
 			//if(Program.ExcelWindow.FileName=="")
 			//	Program.ExcelWindow.spreadsheet1.Open("Data\\Test\\c5.xlsx");
@@ -215,7 +270,18 @@ namespace BiSS.Projects.RPGen.Windows.Wizard
 			//MessageBox.Show($"Temp\\{Program.XlsFile}");
 			try
 			{
-				File.Copy(@"Data\object3", Application.StartupPath + $"\\Temp\\{Program.XlsFile}", true);
+				//MessageBox.Show($"{++dbg_cnt}");
+				//Program.XlsFile = null;
+				if (counter == prevcounter + 1)
+				{
+					Program.XlsFile = null;
+					prevcounter++;
+				}
+
+				if (!File.Exists(Application.StartupPath + $"\\Data\\Temp\\{Program.XlsFile}"))
+					File.Copy(@"Data\object3", Application.StartupPath + $"\\Data\\Temp\\{Program.XlsFile}", true);
+
+
 			}
 			catch (Exception)
 			{
@@ -225,52 +291,41 @@ namespace BiSS.Projects.RPGen.Windows.Wizard
 									"1. 应用程序不完整,请重新下载应用程序.\r\n" +
 									"2. 应用程序没有在文件系统上操作文件的权限,请修改权限设置.\r\n" +
 									"3. 如果以上均无问题,请联系应用程序开发者.";
-				return;
+				return false;
 			}
 			var xls = new Process()
 			{
 				StartInfo =
 				{
-					FileName = $"Temp\\{Program.XlsFile}",
+					FileName = $"Data\\Temp\\{Program.XlsFile}",
 
 				},
 			};
 			xls.Start();
 			xls.WaitForExit();
 			ExcelWindow ew = new ExcelWindow("检查数据");
-			ew.spreadsheet1.Open($"Temp\\{Program.XlsFile}");
+			ew.spreadsheet1.Open($"Data\\Temp\\{Program.XlsFile}");
 			MessageBox.Show("单击确定以继续...\r\n您可能需要等待一段时间...", WriteObject(ew.spreadsheet1.ActiveSheet) ?? "提示");
 			Log("Loop Begin");
-			//Busy.BusyWindow busy=new Busy.BusyWindow();
-			//busy.Worker.DoWork += (___s___, ___args___) => {
-			//	while (ew.Export() == null)
-			//	{
-			//		Log("Looping...");
-			//		if (ew.Error.HasValue&&ew.Error.Value)
-			//			break;
-			//	}
-			//};
-			//busy.ShowDialog();
-
-			//await Task.Run(() =>
-			//{
-			while (ew.Export() == null)
-			{
-				Log("Looping...");
-				if (ew.Error.HasValue && ew.Error.Value)
-					break;
-			}
-			//});
-
+			var data = ew.Export();
 			//while (ew.Export() == null)
 			//{
 			//	Log("Looping...");
-			//	if (ew.Error.HasValue&&ew.Error.Value)
+			//	if (ew.Error.HasValue && ew.Error.Value)
+			//		break;
+			//	if (ew.KillingError)
 			//		break;
 			//}
-			if (ew.Error.HasValue && !ew.Error.Value)
+			if (data == null)
 			{
-				var data = ew.Export();
+
+				goto Begin;
+				//ShouldAutoNext = false;
+				//return false;
+			}
+			if (ew.Error.HasValue && !ew.Error.Value && !ew.KillingError)
+			{
+
 				Program.Data.X = data;
 				/////////////////////
 				if (Program.DebugEnabled)
@@ -280,25 +335,20 @@ namespace BiSS.Projects.RPGen.Windows.Wizard
 					File.Create("test.dat").Close();
 					File.AppendAllText("test.dat", json, Encoding.UTF8);
 				}
-				//////////////////////
-				//MessageBox.Show(JsonConvert.SerializeObject(data[0]), "测试数据");
 
-				//this.Hide();
-				//var fmt = new FormatWindow();
-				//fmt.FormClosed += (s, args) =>
-				//{
-				//	this.label1.Enabled = true;
-				//	this.Close();
-				//};
-				//fmt.Show();
 			}
 			else
 			{
-				MessageBox.Show("Error");
+				//MessageBox.Show("Error");
 				label1.Enabled = true;
-				return;
+				goto Begin;
 			}
+
+			return true;
 		}
+
+		//private bool ShouldAutoNext = true;
+
 	}
 
 	public class WelcomeWindowMessage

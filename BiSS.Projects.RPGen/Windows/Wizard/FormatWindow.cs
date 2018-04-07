@@ -58,7 +58,8 @@ namespace BiSS.Projects.RPGen.Windows.Wizard
 					{
 						Program.Seprators[(NfSubjects)jcpy][(Level)icpy] = tbs[icpy, jcpy].Value.HasValue ? (float)(tbs[icpy, jcpy].Value.Value / 100f) : 0f;
 						//Log($"j:{jcpy},j:{jcpy}\r\ni:{icpy},i:{icpy}");
-						MessageBox.Show($"{tbs[icpy, jcpy].Value}\r\n{Program.Seprators[(NfSubjects)jcpy][(Level)icpy]}");
+						if (DebugEnabled)
+							MessageBox.Show($"{tbs[icpy, jcpy].Value}\r\n{Program.Seprators[(NfSubjects)jcpy][(Level)icpy]}");
 
 					};
 					Controls.Add(tbs[i, j]);
@@ -83,13 +84,7 @@ namespace BiSS.Projects.RPGen.Windows.Wizard
 		{
 		}
 
-		protected void ChangeFileSaveDialog(bool toPPT)
-		{
-			if (Program.DebugEnabled)
-				MessageBox.Show($"Checked:{metroToggle2.Checked}\r\nCHANGED TO {(toPPT ? "PPT" : "EXCEL")} MODE!");
-			saveFileDialog.Filter =
-				toPPT ? "PowerPoint 2007+ 幻灯片|*.pptx|PowerPoint 2003 幻灯片|*.ppt" : "Excel 2007+ 表格|*.xlsx|Excel 2003 表格|*.xls";
-		}
+
 
 		private void dotdotdot_Click(object sender, EventArgs e)
 		{
@@ -97,12 +92,7 @@ namespace BiSS.Projects.RPGen.Windows.Wizard
 			metroTextBox1.Text = saveFileDialog.FileName;
 		}
 
-		private void metroToggle2_CheckedChanged(object sender, EventArgs e)
-		{
-			if (Program.DebugEnabled)
-				MessageBox.Show(metroToggle2.Checked.ToString());
-			ChangeFileSaveDialog(!metroToggle2.Checked);
-		}
+
 
 		private void metroTile1_Click(object sender, EventArgs e)
 		{
@@ -166,7 +156,7 @@ namespace BiSS.Projects.RPGen.Windows.Wizard
 
 		private void metroTextBox2_TextChanged(object sender, EventArgs e)
 		{
-			Program.Title = metroTextBox2.Text;
+			//Program.Title = metroTextBox2.Text;
 		}
 
 		private void metroTextBox3_TextChanged(object sender, EventArgs e)
@@ -193,6 +183,7 @@ namespace BiSS.Projects.RPGen.Windows.Wizard
 
 		private void continuebtn_Click(object sender, EventArgs e)
 		{
+			ClosedByUser = false;
 			var ret = CheckData();
 			if (!ret.right)
 			{
@@ -211,7 +202,7 @@ namespace BiSS.Projects.RPGen.Windows.Wizard
 			}
 			string _path = string.IsNullOrWhiteSpace(metroTextBox1.Text)
 				? Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) +
-				  $"\\成绩报告.{(metroToggle2.Checked ? "xlsx" : "pptx")}"
+				  $"\\成绩报告.xlsx"
 				: metroTextBox1.Text;
 			var fi = new FileInfo(_path);
 			//MessageBox.Show(_path);
@@ -321,6 +312,22 @@ namespace BiSS.Projects.RPGen.Windows.Wizard
 				};
 				w.ShowDialog();
 			}
+		}
+
+		private void metroTextBox4_TextChanged(object sender, EventArgs e)
+		{
+			Program.Author = metroTextBox4.Text;
+		}
+
+		public bool ClosedByUser = true;
+		private void FormatWindow_FormClosing(object sender, FormClosingEventArgs e)
+		{
+
+		}
+
+		private void FormatWindow_FormClosed(object sender, FormClosedEventArgs e)
+		{
+
 		}
 	}
 }
