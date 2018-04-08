@@ -42,9 +42,10 @@ namespace BiSS.Projects.RPGen.Windows
 			// 
 			// title
 			// 
+			this.title.Font = new System.Drawing.Font("微软雅黑", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
 			this.title.ForeColor = System.Drawing.Color.White;
 			this.title.Location = new System.Drawing.Point(12, 9);
-			this.title.Size = new System.Drawing.Size(481, 46);
+			this.title.Size = new System.Drawing.Size(463, 46);
 			this.title.Text = "成绩报告生成器 正在启动......";
 			this.title.MouseDown += new System.Windows.Forms.MouseEventHandler(this.WindowMove);
 			// 

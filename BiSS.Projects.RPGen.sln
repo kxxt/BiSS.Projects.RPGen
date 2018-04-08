@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BiSS.Projects.RPGen", "BiSS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RsWork.UI", "RsWork.UI\RsWork.UI\RsWork.UI.csproj", "{E1D0B406-1238-4907-8F8B-43D18E2D9B9C}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "成绩报告生成器", "Installer\Installer.vdproj", "{D9343A70-5E12-4394-858A-31C2576C3B7C}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,10 +31,6 @@ Global
 		{E1D0B406-1238-4907-8F8B-43D18E2D9B9C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E1D0B406-1238-4907-8F8B-43D18E2D9B9C}.Release|x86.ActiveCfg = Release|Any CPU
 		{E1D0B406-1238-4907-8F8B-43D18E2D9B9C}.Release|x86.Build.0 = Release|Any CPU
-		{D9343A70-5E12-4394-858A-31C2576C3B7C}.Debug|Any CPU.ActiveCfg = Debug
-		{D9343A70-5E12-4394-858A-31C2576C3B7C}.Debug|x86.ActiveCfg = Debug
-		{D9343A70-5E12-4394-858A-31C2576C3B7C}.Release|Any CPU.ActiveCfg = Release
-		{D9343A70-5E12-4394-858A-31C2576C3B7C}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

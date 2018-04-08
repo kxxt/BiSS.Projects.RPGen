@@ -93,7 +93,7 @@
 			// 
 			// saveFileDialog
 			// 
-			this.saveFileDialog.Filter = "Excel 2007+ 表格|*.xlsx|Excel 2003 表格|*.xls";
+			this.saveFileDialog.Filter = "Excel 2007+ 表格|*.xlsx";
 			// 
 			// metroTextBox1
 			// 
@@ -610,7 +610,7 @@
 			// FormatWindow
 			// 
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-			this.ClientSize = new System.Drawing.Size(863, 488);
+			this.ClientSize = new System.Drawing.Size(889, 486);
 			this.Controls.Add(this.windows10Btn21);
 			this.Controls.Add(this.sfNumericTextBox10);
 			this.Controls.Add(this.sfNumericTextBox11);
@@ -661,7 +661,7 @@
 			this.Controls.Add(this.metroTextBox1);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "FormatWindow";
-			this.Text = "";
+			this.Text = "选择导出路径及格式并设置数据";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormatWindow_FormClosing);
 			this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormatWindow_FormClosed);
 			this.Load += new System.EventHandler(this.FormatWindow_Load);

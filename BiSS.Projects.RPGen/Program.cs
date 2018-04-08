@@ -203,6 +203,7 @@ namespace BiSS.Projects.RPGen
 			}
 		}
 
+		public static bool ExitGuide = false;
 		public static bool RaceMode { get => raceMode; private set => raceMode = value; }
 		public static EventHandler<DebugEnabledChangedEventArgs> DebugEnabledChanged { get => debugEnabledChanged; set => debugEnabledChanged = value; }
 		public static string EnvDir { get => envDir; set => envDir = value; }
@@ -406,7 +407,7 @@ namespace BiSS.Projects.RPGen
 			/////////////////////////////////////////////////
 			try
 			{
-				xls.Save(pathWithoutLine + "\\" + mname + (v2007 ? ".xlsx" : ".xls"));
+				xls.Save(pathWithoutLine + "\\" + mname + ".xlsx");
 			}
 			catch
 			{

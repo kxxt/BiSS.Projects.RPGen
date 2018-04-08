@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -103,7 +104,8 @@ namespace BiSS.Projects.RPGen.Windows.Wizard
 						return true;
 					return true;
 				}),
-				new WelcomeWindowMessage("填写 Excel 成绩表格","在接下来的过程中,你将填写一份固定格式的Excel 成绩表单", "应用程序将启动 Excel , 请填写此表格 , 您可以把原成绩表中的数据复制到此表中.\r\n注意:请勿修改列标题及列的顺序 ! \r\n请在填写完成后保存文件并关闭 Excel 窗口,返回到本程序中继续操作.\r\n按任意键或下方按钮启动 Excel 来填写表单."),
+				new WelcomeWindowMessage("填写 Excel 成绩表格","在接下来的过程中,你将填写一份固定格式的Excel 成绩表单", "应用程序将启动 Excel , 请填写此表格 , 您可以把原成绩表中的数据复制到此表中.\r\n注意:请勿修改列标题及列的顺序 ! \r\n请在填写完成后保存文件并关闭 Excel 窗口,返回到本程序中继续操作.\r\n按任意键或下方按钮启动 Excel 来填写表单.\r\n" +
+										 "在下一步前 , 请确保计算机上存在能打开 Excel 2007 表格的应用程序 , 并绑定 “ *.xlsx ” 扩展名 , 建议使用 Microsoft Office Excel 2016 .\r\n[ Microsoft Office Excel 2003 不符合条件 , 请至少使用 Excel 2007 ]\r\n如果您没有安装指定程序 , 请关闭本程序 , 安装后再返回操作 ."),
 				new WelcomeWindowMessage("填写 Excel 成绩表格","请到 Excel 窗口填写成绩表格.如果您看到这个界面并已填写完表格 , 请关闭 Excel.",_ =>
 				{
 					if (DebugEnabled)
@@ -153,7 +155,7 @@ namespace BiSS.Projects.RPGen.Windows.Wizard
 						Text =$"您的成绩报告已导出到{path}\r\n您现在可以查看或根据自己的需要修改它.\r\n\t\t点击上方链接打开成绩报告\r\n点击 [ 点此继续 ] 或上方关闭按钮结束向导 .",
 						AutoSize = true,
 						Dock = System.Windows.Forms.DockStyle.Left,
-						Font = new System.Drawing.Font("微软雅黑 Light", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134))),
+						Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134))),
 						TextAlign = System.Drawing.ContentAlignment.MiddleLeft,
 						LinkArea=new LinkArea(10,path.Length),
 						ActiveLinkColor = Color.DarkCyan,
@@ -162,7 +164,18 @@ namespace BiSS.Projects.RPGen.Windows.Wizard
 
 					};
 					labelx.TabStop = false;
-					labelx.LinkClicked += (__, ___) => { Process.Start(path);};
+					labelx.LinkClicked += (__, ___) =>
+					{
+						try
+						{
+							Process.Start(path);
+						}
+						catch
+						{
+							MessageBox.Show("打开生成的成绩报告时出错 !\r\n请您前往指定目录手动打开 .","错误",MessageBoxButtons.OK,MessageBoxIcon.Error);
+						}
+
+					};
 					panel.Controls.Clear();
 					panel.Controls.Add(labelx);
 					return false;
@@ -187,6 +200,7 @@ namespace BiSS.Projects.RPGen.Windows.Wizard
 
 		private void WelcomeWindow_Load(object sender, EventArgs e)
 		{
+			ExitGuide = false;
 			NextJob();
 		}
 		int cnt = 0;
@@ -308,6 +322,16 @@ namespace BiSS.Projects.RPGen.Windows.Wizard
 			MessageBox.Show("单击确定以继续...\r\n您可能需要等待一段时间...", WriteObject(ew.spreadsheet1.ActiveSheet) ?? "提示");
 			Log("Loop Begin");
 			var data = ew.Export();
+			if (ExitGuide)
+			{
+				if (DebugEnabled)
+				{
+					MessageBox.Show("EXIT_GUIDE");
+				}
+				ExitGuide = false;
+				this.Close();
+				return false;
+			}
 			//while (ew.Export() == null)
 			//{
 			//	Log("Looping...");
@@ -374,7 +398,7 @@ namespace BiSS.Projects.RPGen.Windows.Wizard
 				Text = context,
 				AutoSize = true,
 				Dock = System.Windows.Forms.DockStyle.Fill,
-				Font = new System.Drawing.Font("微软雅黑 Light", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134))),
+				Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134))),
 				TextAlign = System.Drawing.ContentAlignment.MiddleLeft
 			};
 			this.context.Dock = DockStyle.Fill;

@@ -45,7 +45,7 @@ namespace BiSS.Projects.RPGen.Windows
 			this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
 			dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-			dataGridViewCellStyle4.Font = new System.Drawing.Font("微软雅黑 Light", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			dataGridViewCellStyle4.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
 			dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
 			dataGridViewCellStyle4.Format = "N2";
 			dataGridViewCellStyle4.NullValue = "<null>";
@@ -82,7 +82,7 @@ namespace BiSS.Projects.RPGen.Windows
 			this.ClientSize = new System.Drawing.Size(897, 714);
 			this.Controls.Add(this.metroButton1);
 			this.Controls.Add(this.dataGridView);
-			this.Font = new System.Drawing.Font("微软雅黑 Light", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
 			this.Name = "GridEditWindow";
 			this.Style = MetroFramework.MetroColorStyle.Orange;
 			this.Text = "{$Window Title}";

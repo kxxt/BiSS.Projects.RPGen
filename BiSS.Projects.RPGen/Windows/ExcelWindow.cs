@@ -177,12 +177,16 @@ namespace BiSS.Projects.RPGen.Windows
 						else
 							return null;
 
-						MessageBox.Show($"表格中有错误数据,可能是数字中混入了字母,\r\n或信息输入不正确,请检查并改正.{(Program.DebugEnabled ? $"\r\n{Logger.GetExceptionInfo(ex)}" : "")}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+						var r = MessageBox.Show($"表格中有错误数据,可能是数字中混入了字母,\r\n或信息输入不正确,请检查并改正.{(Program.DebugEnabled ? $"\r\n{Logger.GetExceptionInfo(ex)}" : "")}\r\n单击 [ 确定 ] 以返回修改 .\r\n单击 [ 取消 ] 将退出向导 .", "警告", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
 						//DialogWindows10 dlg = new DialogWindows10();
 						//dlg.title.Text = "错误";
 						//dlg.Text = "错误";
 						//dlg.subTitle.Text = $"表格中有错误数据,可能是数字中混入了字母,\r\n或信息输入不正确,请检查并改正.{(Program.DebugEnabled ? $"\r\n{Logger.GetExceptionInfo(ex)}" : "")}";
 						//dlg.ShowDialog();
+						if (r != DialogResult.OK)
+						{
+							Program.ExitGuide = true;
+						}
 					}
 					Dest:
 					li.Add(sm);
@@ -192,11 +196,16 @@ namespace BiSS.Projects.RPGen.Windows
 			catch (Exception e)
 			{
 				Error = true;
-				DialogWindows10 dlg = new DialogWindows10();
-				dlg.title.Text = "错误";
-				dlg.Text = "错误";
-				dlg.subTitle.Text = "表格中有错误数据,可能是数字中混入了字母,请检查并改正.";
-				dlg.ShowDialog();
+				//DialogWindows10 dlg = new DialogWindows10();
+				//dlg.title.Text = "错误";
+				//dlg.Text = "错误";
+				//dlg.subTitle.Text = "表格中有错误数据,可能是数字中混入了字母,请检查并改正.";
+				//dlg.ShowDialog();
+				var r = MessageBox.Show($"表格中有错误数据,可能是数字中混入了字母,\r\n或信息输入不正确,请检查并改正.{(Program.DebugEnabled ? $"\r\n{Logger.GetExceptionInfo(e)}" : "")}\r\n单击 [ 确定 ] 以返回修改 .\r\n单击 [ 取消 ] 将退出向导 .", "警告", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+				if (r != DialogResult.OK)
+				{
+					Program.ExitGuide = true;
+				}
 				li = null;
 			}
 

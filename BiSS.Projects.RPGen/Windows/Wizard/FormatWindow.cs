@@ -224,7 +224,7 @@ namespace BiSS.Projects.RPGen.Windows.Wizard
 			}
 
 			//MessageBox.Show($"{fi.Name.Replace("." + fi.Extension, "")}\r\n{fi.Extension}");
-			Program.SaveExcel(x, fi.DirectoryName, fi.Name.Replace(fi.Extension, ""), fi.Extension == ".xlsx");
+			Program.SaveExcel(x, fi.DirectoryName, fi.Name.Replace(fi.Extension, ""), true);
 			OutputPath = _path;
 
 			this.Close();
