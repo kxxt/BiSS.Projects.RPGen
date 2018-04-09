@@ -64,7 +64,7 @@
 			this.webBrowser1.Location = new System.Drawing.Point(3, 70);
 			this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
 			this.webBrowser1.Name = "webBrowser1";
-			this.webBrowser1.Size = new System.Drawing.Size(1025, 355);
+			this.webBrowser1.Size = new System.Drawing.Size(1038, 354);
 			this.webBrowser1.TabIndex = 4;
 			this.webBrowser1.WebBrowserShortcutsEnabled = false;
 			// 
@@ -74,9 +74,9 @@
 			this.windows10Btn21.DialogResult = System.Windows.Forms.DialogResult.Cancel;
 			this.windows10Btn21.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.windows10Btn21.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-			this.windows10Btn21.Location = new System.Drawing.Point(827, 45);
+			this.windows10Btn21.Location = new System.Drawing.Point(837, 45);
 			this.windows10Btn21.Name = "windows10Btn21";
-			this.windows10Btn21.Size = new System.Drawing.Size(201, 19);
+			this.windows10Btn21.Size = new System.Drawing.Size(204, 19);
 			this.windows10Btn21.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
 			this.windows10Btn21.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
 			this.windows10Btn21.Style.ForeColor = System.Drawing.Color.Black;
@@ -92,9 +92,9 @@
 			this.windows10Btn11.AccessibleName = "Button";
 			this.windows10Btn11.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.windows10Btn11.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-			this.windows10Btn11.Location = new System.Drawing.Point(621, 45);
+			this.windows10Btn11.Location = new System.Drawing.Point(629, 45);
 			this.windows10Btn11.Name = "windows10Btn11";
-			this.windows10Btn11.Size = new System.Drawing.Size(200, 19);
+			this.windows10Btn11.Size = new System.Drawing.Size(202, 19);
 			this.windows10Btn11.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
 			this.windows10Btn11.Style.FocusedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(93)))), ((int)(((byte)(166)))));
 			this.windows10Btn11.Style.FocusedForeColor = System.Drawing.Color.White;
@@ -129,7 +129,7 @@
 			this.label2.ForeColor = System.Drawing.Color.Black;
 			this.label2.Location = new System.Drawing.Point(3, 0);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(818, 42);
+			this.label2.Size = new System.Drawing.Size(828, 42);
 			this.label2.TabIndex = 2;
 			this.label2.Text = "用户许可协议";
 			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -153,14 +153,14 @@
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6F));
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 84F));
-			this.tableLayoutPanel1.Size = new System.Drawing.Size(1031, 428);
+			this.tableLayoutPanel1.Size = new System.Drawing.Size(1044, 427);
 			this.tableLayoutPanel1.TabIndex = 5;
 			// 
 			// flowLayoutPanel1
 			// 
 			this.flowLayoutPanel1.Controls.Add(this.label1);
 			this.flowLayoutPanel1.Controls.Add(this.metroToggle1);
-			this.flowLayoutPanel1.Location = new System.Drawing.Point(827, 3);
+			this.flowLayoutPanel1.Location = new System.Drawing.Point(837, 3);
 			this.flowLayoutPanel1.Name = "flowLayoutPanel1";
 			this.flowLayoutPanel1.Size = new System.Drawing.Size(167, 36);
 			this.flowLayoutPanel1.TabIndex = 5;
@@ -198,10 +198,10 @@
 			// WebWindow
 			// 
 			this.AcceptButton = this.windows10Btn11;
-			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.CancelButton = this.windows10Btn21;
-			this.ClientSize = new System.Drawing.Size(1035, 432);
+			this.ClientSize = new System.Drawing.Size(1048, 431);
 			this.Controls.Add(this.tableLayoutPanel1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

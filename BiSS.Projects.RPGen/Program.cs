@@ -26,6 +26,12 @@ namespace BiSS.Projects.RPGen
 {
 	internal static class Program
 	{
+		public static string Temp;
+
+		public static string CurXlsFile
+		{
+			get { return Temp + XlsFile; }
+		}
 		internal static readonly String PassWord = "CjBgScQX*Dxcsdfwr";
 		/// <summary>
 		/// 应用程序的主入口点。
@@ -33,8 +39,13 @@ namespace BiSS.Projects.RPGen
 		[STAThread]
 		private static int Main()
 		{
+			Temp = Path.GetTempPath();
+			if (DebugEnabled)
+				MessageBox.Show(Temp);
 #if DEBUG
 			DebugEnabled = true;
+#else
+			DebugEnabled = false;
 #endif
 #if RACE
 			RaceMode = true;
@@ -94,7 +105,7 @@ namespace BiSS.Projects.RPGen
 			Log("ShowLogWindow.");
 			LogWindow.Visible = true;
 		}
-		private static bool debugEnabled = false;//todo
+		private static bool debugEnabled = true;//todo
 		private static bool showCellInfo = true;
 		private static bool raceMode = false;
 		private static EventHandler<DebugEnabledChangedEventArgs> debugEnabledChanged;
@@ -420,11 +431,12 @@ namespace BiSS.Projects.RPGen
 
 			try
 			{
-				File.Delete("Data\\Temp\\" + XlsFile);
+				File.Delete(CurXlsFile);
 			}
 			catch
 			{
-				;
+				if (DebugEnabled)
+					MessageBox.Show("Deletion Fault!");
 			}
 
 			wb.Close();

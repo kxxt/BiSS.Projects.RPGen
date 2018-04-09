@@ -73,7 +73,7 @@ namespace BiSS.Projects.RPGen.Windows
 			li.Add((Ckf("Data\\object1"), "Data\\object1"));
 			li.Add((Ckf("Data\\object2"), "Data\\object2"));
 			li.Add((Ckf("Data\\object3"), "Data\\object3"));
-			li.Add((Ckf("Data\\Temp\\.data"), "Data\\Temp\\.data"));
+			//li.Add((Ckf("Data\\Temp\\.data"), "Data\\Temp\\.data"));
 			foreach (var b in li)
 			{
 				if (!b.x)

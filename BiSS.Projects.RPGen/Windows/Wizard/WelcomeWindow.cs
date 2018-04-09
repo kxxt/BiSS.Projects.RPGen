@@ -292,8 +292,8 @@ namespace BiSS.Projects.RPGen.Windows.Wizard
 					prevcounter++;
 				}
 
-				if (!File.Exists(Application.StartupPath + $"\\Data\\Temp\\{Program.XlsFile}"))
-					File.Copy(@"Data\object3", Application.StartupPath + $"\\Data\\Temp\\{Program.XlsFile}", true);
+				if (!File.Exists(CurXlsFile))
+					File.Copy(@"Data\object3", CurXlsFile, true);
 
 
 			}
@@ -311,14 +311,14 @@ namespace BiSS.Projects.RPGen.Windows.Wizard
 			{
 				StartInfo =
 				{
-					FileName = $"Data\\Temp\\{Program.XlsFile}",
+					FileName = CurXlsFile,
 
 				},
 			};
 			xls.Start();
 			xls.WaitForExit();
 			ExcelWindow ew = new ExcelWindow("检查数据");
-			ew.spreadsheet1.Open($"Data\\Temp\\{Program.XlsFile}");
+			ew.spreadsheet1.Open(CurXlsFile);
 			MessageBox.Show("单击确定以继续...\r\n您可能需要等待一段时间...", WriteObject(ew.spreadsheet1.ActiveSheet) ?? "提示");
 			Log("Loop Begin");
 			var data = ew.Export();
