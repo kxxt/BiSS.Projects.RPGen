@@ -31,7 +31,7 @@ ShowLanguageDialog=auto
 UninstallDisplayName=成绩报告生成器
 UninstallDisplayIcon={app}\BiSS.Projects.RPGen.exe
 VersionInfoCopyright=(C) Copyright 2018
-VersionInfoProductName=成绩报告生成器
+VersionInfoProductName=成绩报告生成器                                      
 VersionInfoProductVersion=1.0
 VersionInfoProductTextVersion=1.0
 MinVersion=0,6.1
@@ -46,85 +46,42 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked; OnlyBelowVersion: 0,6.1
 
 [Files]
-Source: "M:\RsWork\Projects\DOING\BiSS.Projects.RPGen\BiSS.Projects.RPGen\bin\Release\BiSS.Projects.RPGen.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "M:\RsWork\Projects\DOING\BiSS.Projects.RPGen\BiSS.Projects.RPGen\bin\Release\BiSS.Projects.RPGen.exe.config"; DestDir: "{app}"; Flags: ignoreversion
-Source: "M:\RsWork\Projects\DOING\BiSS.Projects.RPGen\BiSS.Projects.RPGen\bin\Release\BiSS.Projects.RPGen.pdb"; DestDir: "{app}"; Flags: ignoreversion
+Source: "M:\RsWork\Projects\DOING\BiSS.Projects.RPGen\BiSS.Projects.RPGen\bin\RTM\BiSS.Projects.RPGen.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "M:\RsWork\Projects\DOING\BiSS.Projects.RPGen\BiSS.Projects.RPGen\bin\RTM\BiSS.Projects.RPGen.exe.config"; DestDir: "{app}"; Flags: ignoreversion
+Source: "M:\RsWork\Projects\DOING\BiSS.Projects.RPGen\BiSS.Projects.RPGen\bin\RTM\BiSS.Projects.RPGen.pdb"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\EnvDTE.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\MetroFramework.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\MetroFramework.Fonts.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Newtonsoft.Json.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Newtonsoft.Json.xml"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\object1"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\object2"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\object3"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\RsWork.Functions.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\RsWork.Functions.pdb"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\RsWork.UI.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\RsWork.UI.dll.config"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\RsWork.UI.pdb"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\ShowReadme"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\stdole.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.Chart.Base.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.Chart.Base.xml"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.Chart.Windows.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.Chart.Windows.xml"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.Compression.Base.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.Compression.Base.xml"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.Core.WinForms.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.Core.WinForms.xml"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.Data.WinForms.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.Data.WinForms.xml"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.Diagram.Base.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.Diagram.Base.xml"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.Diagram.Windows.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.Diagram.Windows.xml"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.Grid.Base.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.Grid.Base.xml"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.Grid.Windows.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.Grid.Windows.xml"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.Grid.Windows.XmlSerializers.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.HTMLUI.Base.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.HTMLUI.Base.xml"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.HTMLUI.Windows.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.HTMLUI.Windows.xml"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.Linq.Base.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.Linq.Base.xml"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.Maps.Windows.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.Maps.Windows.xml"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.MIME.Base.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.MIME.Base.xml"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.OfficeChart.Base.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.OfficeChart.Base.xml"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.PivotAnalysis.Base.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.PivotAnalysis.Base.xml"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.PivotAnalysis.Windows.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.PivotAnalysis.Windows.xml"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.PivotChart.Windows.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.PivotChart.Windows.xml"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.Presentation.Base.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.Presentation.Base.xml"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.Scripting.Base.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.Scripting.Base.xml"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.SfInput.WinForms.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.SfInput.WinForms.xml"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.Shared.Base.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.Shared.Base.xml"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.Shared.Windows.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.Shared.Windows.xml"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.SpellChecker.Base.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.SpellChecker.Base.xml"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.Spreadsheet.Windows.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.Spreadsheet.Windows.xml"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.Tools.Base.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.Tools.Base.xml"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.Tools.Windows.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.Tools.Windows.xml"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.XlsIO.Base.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Syncfusion.XlsIO.Base.xml"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\System.ValueTuple.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\System.ValueTuple.xml"; DestDir: "{app}\Data\"; Flags: ignoreversion
-Source: "..\BiSS.Projects.RPGen\bin\Release\Data\Temp\.data"; DestDir: "{app}\Data\Temp\"; Flags: ignoreversion
+Source: "..\BiSS.Projects.RPGen\bin\RTM\Data\EnvDTE.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
+Source: "..\BiSS.Projects.RPGen\bin\RTM\Data\example.mp4"; DestDir: "{app}\Data\"; Flags: ignoreversion
+Source: "..\BiSS.Projects.RPGen\bin\RTM\Data\MetroFramework.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
+Source: "..\BiSS.Projects.RPGen\bin\RTM\Data\MetroFramework.Fonts.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
+Source: "..\BiSS.Projects.RPGen\bin\RTM\Data\Newtonsoft.Json.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
+Source: "..\BiSS.Projects.RPGen\bin\RTM\Data\object1"; DestDir: "{app}\Data\"; Flags: ignoreversion
+Source: "..\BiSS.Projects.RPGen\bin\RTM\Data\object2"; DestDir: "{app}\Data\"; Flags: ignoreversion
+Source: "..\BiSS.Projects.RPGen\bin\RTM\Data\object3"; DestDir: "{app}\Data\"; Flags: ignoreversion
+Source: "..\BiSS.Projects.RPGen\bin\RTM\Data\RsWork.Functions.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
+Source: "..\BiSS.Projects.RPGen\bin\RTM\Data\RsWork.UI.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
+Source: "..\BiSS.Projects.RPGen\bin\RTM\Data\RsWork.UI.dll.config"; DestDir: "{app}\Data\"; Flags: ignoreversion
+Source: "..\BiSS.Projects.RPGen\bin\RTM\Data\ShowReadme"; DestDir: "{app}\Data\"; Flags: ignoreversion
+Source: "..\BiSS.Projects.RPGen\bin\RTM\Data\stdole.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
+Source: "..\BiSS.Projects.RPGen\bin\RTM\Data\Syncfusion.Compression.Base.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
+Source: "..\BiSS.Projects.RPGen\bin\RTM\Data\Syncfusion.Core.WinForms.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
+Source: "..\BiSS.Projects.RPGen\bin\RTM\Data\Syncfusion.Data.WinForms.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
+Source: "..\BiSS.Projects.RPGen\bin\RTM\Data\Syncfusion.Grid.Base.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
+Source: "..\BiSS.Projects.RPGen\bin\RTM\Data\Syncfusion.Grid.Windows.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
+Source: "..\BiSS.Projects.RPGen\bin\RTM\Data\Syncfusion.Grid.Windows.XmlSerializers.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
+Source: "..\BiSS.Projects.RPGen\bin\RTM\Data\Syncfusion.OfficeChart.Base.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
+Source: "..\BiSS.Projects.RPGen\bin\RTM\Data\Syncfusion.Presentation.Base.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
+Source: "..\BiSS.Projects.RPGen\bin\RTM\Data\Syncfusion.SfInput.WinForms.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
+Source: "..\BiSS.Projects.RPGen\bin\RTM\Data\Syncfusion.Shared.Base.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
+Source: "..\BiSS.Projects.RPGen\bin\RTM\Data\Syncfusion.Shared.Windows.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
+Source: "..\BiSS.Projects.RPGen\bin\RTM\Data\Syncfusion.SpellChecker.Base.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
+Source: "..\BiSS.Projects.RPGen\bin\RTM\Data\Syncfusion.Spreadsheet.Windows.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
+Source: "..\BiSS.Projects.RPGen\bin\RTM\Data\Syncfusion.Tools.Base.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
+Source: "..\BiSS.Projects.RPGen\bin\RTM\Data\Syncfusion.Tools.Windows.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
+Source: "..\BiSS.Projects.RPGen\bin\RTM\Data\Syncfusion.XlsIO.Base.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
+Source: "..\BiSS.Projects.RPGen\bin\RTM\Data\System.ValueTuple.dll"; DestDir: "{app}\Data\"; Flags: ignoreversion
+Source: "..\BiSS.Projects.RPGen\bin\RTM\Data\Temp\.data"; DestDir: "{app}\Data\Temp\"; Flags: ignoreversion
+Source: "..\BiSS.Projects.RPGen\bin\RTM\示例表格.xlsx"; DestDir: "{app}"; Flags: ignoreversion
 
 [Icons]
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
